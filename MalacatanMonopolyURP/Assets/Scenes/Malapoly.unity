@@ -1314,7 +1314,7 @@ GameObject:
   - component: {fileID: 418805210}
   - component: {fileID: 418805211}
   m_Layer: 5
-  m_Name: PlayersNumMenu
+  m_Name: NumOfPlayersMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1440,7 +1440,7 @@ GameObject:
   - component: {fileID: 556321875}
   - component: {fileID: 556321876}
   m_Layer: 5
-  m_Name: RoundsMenu
+  m_Name: NumOfRoundsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2298,7 +2298,7 @@ GameObject:
   - component: {fileID: 1073147953}
   - component: {fileID: 1073147954}
   m_Layer: 5
-  m_Name: CharactersMenu
+  m_Name: CharacterSelectMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
