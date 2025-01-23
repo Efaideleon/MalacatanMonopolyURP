@@ -40,5 +40,24 @@ public class GameMenu: MonoBehaviour
     public void HandleConfirmNumOfPlayersButton()
     {
         Debug.Log($"Num of player picked: {_numOfPlayers}");
+        // When the confirm button is pressed disable the number of players menu
+        if (NumOfPlayersMenu!= null)
+        {
+            NumOfPlayersMenu.SetActive(false); 
+        }
+        else
+        {
+            Debug.LogWarning("NumOfPlayersMenu is not assigned!");
+        }
+
+        if (CharacterSelectMenu != null)
+        {
+            CharacterSelectMenu.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("CharacterSelectMenu is not assigned!");
+        }
+        // and enable the character select menu
     }
 }
