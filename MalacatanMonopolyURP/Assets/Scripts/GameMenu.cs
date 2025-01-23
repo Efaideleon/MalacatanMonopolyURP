@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class GameMenu: MonoBehaviour
 {
@@ -7,6 +7,8 @@ public class GameMenu: MonoBehaviour
     [SerializeField] private GameObject NumOfPlayersMenu;
     [SerializeField] private GameObject CharacterSelectMenu;
     [SerializeField] private GameObject NumOfRoundsMenu;
+
+    private int _numOfPlayers = 0;
 
     public void HandleStartButton()
     {
@@ -28,5 +30,15 @@ public class GameMenu: MonoBehaviour
         {
             Debug.LogWarning("StartMenu is not assigned!");
         }
+    }
+
+    public void PicknNumOfPlayers(int numOfPlayers)
+    {
+        _numOfPlayers = numOfPlayers;
+    }   
+
+    public void HandleConfirmNumOfPlayersButton()
+    {
+        Debug.Log($"Num of player picked: {_numOfPlayers}");
     }
 }
