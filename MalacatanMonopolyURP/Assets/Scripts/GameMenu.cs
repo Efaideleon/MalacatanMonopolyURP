@@ -52,6 +52,7 @@ public class GameMenu: MonoBehaviour
                 ChangeMenu(CharacterSelectMenu, NumOfRoundsMenu);
             }
 
+            // TODO: The player should only be able to pick a unique character.
             _currentPlayerChoosingCharacter++;
             _currentPlayerChoosingCharacterText.text = _currentPlayerChoosingCharacter.ToString();
             _chosenCharacterName = "";
