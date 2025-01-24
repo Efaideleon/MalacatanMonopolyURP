@@ -4627,9 +4627,10 @@ MonoBehaviour:
   CharacterSelectMenu: {fileID: 1073147952}
   NumOfRoundsMenu: {fileID: 556321874}
   _currentPlayerChoosingCharacterText: {fileID: 560098035}
-  _num_of_players_selector: {fileID: 1905360608}
-  _character_selector: {fileID: 725278145}
-  _num_of_rounds_selector: {fileID: 1150215299}
+  _charactersToChooseFrom: []
+  _numOfPlayersSelector: {fileID: 1905360608}
+  _characterSelector: {fileID: 725278145}
+  _numOfRoundsSelector: {fileID: 1150215299}
 --- !u!1 &1545337969
 GameObject:
   m_ObjectHideFlags: 0
