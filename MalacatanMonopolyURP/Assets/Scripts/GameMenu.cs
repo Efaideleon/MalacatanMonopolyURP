@@ -13,12 +13,14 @@ public class GameMenu: MonoBehaviour
 
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI _currentPlayerChoosingCharacterText;
+    [Tooltip("Characters available on the Character Selection Menu")]
+    [SerializeField] private GameObject[] _charactersToChooseFrom;
+    [SerializeField] private GameObject _numOfPlayersSelector;
+    [SerializeField] private GameObject _characterSelector;
+    [SerializeField] private GameObject _numOfRoundsSelector;
 
-    [SerializeField] private GameObject _num_of_players_selector;
-    [SerializeField] private GameObject _character_selector;
-    [SerializeField] private GameObject _num_of_rounds_selector;
-
-    private int _numOfPlayers = 0;
+    // The number of players is set to 2 by default.
+    private int _numOfPlayers = 2;
     private string _chosenCharacterName = "";
     private int _currentPlayerChoosingCharacter = 1;
     private readonly List<string> _playerCharactersPicked = new ();
@@ -29,19 +31,19 @@ public class GameMenu: MonoBehaviour
 
     public void PickNumOfPlayers(GameObject numOfPlayers)
     {
-        _num_of_players_selector.transform.position = numOfPlayers.transform.position;
+        _numOfPlayersSelector.transform.position = numOfPlayers.transform.position;
         _numOfPlayers = int.Parse(numOfPlayers.name);
     }   
 
     public void PickCharacter(GameObject CharacterName)
     {
-        _character_selector.transform.position = CharacterName.transform.position;
+        _characterSelector.transform.position = CharacterName.transform.position;
         _chosenCharacterName = CharacterName.name;
     }
 
     public void PickNumberOfRounds(GameObject RoundPanelNum)
     {
-        _num_of_rounds_selector.transform.position = RoundPanelNum.transform.position;
+        _numOfRoundsSelector.transform.position = RoundPanelNum.transform.position;
         _numOfRounds = int.Parse(RoundPanelNum.name);
     }
 

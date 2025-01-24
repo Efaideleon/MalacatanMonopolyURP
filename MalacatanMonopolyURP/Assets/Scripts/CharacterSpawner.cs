@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.ShaderGraph.Internal;
 
 public class CharacterSpawner : MonoBehaviour
 {
@@ -21,7 +20,6 @@ public class CharacterSpawner : MonoBehaviour
 
     public void SpawnCharacters(List<string> charactersToSpawn)
     {
-
         float radius = 3f;
         for (int i = 0; i < charactersToSpawn.Count; i++)
         {
@@ -31,12 +29,11 @@ public class CharacterSpawner : MonoBehaviour
             // Calculate the position on the circle
             float x = transform.position.x + Mathf.Cos(angle) * radius;
             float z = transform.position.z + Mathf.Sin(angle) * radius;
-            Vector3 charPos = new Vector3(x, transform.position.y, z);
+            Vector3 charPos = new (x, transform.position.y, z);
 
             Quaternion charRot = Quaternion.Euler(0, 0, 0);
             SpawnCharacter(charactersToSpawn[i], charPos, charRot);
         }
-
     }
     
     private void SpawnCharacter(string characterName, Vector3 position, Quaternion rotation )
@@ -45,7 +42,6 @@ public class CharacterSpawner : MonoBehaviour
         GameObject characterToSpawn = _characters.FirstOrDefault(character => character.name == characterName);
         if (characterToSpawn != null)
         {
-
             Instantiate(characterToSpawn, position, rotation);
         }
     }
