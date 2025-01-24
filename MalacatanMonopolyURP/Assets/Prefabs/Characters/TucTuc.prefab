@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8981544494868354585}
   - component: {fileID: 8933799438955663992}
   m_Layer: 0
-  m_Name: TucTuc
+  m_Name: Tuctuc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,6 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: f7383b2e3aaa5394994bdad1616da530, type: 2}
   - {fileID: 2100000, guid: 173692191d87d8849bd78dc8a65f1640, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
