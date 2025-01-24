@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class GameMenu: MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class GameMenu: MonoBehaviour
     private int _currentPlayerChoosingCharacter = 1;
     private readonly List<string> _playerCharactersPicked = new ();
     private int _numOfRounds = 0;
+
+    // Events
+    public event Action<List<string>> OnCharacterSpawn;
 
     public void PickNumOfPlayers(int numOfPlayers)
     {
@@ -82,11 +86,14 @@ public class GameMenu: MonoBehaviour
         Debug.Log($"Num of rounds picked: {_numOfRounds}");
         if (_numOfRounds > 0) 
         {
+            // Starting the game.
             Debug.Log("Starting the game...");
             gameObject.SetActive(false);
             if (NumOfRoundsMenu != null)
             {
                 NumOfRoundsMenu.SetActive(false);
+                // TODO: Pass the character list to spawn
+                OnCharacterSpawn.Invoke(_playerCharactersPicked);
             }
             else
             {
