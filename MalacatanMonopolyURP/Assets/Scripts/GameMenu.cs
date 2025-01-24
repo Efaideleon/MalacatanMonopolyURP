@@ -69,7 +69,7 @@ public class GameMenu: MonoBehaviour
         // TODO: Make sure that the number has been picked before going to next menu.
         if (_numOfPlayers > 0)
         {
-            ChangeMenu(NumOfPlayersMenu,CharacterSelectMenu);
+            ChangeMenu(NumOfPlayersMenu, CharacterSelectMenu);
         }
         else
         {

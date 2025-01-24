@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class CharacterSpawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] GameObject[] _characters;
+
+    public void SpawnCharacters()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void SpawnCharacter(string characterName)
     {
-        
+        foreach (var character in _characters)
+        {
+            if (character.name == characterName)
+            {
+                Instantiate(character, transform.position, Quaternion.identity);
+            }
+        }
     }
 }
