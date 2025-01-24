@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8815440592264286184}
   - component: {fileID: 4447551538934934109}
   m_Layer: 0
-  m_Name: Tuctuc.001
+  m_Name: TucTuc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

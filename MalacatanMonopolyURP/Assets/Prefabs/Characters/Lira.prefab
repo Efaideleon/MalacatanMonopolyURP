@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8961899411067865423}
   - component: {fileID: 683929199919189942}
   m_Layer: 0
-  m_Name: Lira.001
+  m_Name: Lira
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
