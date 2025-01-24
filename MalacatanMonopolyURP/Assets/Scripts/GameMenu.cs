@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using System.Linq;
+using UnityEngine.UI;
 
 public class GameMenu: MonoBehaviour
 {
@@ -21,13 +23,18 @@ public class GameMenu: MonoBehaviour
 
     // The number of players is set to 2 by default.
     private int _numOfPlayers = 2;
-    private string _chosenCharacterName = "";
+    private string _chosenCharacterName;  
     private int _currentPlayerChoosingCharacter = 1;
-    private readonly List<string> _playerCharactersPicked = new ();
-    private int _numOfRounds = 0;
+    private readonly List<string> _listOfCharacterPicked = new ();
+    private int _numOfRounds = 8;
 
     // Events
     public event Action<List<string>> OnCharacterSpawn;
+
+    void Start()
+    {
+        _chosenCharacterName = _charactersToChooseFrom[0].name;
+    }
 
     public void PickNumOfPlayers(GameObject numOfPlayers)
     {
@@ -70,29 +77,40 @@ public class GameMenu: MonoBehaviour
     {
         if (_chosenCharacterName != "")
         {
-            Debug.Log($"Player {_currentPlayerChoosingCharacter} picked: {_chosenCharacterName}");
-            _playerCharactersPicked.Add(_chosenCharacterName);
+            // If the chosenCharacterName is on the list of character picked return.
+            if (_listOfCharacterPicked.Contains(_chosenCharacterName)) return;
 
+            Debug.Log($"Player {_currentPlayerChoosingCharacter} picked: {_chosenCharacterName}");
+            _listOfCharacterPicked.Add(_chosenCharacterName);
+
+            // Set the chosen character button to inactive.
+            Button characterButton = _charactersToChooseFrom.FirstOrDefault(character => _chosenCharacterName == character.name).GetComponent<Button>();
+            characterButton.interactable = false;
+
+            // Change to the next menu if all the players picked their characters.
             if (_currentPlayerChoosingCharacter == _numOfPlayers)
             {
                 // After finishing picking characters for all players go to num of rounds menu.
                 ChangeMenu(CharacterSelectMenu, NumOfRoundsMenu);
             }
 
-
-
             // TODO: The player should only be able to pick a unique character.
             _currentPlayerChoosingCharacter++;
             _currentPlayerChoosingCharacterText.text = _currentPlayerChoosingCharacter.ToString();
-            _chosenCharacterName = "";
+
+            // Set the selector to the next available character.
+            GameObject nextAvailableCharacter = _charactersToChooseFrom.Where(character => !_listOfCharacterPicked.Contains(character.name)).FirstOrDefault();
+            if (nextAvailableCharacter != null)
+            {
+                _characterSelector.transform.position = nextAvailableCharacter.transform.position;
+                _chosenCharacterName = nextAvailableCharacter.name;
+            }
         }
         else
         {
             Debug.LogWarning("Character has not been picked!");
         }
     }
-
-
 
     public void HandleStartButtonAfterNumOfRounds()
     {
@@ -106,7 +124,7 @@ public class GameMenu: MonoBehaviour
             {
                 NumOfRoundsMenu.SetActive(false);
                 // TODO: Pass the character list to spawn
-                OnCharacterSpawn.Invoke(_playerCharactersPicked);
+                OnCharacterSpawn.Invoke(_listOfCharacterPicked);
             }
             else
             {
