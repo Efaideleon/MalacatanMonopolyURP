@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class CharacterSpawner : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CharacterSpawner : MonoBehaviour
 
     void OnEnable()
     {
+        // When the Start Button on the Round selection Menu is pressed spawn the Characters.
         _gameMenu.OnCharacterSpawn += SpawnCharacters;
     }
 
@@ -26,12 +28,11 @@ public class CharacterSpawner : MonoBehaviour
     
     private void SpawnCharacter(string characterName)
     {
-        foreach (var character in _characters)
+        // Find and check if the character exists in the list of available characters.
+        GameObject characterToSpawn = _characters.FirstOrDefault(character => character.name == characterName);
+        if (characterToSpawn != null)
         {
-            if (character.name == characterName)
-            {
-                Instantiate(character, transform.position, Quaternion.identity);
-            }
+            Instantiate(characterToSpawn, transform.position, Quaternion.identity);
         }
     }
 }

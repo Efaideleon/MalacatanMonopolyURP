@@ -6861,6 +6861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2104475031}
+  - component: {fileID: 2104475032}
   m_Layer: 0
   m_Name: CharacterSpawner
   m_TagString: Untagged
@@ -6883,6 +6884,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2104475032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104475030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672006a97faa047959e07c906ac5233b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characters:
+  - {fileID: 8697356879511710085, guid: 243fbc57cf7d0455f826edfdcae79ab0, type: 3}
+  - {fileID: 2267832882188470794, guid: a164add103ab9404c8b60963809142cd, type: 3}
+  - {fileID: 6218627839853144722, guid: ac99846991266456387fa9f6e228ff32, type: 3}
+  - {fileID: 4449487276028556146, guid: c4bd09c0e2b10425292c6669f9307719, type: 3}
+  - {fileID: 1803442326320450367, guid: 9479c2c325bd2420aa3cd23b8f0181ab, type: 3}
+  - {fileID: 6808828382254579881, guid: 9c2702a1cc0a94861ab482cb7a8b1b50, type: 3}
+  _gameMenu: {fileID: 1531696318}
 --- !u!1 &2141378387
 GameObject:
   m_ObjectHideFlags: 0
