@@ -14,6 +14,10 @@ public class GameMenu: MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI _currentPlayerChoosingCharacterText;
 
+    [SerializeField] private GameObject _num_of_players_selector;
+    [SerializeField] private GameObject _character_selector;
+    [SerializeField] private GameObject _num_of_rounds_selector;
+
     private int _numOfPlayers = 0;
     private string _chosenCharacterName = "";
     private int _currentPlayerChoosingCharacter = 1;
@@ -23,24 +27,41 @@ public class GameMenu: MonoBehaviour
     // Events
     public event Action<List<string>> OnCharacterSpawn;
 
-    public void PickNumOfPlayers(int numOfPlayers)
+    public void PickNumOfPlayers(GameObject numOfPlayers)
     {
-        _numOfPlayers = numOfPlayers;
+        _num_of_players_selector.transform.position = numOfPlayers.transform.position;
+        _numOfPlayers = int.Parse(numOfPlayers.name);
     }   
 
-    public void PickCharacter(string characterNameStr)
+    public void PickCharacter(GameObject CharacterName)
     {
-        _chosenCharacterName = characterNameStr;
+        _character_selector.transform.position = CharacterName.transform.position;
+        _chosenCharacterName = CharacterName.name;
     }
 
-    public void PickNumberOfRounds(int numOfRounds)
+    public void PickNumberOfRounds(GameObject RoundPanelNum)
     {
-        _numOfRounds = numOfRounds;
+        _num_of_rounds_selector.transform.position = RoundPanelNum.transform.position;
+        _numOfRounds = int.Parse(RoundPanelNum.name);
     }
 
     public void HandleStartButton()
     {
         ChangeMenu(StartMenu,NumOfPlayersMenu);
+    }
+
+    public void HandleConfirmNumOfPlayersButton()
+    {
+        Debug.Log($"Num of player picked: {_numOfPlayers}");
+        // TODO: Make sure that the number has been picked before going to next menu.
+        if (_numOfPlayers > 0)
+        {
+            ChangeMenu(NumOfPlayersMenu, CharacterSelectMenu);
+        }
+        else
+        {
+            Debug.LogWarning("Number of players has not been picked!");
+        }
     }
 
     public void HandleConfirmCharacterSelection()
@@ -56,6 +77,8 @@ public class GameMenu: MonoBehaviour
                 ChangeMenu(CharacterSelectMenu, NumOfRoundsMenu);
             }
 
+
+
             // TODO: The player should only be able to pick a unique character.
             _currentPlayerChoosingCharacter++;
             _currentPlayerChoosingCharacterText.text = _currentPlayerChoosingCharacter.ToString();
@@ -67,19 +90,7 @@ public class GameMenu: MonoBehaviour
         }
     }
 
-    public void HandleConfirmNumOfPlayersButton()
-    {
-        Debug.Log($"Num of player picked: {_numOfPlayers}");
-        // TODO: Make sure that the number has been picked before going to next menu.
-        if (_numOfPlayers > 0)
-        {
-            ChangeMenu(NumOfPlayersMenu, CharacterSelectMenu);
-        }
-        else
-        {
-            Debug.LogWarning("Number of players has not been picked!");
-        }   
-    }
+
 
     public void HandleStartButtonAfterNumOfRounds()
     {
