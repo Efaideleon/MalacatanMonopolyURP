@@ -6,10 +6,17 @@ public class GameData : ScriptableObject
 {
     [SerializeField] List<GameObject> _listOfAllCharacterGOs; 
     public List<GameObject> ListOfAllCharacterGOs => _listOfAllCharacterGOs;
-    private List<Character> _charactersPlaying = new ();
+    private List<Character> _listOfCharacersPicked = new ();
+    public List<Character> ListOfCharactersPicked => _listOfCharacersPicked;
 
-    public void SetCharacters(List<Character> characters)
+    public void AddToCharactersPicked(Character character)
     {
-        _charactersPlaying = characters;
+        _listOfCharacersPicked.Add(character);
+
+        Debug.Log("List of characters picked:");
+        foreach(var c in _listOfCharacersPicked)
+        {
+            Debug.Log($"Character: {c.name}");
+        }
     }
 }

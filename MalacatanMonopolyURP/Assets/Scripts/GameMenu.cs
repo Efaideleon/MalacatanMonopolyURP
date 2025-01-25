@@ -28,7 +28,6 @@ public class GameMenu: MonoBehaviour
     private int _numOfPlayers = 2;
     private Character _chosenCharacter;  
     private int _numOfCurrentPlayerChoosingChar = 1;
-    private readonly List<Character> _listOfCharactersPicked = new ();
     private int _numOfRounds = 8;
 
     // Events
@@ -83,20 +82,19 @@ public class GameMenu: MonoBehaviour
     {
         if (_chosenCharacter != null)
         {
-            // If the chosenCharacterName is on the list of character picked return.
-            if (_listOfCharactersPicked.Contains(_chosenCharacter)) return;
+            // The player should pick a unique character.
+            if (_gameData.ListOfCharactersPicked.Contains(_chosenCharacter)) return;
 
             Debug.Log($"Player {_numOfCurrentPlayerChoosingChar} picked: {_chosenCharacter.Name}");
             _chosenCharacter.InitializeCharacter(_numOfCurrentPlayerChoosingChar);
-            _listOfCharactersPicked.Add(_chosenCharacter);
 
             // Set the chosen character button to inactive.
             GameObject chosenCharacterPanel = _panelsOfCharactersToChooseFrom.FirstOrDefault(characterPanel => _chosenCharacter.Name == characterPanel.name);
-            Button characterButton = chosenCharacterPanel.GetComponent<Button>();
-            characterButton.interactable = false;
+            Button chosenCharacterButton = chosenCharacterPanel.GetComponent<Button>();
+            chosenCharacterButton.interactable = false;
 
             // Store the character picked in the GameData.
-            _gameData.SetCharacters(_listOfCharactersPicked);
+            _gameData.AddToCharactersPicked(_chosenCharacter);
 
             // Change to the next menu if all the players picked their characters.
             if (_numOfCurrentPlayerChoosingChar == _numOfPlayers)
@@ -105,12 +103,11 @@ public class GameMenu: MonoBehaviour
                 ChangeMenu(CharacterSelectMenu, NumOfRoundsMenu);
             }
 
-            // TODO: The player should only be able to pick a unique character.
             _numOfCurrentPlayerChoosingChar++;
             _currentPlayerChoosingCharacterText.text = _numOfCurrentPlayerChoosingChar.ToString();
 
             // Set the selector to the next available character.
-            GameObject nextAvailableCharacterPanel = _panelsOfCharactersToChooseFrom.FirstOrDefault(characterPanel => !_listOfCharactersPicked.Any(pickedCharacter => pickedCharacter.Name == characterPanel.name));
+            GameObject nextAvailableCharacterPanel = _panelsOfCharactersToChooseFrom.FirstOrDefault(characterPanel => !_gameData.ListOfCharactersPicked.Any(pickedCharacter => pickedCharacter.Name == characterPanel.name));
             if (nextAvailableCharacterPanel != null)
             {
                 _characterSelector.transform.position = nextAvailableCharacterPanel.transform.position;
@@ -135,7 +132,7 @@ public class GameMenu: MonoBehaviour
             {
                 NumOfRoundsMenu.SetActive(false);
                 // TODO: Pass the character list to spawn
-                OnCharacterSpawn.Invoke(_listOfCharactersPicked);
+                OnCharacterSpawn.Invoke(_gameData.ListOfCharactersPicked);
             }
             else
             {
