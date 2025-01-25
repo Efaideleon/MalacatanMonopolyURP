@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,10 @@ public class GameData : ScriptableObject
     public List<GameObject> ListOfAllCharacterGOs => _listOfAllCharacterGOs;
     private List<Character> _listOfCharacersPicked = new ();
     public List<Character> ListOfCharactersPicked => _listOfCharacersPicked;
+    public int NumberOfCharacters { get; private set; }
+
+    // Events
+    public event Action OnAllCharacterPicked;
 
     public void AddToCharactersPicked(Character character)
     {
@@ -18,5 +23,16 @@ public class GameData : ScriptableObject
         {
             Debug.Log($"Character: {c.name}");
         }
+    }
+
+    public void SetTotalNumberOfCharacters(int numOfCharacters)
+    {
+        NumberOfCharacters = numOfCharacters;
+        OnAllCharacterPicked?.Invoke();
+    }
+
+    public void Reset()
+    {
+        _listOfCharacersPicked.Clear();
     }
 }

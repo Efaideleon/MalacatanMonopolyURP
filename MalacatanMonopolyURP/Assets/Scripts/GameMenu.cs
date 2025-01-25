@@ -32,6 +32,7 @@ public class GameMenu: MonoBehaviour
 
     // Events
     public event Action<List<Character>> OnCharacterSpawn;
+    public event Action OnGameStart;
 
     void Start()
     {
@@ -80,9 +81,15 @@ public class GameMenu: MonoBehaviour
 
     public void HandleConfirmCharacterSelection()
     {
+        Debug.Log($"Chosen character: {_chosenCharacter}");
         if (_chosenCharacter != null)
         {
             // The player should pick a unique character.
+            foreach (Character c in _gameData.ListOfCharactersPicked)
+            {
+                Debug.Log($"{c}");
+            }
+
             if (_gameData.ListOfCharactersPicked.Contains(_chosenCharacter)) return;
 
             Debug.Log($"Player {_numOfCurrentPlayerChoosingChar} picked: {_chosenCharacter.Name}");
@@ -101,6 +108,9 @@ public class GameMenu: MonoBehaviour
             {
                 // After finishing picking characters for all players go to num of rounds menu.
                 ChangeMenu(CharacterSelectMenu, NumOfRoundsMenu);
+
+                // Announce that all characters have been picked.
+                _gameData.SetTotalNumberOfCharacters(_numOfPlayers);
             }
 
             _numOfCurrentPlayerChoosingChar++;
@@ -120,6 +130,7 @@ public class GameMenu: MonoBehaviour
         }
     }
 
+    // The last button pressed before starting the game.
     public void HandleStartButtonAfterNumOfRounds()
     {
         Debug.Log($"Num of rounds picked: {_numOfRounds}");
@@ -127,12 +138,12 @@ public class GameMenu: MonoBehaviour
         {
             // Starting the game.
             Debug.Log("Starting the game...");
-            gameObject.SetActive(false);
             if (NumOfRoundsMenu != null)
             {
                 NumOfRoundsMenu.SetActive(false);
                 // TODO: Pass the character list to spawn
                 OnCharacterSpawn.Invoke(_gameData.ListOfCharactersPicked);
+                OnGameStart.Invoke();
             }
             else
             {

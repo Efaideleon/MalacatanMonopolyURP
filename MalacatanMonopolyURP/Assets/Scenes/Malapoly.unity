@@ -2633,6 +2633,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725278145}
   m_CullTransparentMesh: 1
+--- !u!1 &772710999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 772711001}
+  - component: {fileID: 772711000}
+  m_Layer: 0
+  m_Name: GameUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &772711000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772710999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a61ef01607384b47b42bf7bbf3ca7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameLogic: {fileID: 949129129}
+  _gameMenu: {fileID: 1531696318}
+  _playerUI: {fileID: 1793159715}
+--- !u!4 &772711001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772710999}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.334948, y: -10.121749, z: -1.6110027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &789497850
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,6 +3106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rollDiceButton: {fileID: 1089768139}
+  _gameData: {fileID: 11400000, guid: c62fe705e694d44a894a71798ab3a71b, type: 2}
 --- !u!4 &949129130
 Transform:
   m_ObjectHideFlags: 0
@@ -6380,7 +6428,7 @@ GameObject:
   - component: {fileID: 1793159711}
   - component: {fileID: 1793159715}
   m_Layer: 5
-  m_Name: GameUI
+  m_Name: PlayerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6483,7 +6531,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerNameText: {fileID: 2143674953}
-  _gameLogic: {fileID: 949129129}
 --- !u!1 &1794265006
 GameObject:
   m_ObjectHideFlags: 0
@@ -11775,3 +11822,4 @@ SceneRoots:
   - {fileID: 2104475031}
   - {fileID: 1793159714}
   - {fileID: 949129130}
+  - {fileID: 772711001}
