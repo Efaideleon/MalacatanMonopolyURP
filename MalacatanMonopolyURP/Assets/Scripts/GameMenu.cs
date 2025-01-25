@@ -16,24 +16,27 @@ public class GameMenu: MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI _currentPlayerChoosingCharacterText;
     [Tooltip("Characters available on the Character Selection Menu")]
-    [SerializeField] private GameObject[] _charactersToChooseFrom;
+    [SerializeField] private GameObject[] _panelsOfCharactersToChooseFrom;
     [SerializeField] private GameObject _numOfPlayersSelector;
     [SerializeField] private GameObject _characterSelector;
     [SerializeField] private GameObject _numOfRoundsSelector;
 
+    // GameData stores informations about all the player's characters.
+    [SerializeField] private GameData _gameData;
+
     // The number of players is set to 2 by default.
     private int _numOfPlayers = 2;
-    private string _chosenCharacterName;  
-    private int _currentPlayerChoosingCharacter = 1;
-    private readonly List<string> _listOfCharacterPicked = new ();
+    private Character _chosenCharacter;  
+    private int _numOfCurrentPlayerChoosingChar = 1;
+    private readonly List<Character> _listOfCharactersPicked = new ();
     private int _numOfRounds = 8;
 
     // Events
-    public event Action<List<string>> OnCharacterSpawn;
+    public event Action<List<Character>> OnCharacterSpawn;
 
     void Start()
     {
-        _chosenCharacterName = _charactersToChooseFrom[0].name;
+        _chosenCharacter = _gameData.ListOfAllCharacterGOs[0].GetComponent<Character>();
     }
 
     public void PickNumOfPlayers(GameObject numOfPlayers)
@@ -42,10 +45,13 @@ public class GameMenu: MonoBehaviour
         _numOfPlayers = int.Parse(numOfPlayers.name);
     }   
 
-    public void PickCharacter(GameObject CharacterName)
+    public void PickCharacter(GameObject CharacterNamePanel)
     {
-        _characterSelector.transform.position = CharacterName.transform.position;
-        _chosenCharacterName = CharacterName.name;
+        _characterSelector.transform.position = CharacterNamePanel.transform.position;
+         GameObject chosenCharacterGO = _gameData.ListOfAllCharacterGOs.FirstOrDefault(character => character.name == CharacterNamePanel.name);
+         // if (chosenCharacterGO != null)
+        _chosenCharacter = chosenCharacterGO.GetComponent<Character>();
+         Debug.Log($"Character chosen: {_chosenCharacter.name}");
     }
 
     public void PickNumberOfRounds(GameObject RoundPanelNum)
@@ -75,35 +81,40 @@ public class GameMenu: MonoBehaviour
 
     public void HandleConfirmCharacterSelection()
     {
-        if (_chosenCharacterName != "")
+        if (_chosenCharacter != null)
         {
             // If the chosenCharacterName is on the list of character picked return.
-            if (_listOfCharacterPicked.Contains(_chosenCharacterName)) return;
+            if (_listOfCharactersPicked.Contains(_chosenCharacter)) return;
 
-            Debug.Log($"Player {_currentPlayerChoosingCharacter} picked: {_chosenCharacterName}");
-            _listOfCharacterPicked.Add(_chosenCharacterName);
+            Debug.Log($"Player {_numOfCurrentPlayerChoosingChar} picked: {_chosenCharacter.Name}");
+            _chosenCharacter.InitializeCharacter(_numOfCurrentPlayerChoosingChar);
+            _listOfCharactersPicked.Add(_chosenCharacter);
 
             // Set the chosen character button to inactive.
-            Button characterButton = _charactersToChooseFrom.FirstOrDefault(character => _chosenCharacterName == character.name).GetComponent<Button>();
+            GameObject chosenCharacterPanel = _panelsOfCharactersToChooseFrom.FirstOrDefault(characterPanel => _chosenCharacter.Name == characterPanel.name);
+            Button characterButton = chosenCharacterPanel.GetComponent<Button>();
             characterButton.interactable = false;
 
+            // Store the character picked in the GameData.
+            _gameData.SetCharacters(_listOfCharactersPicked);
+
             // Change to the next menu if all the players picked their characters.
-            if (_currentPlayerChoosingCharacter == _numOfPlayers)
+            if (_numOfCurrentPlayerChoosingChar == _numOfPlayers)
             {
                 // After finishing picking characters for all players go to num of rounds menu.
                 ChangeMenu(CharacterSelectMenu, NumOfRoundsMenu);
             }
 
             // TODO: The player should only be able to pick a unique character.
-            _currentPlayerChoosingCharacter++;
-            _currentPlayerChoosingCharacterText.text = _currentPlayerChoosingCharacter.ToString();
+            _numOfCurrentPlayerChoosingChar++;
+            _currentPlayerChoosingCharacterText.text = _numOfCurrentPlayerChoosingChar.ToString();
 
             // Set the selector to the next available character.
-            GameObject nextAvailableCharacter = _charactersToChooseFrom.Where(character => !_listOfCharacterPicked.Contains(character.name)).FirstOrDefault();
-            if (nextAvailableCharacter != null)
+            GameObject nextAvailableCharacterPanel = _panelsOfCharactersToChooseFrom.FirstOrDefault(characterPanel => !_listOfCharactersPicked.Any(pickedCharacter => pickedCharacter.Name == characterPanel.name));
+            if (nextAvailableCharacterPanel != null)
             {
-                _characterSelector.transform.position = nextAvailableCharacter.transform.position;
-                _chosenCharacterName = nextAvailableCharacter.name;
+                _characterSelector.transform.position = nextAvailableCharacterPanel.transform.position;
+                _chosenCharacter = _gameData.ListOfAllCharacterGOs.FirstOrDefault(characterGO => characterGO.GetComponent<Character>().Name == nextAvailableCharacterPanel.name).GetComponent<Character>();
             }
         }
         else
@@ -124,7 +135,7 @@ public class GameMenu: MonoBehaviour
             {
                 NumOfRoundsMenu.SetActive(false);
                 // TODO: Pass the character list to spawn
-                OnCharacterSpawn.Invoke(_listOfCharacterPicked);
+                OnCharacterSpawn.Invoke(_listOfCharactersPicked);
             }
             else
             {

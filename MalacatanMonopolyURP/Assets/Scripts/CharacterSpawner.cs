@@ -4,7 +4,7 @@ using System.Linq;
 
 public class CharacterSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject[] _characters;
+    [SerializeField] GameData _gameData;
     [SerializeField] GameMenu _gameMenu;
 
     void OnEnable()
@@ -18,7 +18,7 @@ public class CharacterSpawner : MonoBehaviour
         _gameMenu.OnCharacterSpawn -= SpawnCharacters;
     }
 
-    public void SpawnCharacters(List<string> charactersToSpawn)
+    public void SpawnCharacters(List<Character> charactersToSpawn)
     {
         float radius = 3f;
         for (int i = 0; i < charactersToSpawn.Count; i++)
@@ -36,10 +36,9 @@ public class CharacterSpawner : MonoBehaviour
         }
     }
     
-    private void SpawnCharacter(string characterName, Vector3 position, Quaternion rotation )
+    private void SpawnCharacter(Character characterToSpawn, Vector3 position, Quaternion rotation )
     {
         // Find and check if the character exists in the list of available characters.
-        GameObject characterToSpawn = _characters.FirstOrDefault(character => character.name == characterName);
         if (characterToSpawn != null)
         {
             Instantiate(characterToSpawn, position, rotation);
