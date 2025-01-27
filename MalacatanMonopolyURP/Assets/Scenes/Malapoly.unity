@@ -2046,7 +2046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 514164464}
   m_Layer: 0
-  m_Name: Go
+  m_Name: GoPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14081,3 +14081,4 @@ SceneRoots:
   - {fileID: 949129130}
   - {fileID: 772711001}
   - {fileID: 775678873}
+  - {fileID: 1509847052}
