@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameBoard : MonoBehaviour
@@ -9,18 +10,6 @@ public class GameBoard : MonoBehaviour
     // Must be in order
     public List<GameObject> PositionMarkers => _positionMarkers;
 
-    // Get the position of a tile at a specific index.
-    public Vector3 GetMarkerPositionAt(int index)
-    {
-        for (int i = 0; i < _positionMarkers.Count; i++)
-        {
-            if (i == index)
-            {
-                Debug.Log($"Marker at index {index} is : {_positionMarkers[i].name}");
-                Vector3 markerPosition = _positionMarkers[i].transform.position;
-                return markerPosition; 
-            }
-        }
-        return Vector3.zero;
-    }
+    // Get the card at a specific index.
+    public Card GetCardAt(int index) => _cards.ElementAtOrDefault(index);
 }

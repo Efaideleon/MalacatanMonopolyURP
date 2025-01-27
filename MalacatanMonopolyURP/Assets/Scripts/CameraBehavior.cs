@@ -34,9 +34,24 @@ public class CameraBehavior : MonoBehaviour
     {
         if (_gameLogic.CurrentActivePlayer)
         {
-            var offset = new Vector3(20, 15, 5);
+            var offset = CalculateOffset();
             transform.position = _gameLogic.CurrentActivePlayer.transform.position + offset;
             _camera.transform.LookAt(_gameLogic.CurrentActivePlayer.transform);
+        }
+    }
+
+    private Vector3 CalculateOffset()
+    {
+        switch (_gameLogic.CurrentActivePlayer.PositionOnBoardIndex)
+        {
+            case < 10:
+                return new Vector3(20, 15, 5);
+            case >= 10 and < 20:
+                return new Vector3(-5, 15, -20);
+            case >= 20 and < 30:
+                return new Vector3(-20, 15, -5);
+            case >= 30:
+                return new Vector3(5, 15, 20);
         }
     }
 }
