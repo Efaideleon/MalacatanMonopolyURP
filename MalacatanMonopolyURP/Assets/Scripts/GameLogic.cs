@@ -17,8 +17,9 @@ public class GameLogic : MonoBehaviour
 
     public Character CurrentActivePlayer => _playersQueue.Peek();
 
-    public event Action<int> OnPlayerTurnChange;
+    public event Action OnPlayerTurnEnded;
     public event Action OnPlayersQueueFilled;
+    public event Action OnDiceRolled;
 
     void OnEnable()
     {
@@ -53,17 +54,24 @@ public class GameLogic : MonoBehaviour
         _rolledDiceValue = UnityEngine.Random.Range(1, 7);
         if (CurrentActivePlayer)
         {
-            // TODO: Position should loop around the map.
-            var currentPlayer = _playersQueue.Dequeue();
-            Debug.Log($"Player: {currentPlayer.PlayerNumber} Rolled: {_rolledDiceValue}");
-            var newPlayerBoardIndex = (currentPlayer.PositionOnBoardIndex + _rolledDiceValue) % 40;
+            // Moving the player posiiton on the board.
+            Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Rolled: {_rolledDiceValue}");
+            var newPlayerBoardIndex = (CurrentActivePlayer.PositionOnBoardIndex + _rolledDiceValue) % 40;
             var newPlayerPos = _gameBoard.GetTilePositionAt(newPlayerBoardIndex);
-            currentPlayer.MovePositionTo(newPlayerBoardIndex, newPlayerPos);
+            CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, newPlayerPos);
 
-            // Move to the next player.
-            _playersQueue.Enqueue(currentPlayer);
-            OnPlayerTurnChange?.Invoke(CurrentActivePlayer.PlayerNumber);
+            // Player has rolled the dice, but their turn is not over yet.
+            OnDiceRolled?.Invoke();
         }
+    }
+
+    public void ChangeToNextPlayer()
+    {
+        var currentPlayer = _playersQueue.Dequeue();
+        _playersQueue.Enqueue(currentPlayer);
+
+        // Player turn is over after choosing to buy or not.
+        OnPlayerTurnEnded?.Invoke();
     }
     
     void OnDestroy()
