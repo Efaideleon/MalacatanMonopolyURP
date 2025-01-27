@@ -3107,6 +3107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rollDiceButton: {fileID: 1089768139}
   _gameData: {fileID: 11400000, guid: c62fe705e694d44a894a71798ab3a71b, type: 2}
+  _gameBoard: {fileID: 919132148222307504}
+  _characterSpawner: {fileID: 2104475032}
 --- !u!4 &949129130
 Transform:
   m_ObjectHideFlags: 0
@@ -8508,6 +8510,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652494198293}
+  - component: {fileID: 919132148222307504}
   m_Layer: 0
   m_Name: Malapoly Ojbects
   m_TagString: Untagged
@@ -8515,6 +8518,59 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148222307504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148222307503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f202e90027684d188ff1073b28d8d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tiles:
+  - {fileID: 5698242642208463676}
+  - {fileID: 5579686507916159433}
+  - {fileID: 7907560589838315804}
+  - {fileID: 6341869369545213736}
+  - {fileID: 4464989085521292235}
+  - {fileID: 8444895593901478889}
+  - {fileID: 596509471402423468}
+  - {fileID: 5399438820725905365}
+  - {fileID: 6461285494107150738}
+  - {fileID: 4503859249964661471}
+  - {fileID: 4424414292286059794}
+  - {fileID: 1033012468063944961}
+  - {fileID: 2281981430796337712}
+  - {fileID: 3232306259948824731}
+  - {fileID: 8279463987358612935}
+  - {fileID: 7475562429975496013}
+  - {fileID: 4346985283205414500}
+  - {fileID: 2647191586637526114}
+  - {fileID: 2388730960189929326}
+  - {fileID: 7703812791005073104}
+  - {fileID: 8125442984871136525}
+  - {fileID: 9025818097704379278}
+  - {fileID: 9025853545963628166}
+  - {fileID: 9100582405649125020}
+  - {fileID: 1833184377656786108}
+  - {fileID: 7611778154981087254}
+  - {fileID: 5129914826585443517}
+  - {fileID: 8176814623835751543}
+  - {fileID: 252674878545921482}
+  - {fileID: 1808155156139278056}
+  - {fileID: 4417619613842015963}
+  - {fileID: 1572604131945497560}
+  - {fileID: 2216385026720790493}
+  - {fileID: 5642782326124118703}
+  - {fileID: 3432660885619867692}
+  - {fileID: 4662126149757414907}
+  - {fileID: 3764848511180392563}
+  - {fileID: 2493645671723709997}
+  - {fileID: 4197469347450449478}
+  - {fileID: 1442626797239849634}
 --- !u!33 &927770195427128784
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9035,7 +9091,7 @@ Transform:
   m_GameObject: {fileID: 5579686507916159433}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -26.540974, y: 0.8939018, z: -18.84472}
+  m_LocalPosition: {x: -26.540974, y: 0.8939018, z: -18.91}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []

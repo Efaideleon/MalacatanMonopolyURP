@@ -31,8 +31,7 @@ public class GameMenu: MonoBehaviour
     private int _numOfRounds = 8;
 
     // Events
-    public event Action<List<Character>> OnCharacterSpawn;
-    public event Action OnGameStart;
+    public event Action<List<Character>> OnAllCharactersPicked;
 
     void Start()
     {
@@ -142,8 +141,7 @@ public class GameMenu: MonoBehaviour
             {
                 NumOfRoundsMenu.SetActive(false);
                 // TODO: Pass the character list to spawn
-                OnCharacterSpawn.Invoke(_gameData.ListOfCharactersPicked);
-                OnGameStart.Invoke();
+                OnAllCharactersPicked.Invoke(_gameData.ListOfCharactersPicked);
             }
             else
             {
@@ -154,7 +152,6 @@ public class GameMenu: MonoBehaviour
 
     private void ChangeMenu(GameObject currentMenu, GameObject nextMenu)
     {
-        
         if (currentMenu != null)
         {
             currentMenu.SetActive(false);

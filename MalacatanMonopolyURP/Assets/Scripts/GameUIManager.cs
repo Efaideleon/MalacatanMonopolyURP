@@ -8,8 +8,14 @@ public class GameUIManager : MonoBehaviour
 
     void OnEnable()
     {
-        _gameMenu.OnGameStart += HandleGameStart;
+        _gameLogic.OnPlayersQueueFilled += HandleGameStart;
         _gameLogic.OnPlayerTurnChange += HandlePlayerTurnChange;
+    }
+
+    void OnDisable()
+    {
+        _gameLogic.OnPlayersQueueFilled -= HandleGameStart;
+        _gameLogic.OnPlayerTurnChange -= HandlePlayerTurnChange;
     }
 
     private void HandleGameStart()
@@ -17,6 +23,8 @@ public class GameUIManager : MonoBehaviour
         _gameMenu.gameObject.SetActive(false);
         _playerUI.gameObject.SetActive(true);
         if (_gameLogic.CurrentActivePlayer)
+            Debug.Log($"Starting: Current Active player: {_gameLogic.CurrentActivePlayer.Name}");
+            Debug.Log($"Starting: Current Active player Number: {_gameLogic.CurrentActivePlayer.PlayerNumber}");
             _playerUI.UpdatePlayerName(_gameLogic.CurrentActivePlayer.PlayerNumber);
     }
 

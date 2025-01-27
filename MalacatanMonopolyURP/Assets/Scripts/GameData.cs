@@ -7,12 +7,11 @@ public class GameData : ScriptableObject
 {
     [SerializeField] List<GameObject> _listOfAllCharacterGOs; 
     public List<GameObject> ListOfAllCharacterGOs => _listOfAllCharacterGOs;
-    private List<Character> _listOfCharacersPicked = new ();
+    private List<Character> _listOfCharacersPicked = new();
     public List<Character> ListOfCharactersPicked => _listOfCharacersPicked;
+    private List<Character> _listOfInstancesOfCharactersPicked = new();
+    public List<Character> ListOfInstancesOfCharactersPicked => _listOfInstancesOfCharactersPicked;
     public int NumberOfCharacters { get; private set; }
-
-    // Events
-    public event Action OnAllCharacterPicked;
 
     public void AddToCharactersPicked(Character character)
     {
@@ -25,14 +24,24 @@ public class GameData : ScriptableObject
         }
     }
 
+    public void AddToInstancesOfCharactersPicked(Character character)
+    {
+        _listOfInstancesOfCharactersPicked.Add(character);
+        Debug.Log($"Adding Character instance: {character.Name}");
+        foreach(var c in _listOfInstancesOfCharactersPicked)
+        {
+            Debug.Log($"Character: {c.name}");
+        }
+    }
+
     public void SetTotalNumberOfCharacters(int numOfCharacters)
     {
         NumberOfCharacters = numOfCharacters;
-        OnAllCharacterPicked?.Invoke();
     }
 
     public void Reset()
     {
         _listOfCharacersPicked.Clear();
+        _listOfInstancesOfCharactersPicked.Clear();
     }
 }

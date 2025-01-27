@@ -13,11 +13,18 @@ public class Character : MonoBehaviour , IComparable
 
     // Number of the player
     public int PlayerNumber { get; private set; }
+    public int PositionOnBoardIndex { get; private set; } = 0; 
 
     public void InitializeCharacter(int playerNumber)
     {
         PlayerNumber = playerNumber;
         _playerNameText.text = $"Player {PlayerNumber}";
+    }
+
+    public void MovePositionTo(int newBoardIndex, Vector3 position)
+    {
+        transform.position = position;
+        PositionOnBoardIndex = newBoardIndex;
     }
 
     public int CompareTo(object obj)

@@ -1,21 +1,24 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class CharacterSpawner : MonoBehaviour
 {
     [SerializeField] GameData _gameData;
     [SerializeField] GameMenu _gameMenu;
 
+    public event Action OnAllCharactersSpawned;
+
     void OnEnable()
     {
         // When the Start Button on the Round selection Menu is pressed spawn the Characters.
-        _gameMenu.OnCharacterSpawn += SpawnCharacters;
+        _gameMenu.OnAllCharactersPicked += SpawnCharacters;
     }
 
     void OnDisable()
     {
-        _gameMenu.OnCharacterSpawn -= SpawnCharacters;
+        _gameMenu.OnAllCharactersPicked -= SpawnCharacters;
     }
 
     public void SpawnCharacters(List<Character> charactersToSpawn)
@@ -34,6 +37,7 @@ public class CharacterSpawner : MonoBehaviour
             Quaternion charRot = Quaternion.Euler(0, 0, 0);
             SpawnCharacter(charactersToSpawn[i], charPos, charRot);
         }
+        OnAllCharactersSpawned?.Invoke();
     }
     
     private void SpawnCharacter(Character characterToSpawn, Vector3 position, Quaternion rotation )
@@ -41,7 +45,9 @@ public class CharacterSpawner : MonoBehaviour
         // Find and check if the character exists in the list of available characters.
         if (characterToSpawn != null)
         {
-            Instantiate(characterToSpawn, position, rotation);
+            var charInstance = Instantiate(characterToSpawn, position, rotation);
+            charInstance.InitializeCharacter(characterToSpawn.PlayerNumber);
+            _gameData.AddToInstancesOfCharactersPicked(charInstance);
         }
     }
 }
