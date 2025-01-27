@@ -10517,6 +10517,7 @@ GameObject:
   - component: {fileID: 5265371780907472026}
   - component: {fileID: 4294661951238251570}
   - component: {fileID: 7135313144422670782}
+  - component: {fileID: 7135313144422670783}
   m_Layer: 0
   m_Name: Water Company.001
   m_TagString: Untagged
@@ -10676,6 +10677,7 @@ GameObject:
   - component: {fileID: 2141323771919926182}
   - component: {fileID: 5870064807553532776}
   - component: {fileID: 1652584655215330880}
+  - component: {fileID: 5870064807553532777}
   m_Layer: 0
   m_Name: Parque Final Toon S.001
   m_TagString: Untagged
@@ -10802,6 +10804,7 @@ GameObject:
   - component: {fileID: 5758617457685823514}
   - component: {fileID: 7857752566720030072}
   - component: {fileID: 3658098247673193354}
+  - component: {fileID: 7857752566720030073}
   m_Layer: 0
   m_Name: San Isidro Toon S.001
   m_TagString: Untagged
@@ -11000,6 +11003,7 @@ GameObject:
   - component: {fileID: 7902251204691159312}
   - component: {fileID: 7587085853967549991}
   - component: {fileID: 5147341522013821910}
+  - component: {fileID: 7902251204691159313}
   m_Layer: 0
   m_Name: Estadio Toon S.001
   m_TagString: Untagged
@@ -11123,6 +11127,7 @@ GameObject:
   - component: {fileID: 1122935511563158743}
   - component: {fileID: 1943997611206986146}
   - component: {fileID: 6743661130452416145}
+  - component: {fileID: 6743661130452416146}
   m_Layer: 0
   m_Name: Benson Toon S.001
   m_TagString: Untagged
@@ -11186,6 +11191,7 @@ GameObject:
   - component: {fileID: 6376479994616316263}
   - component: {fileID: 4526857017576063336}
   - component: {fileID: 8605364844255587906}
+  - component: {fileID: 8605364844255587907}
   m_Layer: 0
   m_Name: El Rastro Final S.001
   m_TagString: Untagged
@@ -11355,6 +11361,7 @@ GameObject:
   - component: {fileID: 5452570985802331405}
   - component: {fileID: 8867450460430732638}
   - component: {fileID: 5663056941457945400}
+  - component: {fileID: 8867450460430732639}
   m_Layer: 0
   m_Name: Mangos Toon S.001
   m_TagString: Untagged
@@ -11418,6 +11425,7 @@ GameObject:
   - component: {fileID: 5751613297855761568}
   - component: {fileID: 5385133123794077039}
   - component: {fileID: 8858062955411111112}
+  - component: {fileID: 8858062955411111113}
   m_Layer: 0
   m_Name: Starbus Toon S.002
   m_TagString: Untagged
@@ -11436,6 +11444,7 @@ GameObject:
   - component: {fileID: 3260992914054713421}
   - component: {fileID: 8109383758718738938}
   - component: {fileID: 2220583861457002266}
+  - component: {fileID: 8109383758718738939}
   m_Layer: 0
   m_Name: Eletric Company.001
   m_TagString: Untagged
@@ -11462,6 +11471,7 @@ GameObject:
   - component: {fileID: 9169216230648775400}
   - component: {fileID: 2338458538116771688}
   - component: {fileID: 6131022044219812978}
+  - component: {fileID: 9169216230648775401}
   m_Layer: 0
   m_Name: Bomberos Toon S.001
   m_TagString: Untagged
@@ -11488,6 +11498,7 @@ GameObject:
   - component: {fileID: 3569001149159355121}
   - component: {fileID: 933255770166443881}
   - component: {fileID: 1492120146638388820}
+  - component: {fileID: 3569001149159355122}
   m_Layer: 0
   m_Name: Trinidad  Toon S.001
   m_TagString: Untagged
@@ -11551,6 +11562,7 @@ GameObject:
   - component: {fileID: 944425648595391722}
   - component: {fileID: 4013628959421536022}
   - component: {fileID: 3148805825881565959}
+  - component: {fileID: 4013628959421536023}
   m_Layer: 0
   m_Name: Chest 1.001
   m_TagString: Untagged
@@ -11750,6 +11762,7 @@ GameObject:
   - component: {fileID: 4578166944067871512}
   - component: {fileID: 4614871290077303303}
   - component: {fileID: 6635509481944320513}
+  - component: {fileID: 6635509481944320514}
   m_Layer: 0
   m_Name: La estrella Toon S.001
   m_TagString: Untagged
@@ -11798,6 +11811,7 @@ GameObject:
   - component: {fileID: 951509105680699890}
   - component: {fileID: 1897797532617379105}
   - component: {fileID: 5350416074613787324}
+  - component: {fileID: 5350416074613787325}
   m_Layer: 0
   m_Name: Boncafe Final Toon S.001
   m_TagString: Untagged
@@ -11918,6 +11932,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450652924611698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3569001149159355122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2493645671216729162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Trinidad
+  _cardGO: {fileID: 2493645671216729162}
+  _playersPlacePosition: {fileID: 1566269663}
 --- !u!23 &3658098247673193354
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11982,6 +12011,7 @@ GameObject:
   - component: {fileID: 8049400596834547432}
   - component: {fileID: 8687570507268928214}
   - component: {fileID: 4018503992607999991}
+  - component: {fileID: 8687570507268928215}
   m_Layer: 0
   m_Name: Question Mark 3.001
   m_TagString: Untagged
@@ -12005,6 +12035,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2647191584989695493}
   m_Mesh: {fileID: 2955214512721764137, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &4013628959421536023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2647191584989695493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Chest1
+  _cardGO: {fileID: 2647191584989695493}
+  _playersPlacePosition: {fileID: 1434145629}
 --- !u!23 &4018503992607999991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12061,6 +12106,7 @@ GameObject:
   - component: {fileID: 4242764334188392293}
   - component: {fileID: 6626970100125145315}
   - component: {fileID: 2574794581775820904}
+  - component: {fileID: 6626970100125145316}
   m_Layer: 0
   m_Name: Super Tax.001
   m_TagString: Untagged
@@ -12155,6 +12201,7 @@ GameObject:
   - component: {fileID: 6047284586622868413}
   - component: {fileID: 3509583920633939357}
   - component: {fileID: 1260865192459376952}
+  - component: {fileID: 6047284586622868414}
   m_Layer: 0
   m_Name: Santa Lucia Toon S.001
   m_TagString: Untagged
@@ -12173,6 +12220,7 @@ GameObject:
   - component: {fileID: 6466381799421115935}
   - component: {fileID: 6294721061332303431}
   - component: {fileID: 2071062544973599713}
+  - component: {fileID: 6466381799421115936}
   m_Layer: 0
   m_Name: GOTOJAIL.001
   m_TagString: Untagged
@@ -12191,6 +12239,7 @@ GameObject:
   - component: {fileID: 187162606494131622}
   - component: {fileID: 6471047016191009776}
   - component: {fileID: 5103778652017979929}
+  - component: {fileID: 6471047016191009777}
   m_Layer: 0
   m_Name: Jail.001
   m_TagString: Untagged
@@ -12209,6 +12258,7 @@ GameObject:
   - component: {fileID: 6455361004314198874}
   - component: {fileID: 7850381861559458025}
   - component: {fileID: 7395034847649647450}
+  - component: {fileID: 7850381861559458026}
   m_Layer: 0
   m_Name: Tax.001
   m_TagString: Untagged
@@ -12227,6 +12277,7 @@ GameObject:
   - component: {fileID: 1492846845087224504}
   - component: {fileID: 3870136753961877189}
   - component: {fileID: 7453844794100203157}
+  - component: {fileID: 7453844794100203158}
   m_Layer: 0
   m_Name: Cabuz Toon S.001
   m_TagString: Untagged
@@ -12276,6 +12327,7 @@ GameObject:
   - component: {fileID: 8047015680286673469}
   - component: {fileID: 438833479591710611}
   - component: {fileID: 8359337894598186740}
+  - component: {fileID: 8359337894598186741}
   m_Layer: 0
   m_Name: Santo Domingo.001
   m_TagString: Untagged
@@ -12504,6 +12556,7 @@ GameObject:
   - component: {fileID: 6396749790980213440}
   - component: {fileID: 7704613655282064136}
   - component: {fileID: 4929375200400903859}
+  - component: {fileID: 7704613655282064137}
   m_Layer: 0
   m_Name: La Municipalidad Toon S.001
   m_TagString: Untagged
@@ -12624,6 +12677,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5350416074613787325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432660884107328075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Boncafe
+  _cardGO: {fileID: 3432660884107328075}
+  _playersPlacePosition: {fileID: 188810763}
 --- !u!33 &5385133123794077039
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12661,6 +12729,7 @@ GameObject:
   - component: {fileID: 7678055659131974712}
   - component: {fileID: 927770194929553335}
   - component: {fileID: 8208615256629917776}
+  - component: {fileID: 8208615256629917777}
   m_Layer: 0
   m_Name: Question Mark 2.001
   m_TagString: Untagged
@@ -12694,6 +12763,7 @@ GameObject:
   - component: {fileID: 1891023940471239536}
   - component: {fileID: 8817901213682139667}
   - component: {fileID: 3127564269480628411}
+  - component: {fileID: 8817901213682139668}
   m_Layer: 0
   m_Name: El Mercado Final Toon S.001
   m_TagString: Untagged
@@ -12712,6 +12782,7 @@ GameObject:
   - component: {fileID: 4994773889490703473}
   - component: {fileID: 8569157578071557878}
   - component: {fileID: 1056597136310647731}
+  - component: {fileID: 8569157578071557879}
   m_Layer: 0
   m_Name: Chest 2.001
   m_TagString: Untagged
@@ -12775,6 +12846,7 @@ GameObject:
   - component: {fileID: 5116875157465648506}
   - component: {fileID: 7276742136277608958}
   - component: {fileID: 8645247265041861443}
+  - component: {fileID: 8645247265041861444}
   m_Layer: 0
   m_Name: Go.001
   m_TagString: Untagged
@@ -12820,6 +12892,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596509471908335307}
   m_Mesh: {fileID: 2657639200481256712, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &5870064807553532777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596509471908335307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Parque
+  _cardGO: {fileID: 596509471908335307}
+  _playersPlacePosition: {fileID: 1307421663}
 --- !u!33 &5957417274418520922
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12851,6 +12938,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450652924611698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6047284586622868414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346985281691796483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: SantaLucia
+  _cardGO: {fileID: 4346985281691796483}
+  _playersPlacePosition: {fileID: 1872984575}
 --- !u!23 &6131022044219812978
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12968,6 +13070,7 @@ GameObject:
   - component: {fileID: 1845334248794265654}
   - component: {fileID: 2486259566906591220}
   - component: {fileID: 1397362657468591137}
+  - component: {fileID: 6341869368912395600}
   m_Layer: 0
   m_Name: La Terminal Toon S.001
   m_TagString: Untagged
@@ -12975,6 +13078,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6341869368912395600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341869368912395599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: LaTerminal
+  _cardGO: {fileID: 6341869368912395599}
+  _playersPlacePosition: {fileID: 560499456}
 --- !u!4 &6376479994616316263
 Transform:
   m_ObjectHideFlags: 0
@@ -13046,6 +13164,7 @@ GameObject:
   - component: {fileID: 983068815675313411}
   - component: {fileID: 5957417274418520922}
   - component: {fileID: 4213445448155723962}
+  - component: {fileID: 6461285492468769782}
   m_Layer: 0
   m_Name: Pollo Campero Toon S.001
   m_TagString: Untagged
@@ -13053,6 +13172,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6461285492468769782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6461285492468769781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: PolloCampero
+  _cardGO: {fileID: 6461285492468769781}
+  _playersPlacePosition: {fileID: 1054275848}
 --- !u!4 &6466381799421115935
 Transform:
   m_ObjectHideFlags: 0
@@ -13068,6 +13202,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450652924611698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6466381799421115936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417619615480446140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: GOTOJAIL
+  _cardGO: {fileID: 4417619615480446140}
+  _playersPlacePosition: {fileID: 1637782585}
 --- !u!33 &6471047016191009776
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13076,6 +13225,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4424414290569023349}
   m_Mesh: {fileID: -8096273788456143154, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &6471047016191009777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4424414290569023349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Jail
+  _cardGO: {fileID: 4424414290569023349}
+  _playersPlacePosition: {fileID: 222700821}
 --- !u!33 &6548870523199544013
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13092,6 +13256,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4197469345867600929}
   m_Mesh: {fileID: -2195963887202665743, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &6626970100125145316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4197469345867600929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: SuperTax
+  _cardGO: {fileID: 4197469345867600929}
+  _playersPlacePosition: {fileID: 1478668390}
 --- !u!23 &6635509481944320513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13137,6 +13316,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6635509481944320514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232306258310402812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: LaEstrella
+  _cardGO: {fileID: 3232306258310402812}
+  _playersPlacePosition: {fileID: 1357552776}
 --- !u!23 &6638165764877461127
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13242,6 +13436,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6743661130452416146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572604131505617343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Benson
+  _cardGO: {fileID: 1572604131505617343}
+  _playersPlacePosition: {fileID: 1659680561}
 --- !u!1 &6784230934797518428
 GameObject:
   m_ObjectHideFlags: 0
@@ -13320,6 +13529,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7135313144422670783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252674880187498413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: WaterCompany
+  _cardGO: {fileID: 252674880187498413}
+  _playersPlacePosition: {fileID: 1266839140}
 --- !u!23 &7187501161977760674
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13486,6 +13710,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7453844794100203158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4503859251681706168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Cabuz
+  _cardGO: {fileID: 4503859251681706168}
+  _playersPlacePosition: {fileID: 156038889}
 --- !u!4 &7458768451719347401
 Transform:
   m_ObjectHideFlags: 0
@@ -13512,6 +13751,7 @@ GameObject:
   - component: {fileID: 3301137814038687037}
   - component: {fileID: 3661019915610185919}
   - component: {fileID: 4665345905822929690}
+  - component: {fileID: 7475562430407016235}
   m_Layer: 0
   m_Name: Morazan.001
   m_TagString: Untagged
@@ -13519,6 +13759,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7475562430407016235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7475562430407016234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Morazan
+  _cardGO: {fileID: 7475562430407016234}
+  _playersPlacePosition: {fileID: 1343233213}
 --- !u!33 &7587085853967549991
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13538,6 +13793,7 @@ GameObject:
   - component: {fileID: 7458768451719347401}
   - component: {fileID: 6013455295903130931}
   - component: {fileID: 8371885802030864725}
+  - component: {fileID: 8371885802030864726}
   m_Layer: 0
   m_Name: Alejos.001
   m_TagString: Untagged
@@ -13571,6 +13827,7 @@ GameObject:
   - component: {fileID: 7279570706244901330}
   - component: {fileID: 4274530855931476615}
   - component: {fileID: 2009117025458241618}
+  - component: {fileID: 7703812791436555448}
   m_Layer: 0
   m_Name: Farmacia Higia Toon S.001
   m_TagString: Untagged
@@ -13578,6 +13835,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7703812791436555448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7703812791436555447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: FarmaciaHigia
+  _cardGO: {fileID: 7703812791436555447}
+  _playersPlacePosition: {fileID: 1278112850}
 --- !u!33 &7704613655282064136
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13586,6 +13858,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5129914824879961818}
   m_Mesh: {fileID: -196324475613816458, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &7704613655282064137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5129914824879961818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: LaMunicipalidad
+  _cardGO: {fileID: 5129914824879961818}
+  _playersPlacePosition: {fileID: 1501194213}
 --- !u!33 &7850381861559458025
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13594,6 +13881,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4464989086153068972}
   m_Mesh: {fileID: 1106319110824537776, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &7850381861559458026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4464989086153068972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Tax
+  _cardGO: {fileID: 4464989086153068972}
+  _playersPlacePosition: {fileID: 711935211}
 --- !u!33 &7857752566720030072
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13602,6 +13904,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033012467432176486}
   m_Mesh: {fileID: -8157917371787302043, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &7857752566720030073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033012467432176486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: SanIsidro
+  _cardGO: {fileID: 1033012467432176486}
+  _playersPlacePosition: {fileID: 1960279612}
 --- !u!33 &7886064829971957427
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13625,6 +13942,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450652924611698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7902251204691159313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442626796798912709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Estadio
+  _cardGO: {fileID: 1442626796798912709}
+  _playersPlacePosition: {fileID: 1896719871}
 --- !u!1 &7907560589271534459
 GameObject:
   m_ObjectHideFlags: 0
@@ -13636,6 +13968,7 @@ GameObject:
   - component: {fileID: 9183957958270580315}
   - component: {fileID: 6548870523199544013}
   - component: {fileID: 3527473259916367042}
+  - component: {fileID: 9183957958270580316}
   m_Layer: 0
   m_Name: Chest 3.001
   m_TagString: Untagged
@@ -13681,6 +14014,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2281981430164568151}
   m_Mesh: {fileID: -9064139235950929990, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &8109383758718738939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2281981430164568151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: ElectricCompany
+  _cardGO: {fileID: 2281981430164568151}
+  _playersPlacePosition: {fileID: 619871211}
 --- !u!1 &8125442985437919082
 GameObject:
   m_ObjectHideFlags: 0
@@ -13692,6 +14040,7 @@ GameObject:
   - component: {fileID: 716134306830808306}
   - component: {fileID: 5321749837570113389}
   - component: {fileID: 6221142250617292582}
+  - component: {fileID: 8125442985437919083}
   m_Layer: 0
   m_Name: Parking.001
   m_TagString: Untagged
@@ -13699,6 +14048,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8125442985437919083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8125442985437919082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Parking
+  _cardGO: {fileID: 8125442985437919082}
+  _playersPlacePosition: {fileID: 523549391}
 --- !u!1 &8176814622119788048
 GameObject:
   m_ObjectHideFlags: 0
@@ -13710,6 +14074,7 @@ GameObject:
   - component: {fileID: 1159935360162763009}
   - component: {fileID: 7886064829971957427}
   - component: {fileID: 4876167288317231111}
+  - component: {fileID: 8176814622119788049}
   m_Layer: 0
   m_Name: Intercesion Toon S.001
   m_TagString: Untagged
@@ -13717,6 +14082,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8176814622119788049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176814622119788048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Intercesion
+  _cardGO: {fileID: 8176814622119788048}
+  _playersPlacePosition: {fileID: 1288707354}
 --- !u!23 &8208615256629917776
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13762,6 +14142,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8208615256629917777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5399438819009899954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: QuestionMark2
+  _cardGO: {fileID: 5399438819009899954}
+  _playersPlacePosition: {fileID: 1908364912}
 --- !u!1 &8279463986928175008
 GameObject:
   m_ObjectHideFlags: 0
@@ -13773,6 +14168,7 @@ GameObject:
   - component: {fileID: 264174421299213188}
   - component: {fileID: 7263440481738787980}
   - component: {fileID: 2843688201355937266}
+  - component: {fileID: 8279463986928175009}
   m_Layer: 0
   m_Name: Malacateco Toon S.001
   m_TagString: Untagged
@@ -13780,6 +14176,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8279463986928175009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8279463986928175008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Malacateco
+  _cardGO: {fileID: 8279463986928175008}
+  _playersPlacePosition: {fileID: 1602543006}
 --- !u!23 &8359337894598186740
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13825,6 +14236,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8359337894598186741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662126150187866012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: SantoDomingo
+  _cardGO: {fileID: 4662126150187866012}
+  _playersPlacePosition: {fileID: 1185754936}
 --- !u!23 &8371885802030864725
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13870,6 +14296,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8371885802030864726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611778155487011441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Alejos
+  _cardGO: {fileID: 7611778155487011441}
+  _playersPlacePosition: {fileID: 351747479}
 --- !u!1 &8444895594335054222
 GameObject:
   m_ObjectHideFlags: 0
@@ -13881,6 +14322,7 @@ GameObject:
   - component: {fileID: 6676957641454190776}
   - component: {fileID: 6323007603142915778}
   - component: {fileID: 56195030324003153}
+  - component: {fileID: 8444895594335054223}
   m_Layer: 0
   m_Name: San Juan De Dios.001
   m_TagString: Untagged
@@ -13888,6 +14330,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8444895594335054223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8444895594335054222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: SanJuanDeDios
+  _cardGO: {fileID: 8444895594335054222}
+  _playersPlacePosition: {fileID: 595130165}
 --- !u!33 &8569157578071557878
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13896,6 +14353,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5642782324474214600}
   m_Mesh: {fileID: -8822372176907789326, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &8569157578071557879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642782324474214600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Chest2
+  _cardGO: {fileID: 5642782324474214600}
+  _playersPlacePosition: {fileID: 228246052}
 --- !u!23 &8605364844255587906
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13941,6 +14413,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8605364844255587907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833184379172505307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: ElRastro
+  _cardGO: {fileID: 1833184379172505307}
+  _playersPlacePosition: {fileID: 1289650211}
 --- !u!33 &8622164180353019446
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13994,6 +14481,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8645247265041861444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698242643780821339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Go
+  _cardGO: {fileID: 5698242643780821339}
+  _playersPlacePosition: {fileID: 514164463}
 --- !u!33 &8687570507268928214
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14002,6 +14504,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3764848512694006292}
   m_Mesh: {fileID: -694455872141911826, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &8687570507268928215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764848512694006292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: QuestionMark3
+  _cardGO: {fileID: 3764848512694006292}
+  _playersPlacePosition: {fileID: 1519606728}
 --- !u!33 &8817901213682139667
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14010,6 +14527,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5579686509423465390}
   m_Mesh: {fileID: 1372647328901546947, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &8817901213682139668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579686509423465390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: ElMercado
+  _cardGO: {fileID: 5579686509423465390}
+  _playersPlacePosition: {fileID: 1709105636}
 --- !u!23 &8858062955411111112
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14055,6 +14587,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8858062955411111113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2266565529920390173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Starbus
+  _cardGO: {fileID: 2266565529920390173}
+  _playersPlacePosition: {fileID: 978252236}
 --- !u!33 &8867450460430732638
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14063,6 +14610,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2216385026222165434}
   m_Mesh: {fileID: 4908178730617452728, guid: 8c2b416568ca4ae4eab5130c5ebc4ac0, type: 3}
+--- !u!114 &8867450460430732639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2216385026222165434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Mangos
+  _cardGO: {fileID: 2216385026222165434}
+  _playersPlacePosition: {fileID: 1293387076}
 --- !u!33 &8894777086003492937
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14082,6 +14644,7 @@ GameObject:
   - component: {fileID: 7117630361922821757}
   - component: {fileID: 8622164180353019446}
   - component: {fileID: 7187501161977760674}
+  - component: {fileID: 9025818098337208810}
   m_Layer: 0
   m_Name: Ineb Toon S.001
   m_TagString: Untagged
@@ -14089,6 +14652,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9025818098337208810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025818098337208809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Ineb
+  _cardGO: {fileID: 9025818098337208809}
+  _playersPlacePosition: {fileID: 668199310}
 --- !u!1 &9025853546595409121
 GameObject:
   m_ObjectHideFlags: 0
@@ -14100,6 +14678,7 @@ GameObject:
   - component: {fileID: 6453783997356553768}
   - component: {fileID: 34512642955767681}
   - component: {fileID: 3451197200667071751}
+  - component: {fileID: 9025853546595409122}
   m_Layer: 0
   m_Name: QuestionsMark 1.001
   m_TagString: Untagged
@@ -14107,6 +14686,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9025853546595409122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025853546595409121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: QuestionMark1
+  _cardGO: {fileID: 9025853546595409121}
+  _playersPlacePosition: {fileID: 174421712}
 --- !u!1 &9100582406284031227
 GameObject:
   m_ObjectHideFlags: 0
@@ -14118,6 +14712,7 @@ GameObject:
   - component: {fileID: 2750988796013812431}
   - component: {fileID: 2934904028647428702}
   - component: {fileID: 1499423671573688534}
+  - component: {fileID: 9100582406284031228}
   m_Layer: 0
   m_Name: Chop Suey Final Toon S.001
   m_TagString: Untagged
@@ -14125,6 +14720,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9100582406284031228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100582406284031227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: ChopSuey
+  _cardGO: {fileID: 9100582406284031227}
+  _playersPlacePosition: {fileID: 11168879}
 --- !u!4 &9169216230648775400
 Transform:
   m_ObjectHideFlags: 0
@@ -14140,6 +14750,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450652924611698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9169216230648775401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2388730958615497993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Bomberos
+  _cardGO: {fileID: 2388730958615497993}
+  _playersPlacePosition: {fileID: 1843157233}
 --- !u!4 &9183957958270580315
 Transform:
   m_ObjectHideFlags: 0
@@ -14155,6 +14780,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450652924611698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9183957958270580316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907560589271534459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Chest3
+  _cardGO: {fileID: 7907560589271534459}
+  _playersPlacePosition: {fileID: 24870817}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

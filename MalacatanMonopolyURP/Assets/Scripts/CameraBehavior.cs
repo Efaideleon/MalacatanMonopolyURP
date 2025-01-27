@@ -34,7 +34,7 @@ public class CameraBehavior : MonoBehaviour
     {
         if (_gameLogic.CurrentActivePlayer)
         {
-            var offset = new Vector3(-20, 15, 5);
+            var offset = new Vector3(20, 15, 5);
             transform.position = _gameLogic.CurrentActivePlayer.transform.position + offset;
             _camera.transform.LookAt(_gameLogic.CurrentActivePlayer.transform);
         }
