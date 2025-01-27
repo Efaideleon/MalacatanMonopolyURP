@@ -57,7 +57,7 @@ public class GameLogic : MonoBehaviour
             // Moving the player posiiton on the board.
             Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Rolled: {_rolledDiceValue}");
             var newPlayerBoardIndex = (CurrentActivePlayer.PositionOnBoardIndex + _rolledDiceValue) % 40;
-            var newPlayerPos = _gameBoard.GetTilePositionAt(newPlayerBoardIndex);
+            var newPlayerPos = _gameBoard.GetMarkerPositionAt(newPlayerBoardIndex);
             CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, newPlayerPos);
 
             // Player has rolled the dice, but their turn is not over yet.

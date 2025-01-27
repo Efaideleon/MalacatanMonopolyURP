@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class GameBoard : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _tiles;
+    [SerializeField] private List<GameObject> _positionMarkers;
     // Must be in order
-    public List<GameObject> Tiles => _tiles;
+    public List<GameObject> PositionMarkers => _positionMarkers;
 
     // Get the position of a tile at a specific index.
-    public Vector3 GetTilePositionAt(int index)
+    public Vector3 GetMarkerPositionAt(int index)
     {
-        for (int i = 0; i < _tiles.Count; i++)
+        for (int i = 0; i < _positionMarkers.Count; i++)
         {
             if (i == index)
             {
-                Debug.Log($"Tial at index {index} is : {_tiles[i].name}");
-                Vector3 tilePosition = _tiles[i].transform.position;
-                return tilePosition; 
+                Debug.Log($"Marker at index {index} is : {_positionMarkers[i].name}");
+                Vector3 markerPosition = _positionMarkers[i].transform.position;
+                return markerPosition; 
             }
         }
         return Vector3.zero;
