@@ -14,8 +14,10 @@ public class GameLogic : MonoBehaviour
 
     private Queue<Character> _playersQueue = new Queue<Character>();
     private int _rolledDiceValue = 0;
+    private int _rolledAmount = 0;
 
     public Character CurrentActivePlayer => _playersQueue.Peek();
+    public int RolledAmount => _rolledAmount; 
 
     public event Action OnPlayerTurnEnded;
     public event Action OnPlayersQueueFilled;
@@ -61,6 +63,7 @@ public class GameLogic : MonoBehaviour
             CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, card.PlayersSpotPosition);
 
             // Player has rolled the dice, but their turn is not over yet.
+            _rolledAmount = _rolledDiceValue;
             OnDiceRolled?.Invoke();
         }
     }

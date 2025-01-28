@@ -13,6 +13,7 @@ public class GameUIManager : MonoBehaviour
         _gameLogic.OnPlayerTurnEnded += ShowRollButton;
         _gameLogic.OnDiceRolled += ShowBuyMenu;
         _gameLogic.OnDiceRolled += HideRollDiceButton;
+        _gameLogic.OnDiceRolled += UpdateRolledAmountText;
     }
 
     void OnDisable()
@@ -22,6 +23,7 @@ public class GameUIManager : MonoBehaviour
         _gameLogic.OnPlayerTurnEnded -= ShowRollButton;
         _gameLogic.OnDiceRolled -= ShowBuyMenu;
         _gameLogic.OnDiceRolled -= HideRollDiceButton;
+        _gameLogic.OnDiceRolled -= UpdateRolledAmountText;
     }
 
     private void HideRollDiceButton()
@@ -71,6 +73,11 @@ public class GameUIManager : MonoBehaviour
         {
             Debug.LogWarning("No players in the queue.");
         }
+    }
+
+    private void UpdateRolledAmountText()
+    {
+        _playerUI.UpdateRolledAmountText(_gameLogic.RolledAmount);
     }
 }
 

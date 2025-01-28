@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ public class PlayerUI : MonoBehaviour
 {
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI _playerNameText;
+    [SerializeField] private TextMeshProUGUI _rollAmountText;
+    [SerializeField] private GameObject _rollAmountPanel;
     [SerializeField] private GameObject _buyMenu;
     [SerializeField] private GameObject _rollDiceButton;
 
@@ -27,10 +30,19 @@ public class PlayerUI : MonoBehaviour
     public void ShowRollDiceButton()
     {
         _rollDiceButton.SetActive(true);
+        _rollAmountPanel.SetActive(false);
     }
 
     public void HideRollDiceButton()
     {
+        // After the player clicks on the roll buton, hide the roll button
+        // and show the rolled number text.
         _rollDiceButton.SetActive(false);
+        _rollAmountPanel.SetActive(true);
+    }
+
+    internal void UpdateRolledAmountText(int rolledAmount)
+    {
+        _rollAmountText.text = $"You Rolled: {rolledAmount}";
     }
 }

@@ -12,6 +12,7 @@ public class Card : MonoBehaviour
 
     void Start()
     {
-        _playerSpotPositionGO = transform.Find("PlayerSpot").gameObject;
+        var parent = GameObject.FindGameObjectWithTag("PlayerSpots");
+        _playerSpotPositionGO = parent.transform.Find($"{_cardName}Pos").gameObject;
     }
 }

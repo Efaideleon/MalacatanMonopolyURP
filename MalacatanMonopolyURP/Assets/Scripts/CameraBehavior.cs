@@ -47,11 +47,11 @@ public class CameraBehavior : MonoBehaviour
             case < 10:
                 return new Vector3(20, 15, 5);
             case >= 10 and < 20:
-                return new Vector3(-5, 15, -20);
+                return new Vector3(5, 15, -20);
             case >= 20 and < 30:
                 return new Vector3(-20, 15, -5);
             case >= 30:
-                return new Vector3(5, 15, 20);
+                return new Vector3(-5, 15, 20);
         }
     }
 }
