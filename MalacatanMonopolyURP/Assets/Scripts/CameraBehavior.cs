@@ -34,9 +34,27 @@ public class CameraBehavior : MonoBehaviour
     {
         if (_gameLogic.CurrentActivePlayer)
         {
+            //ok so a new coroutine will be created? every time UpdateCameraPosition is called
+            // this is not good, you should stop the previous coroutine before starting a new one :(
+            StartCoroutine(AnimateCamera() );
             var offset = CalculateOffset();
             transform.position = _gameLogic.CurrentActivePlayer.transform.position + offset;
             _camera.transform.LookAt(_gameLogic.CurrentActivePlayer.transform);
+        }
+    }
+
+    private System.Collections.IEnumerator AnimateCamera()
+    {
+        var offset = CalculateOffset();
+        var targetPosition = _gameLogic.CurrentActivePlayer.transform.position + offset;
+        var startPosition = transform.position;
+        var elapsedTime = 0f;
+        var duration = 1f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
+            yield return null;
         }
     }
 
