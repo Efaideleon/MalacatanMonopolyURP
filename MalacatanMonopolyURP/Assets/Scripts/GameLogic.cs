@@ -76,6 +76,7 @@ public class GameLogic : MonoBehaviour
 
         // Player turn is over after choosing to buy or not.
         OnPlayerTurnEnded?.Invoke();
+        Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Money: {CurrentActivePlayer.Money}");
     }
 
     public void BuyProperty()
@@ -83,6 +84,7 @@ public class GameLogic : MonoBehaviour
         // Update the player money
         // Purchase the card that the player is currently on.
         CurrentActivePlayer.PurchaseProperty(_gameBoard.GetCardAt(CurrentActivePlayer.PositionOnBoardIndex));
+        Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Money: {CurrentActivePlayer.Money}");
         OnBuyProperty?.Invoke();
     }
     

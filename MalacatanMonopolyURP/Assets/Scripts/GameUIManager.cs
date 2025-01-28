@@ -12,6 +12,7 @@ public class GameUIManager : MonoBehaviour
         _gameLogic.OnPlayersQueueFilled += HandleGameStart;
         _gameLogic.OnPlayerTurnEnded += UpdateUICurrentPlayerName;
         _gameLogic.OnPlayerTurnEnded += ShowRollButton;
+        _gameLogic.OnPlayerTurnEnded += UpdateMoneyText;
         _gameLogic.OnDiceRolled += ShowBuyMenu;
         _gameLogic.OnDiceRolled += HideRollDiceButton;
         _gameLogic.OnDiceRolled += UpdateRolledAmountText;
@@ -24,6 +25,7 @@ public class GameUIManager : MonoBehaviour
         _gameLogic.OnPlayersQueueFilled -= HandleGameStart;
         _gameLogic.OnPlayerTurnEnded -= UpdateUICurrentPlayerName;
         _gameLogic.OnPlayerTurnEnded -= ShowRollButton;
+        _gameLogic.OnPlayerTurnEnded -= UpdateMoneyText;
         _gameLogic.OnDiceRolled -= ShowBuyMenu;
         _gameLogic.OnDiceRolled -= HideRollDiceButton;
         _gameLogic.OnDiceRolled -= UpdateRolledAmountText;
