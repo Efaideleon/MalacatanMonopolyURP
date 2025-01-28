@@ -50,7 +50,7 @@ public class CameraBehavior : MonoBehaviour
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
-            _camera.transform.LookAt(_gameLogic.CurrentActivePlayer.transform);        
+            _camera.transform.LookAt(_gameLogic.CurrentActivePlayer.transform);
             transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
             yield return null;
         }

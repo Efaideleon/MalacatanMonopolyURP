@@ -57,11 +57,16 @@ public class GameLogic : MonoBehaviour
         _rolledDiceValue = UnityEngine.Random.Range(1, 7);
         if (CurrentActivePlayer)
         {
-            // Moving the player posiiton on the board.
             Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Rolled: {_rolledDiceValue}");
+            // Get the new index for the player.
             var newPlayerBoardIndex = (CurrentActivePlayer.PositionOnBoardIndex + _rolledDiceValue) % 40;
+            // Get the card at the new index.
             var card = _gameBoard.GetCardAt(newPlayerBoardIndex);
+            // Moving the player position on the board.
             CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, card.PlayersSpotPosition);
+
+            // Trigger an event that depends on the card type.
+            // TODO: Call the correct strategy based on the card type.
 
             // Player has rolled the dice, but their turn is not over yet.
             _rolledAmount = _rolledDiceValue;

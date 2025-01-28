@@ -5,11 +5,11 @@ using UnityEngine;
 public class GameBoard : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _positionMarkers;
-    [SerializeField] private List<Card> _cards;
+    [SerializeField] private List<Place> _cards;
 
     // Must be in order
     public List<GameObject> PositionMarkers => _positionMarkers;
 
     // Get the card at a specific index.
-    public Card GetCardAt(int index) => _cards.ElementAtOrDefault(index);
+    public Place GetCardAt(int index) => _cards.ElementAtOrDefault(index);
 }

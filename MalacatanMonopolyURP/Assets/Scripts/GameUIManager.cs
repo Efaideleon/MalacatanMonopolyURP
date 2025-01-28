@@ -95,7 +95,7 @@ public class GameUIManager : MonoBehaviour
 
     private void ShowYouBoughtPanel()
     {
-        _playerUI.ShowYouBoughtPanel(_gameLogic.CurrentActivePlayer.PropertiesOwned.Last().CardName);
+        _playerUI.ShowYouBoughtPanel(_gameLogic.CurrentActivePlayer.PropertiesOwned.Last().PlaceName);
     }
 }
 
