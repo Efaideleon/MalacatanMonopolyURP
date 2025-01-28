@@ -14,6 +14,7 @@ public class GameUIManager : MonoBehaviour
         _gameLogic.OnDiceRolled += ShowBuyMenu;
         _gameLogic.OnDiceRolled += HideRollDiceButton;
         _gameLogic.OnDiceRolled += UpdateRolledAmountText;
+        _gameLogic.OnBuyProperty += UpdateMoneyText;
     }
 
     void OnDisable()
@@ -24,6 +25,7 @@ public class GameUIManager : MonoBehaviour
         _gameLogic.OnDiceRolled -= ShowBuyMenu;
         _gameLogic.OnDiceRolled -= HideRollDiceButton;
         _gameLogic.OnDiceRolled -= UpdateRolledAmountText;
+        _gameLogic.OnBuyProperty -= UpdateMoneyText;
     }
 
     private void HideRollDiceButton()
@@ -54,6 +56,7 @@ public class GameUIManager : MonoBehaviour
             Debug.Log($"Starting: Current Active player: {_gameLogic.CurrentActivePlayer.Name}");
             Debug.Log($"Starting: Current Active player Number: {_gameLogic.CurrentActivePlayer.PlayerNumber}");
             _playerUI.UpdatePlayerName(_gameLogic.CurrentActivePlayer.PlayerNumber);
+            UpdateMoneyText();
         }
         else
         {
@@ -78,6 +81,11 @@ public class GameUIManager : MonoBehaviour
     private void UpdateRolledAmountText()
     {
         _playerUI.UpdateRolledAmountText(_gameLogic.RolledAmount);
+    }
+
+    private void UpdateMoneyText()
+    {
+        _playerUI.UpdateMoneyText(_gameLogic.CurrentActivePlayer.Money);
     }
 }
 

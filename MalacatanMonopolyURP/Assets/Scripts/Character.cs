@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -14,6 +15,9 @@ public class Character : MonoBehaviour , IComparable
     // Number of the player
     public int PlayerNumber { get; private set; }
     public int PositionOnBoardIndex { get; private set; } = 0; 
+    public float Money { get; private set; } = 500_000;
+
+    private List<Card> _propertiesOwned = new List<Card>();
 
     public void InitializeCharacter(int playerNumber)
     {
@@ -35,5 +39,16 @@ public class Character : MonoBehaviour , IComparable
             return string.Compare(Name, otherCharacter.Name, StringComparison.Ordinal);
         }
         return 1;
+    }
+
+    public void PurchaseProperty(Card card)
+    {
+        Debug.Log($"1: Purchased: {card.CardName} for: {card.Price}");
+        if (Money >= card.Price)
+        {
+            Debug.Log($"Purchased: {card.CardName} for: {card.Price}");
+            Money -= card.Price;
+            _propertiesOwned.Add(card);
+        }
     }
 }

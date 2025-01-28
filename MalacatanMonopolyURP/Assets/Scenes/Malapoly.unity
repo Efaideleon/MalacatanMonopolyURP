@@ -4041,6 +4041,142 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1509847052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1055795623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055795624}
+  - component: {fileID: 1055795626}
+  - component: {fileID: 1055795625}
+  m_Layer: 5
+  m_Name: Roll Amount Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1055795624
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055795623}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1888259966}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1055795625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055795623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'You Rolled: '
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1055795626
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055795623}
+  m_CullTransparentMesh: 1
 --- !u!1 &1073147952
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,6 +5655,18 @@ MonoBehaviour:
       - m_Target: {fileID: 949129129}
         m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
         m_MethodName: ChangeToNextPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 949129129}
+        m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
+        m_MethodName: BuyProperty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8524,6 +8672,218 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733297326}
   m_CullTransparentMesh: 1
+--- !u!1 &1743532767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1743532768}
+  - component: {fileID: 1743532769}
+  - component: {fileID: 1743532770}
+  m_Layer: 5
+  m_Name: Money Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1743532768
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743532767}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1773928134}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1743532769
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743532767}
+  m_CullTransparentMesh: 1
+--- !u!114 &1743532770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743532767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: $0
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1773928133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773928134}
+  - component: {fileID: 1773928136}
+  - component: {fileID: 1773928135}
+  m_Layer: 5
+  m_Name: Money Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1773928134
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773928133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1743532768}
+  m_Father: {fileID: 1793159714}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -135, y: -55}
+  m_SizeDelta: {x: 225.40002, y: 67}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1773928135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773928133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1773928136
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773928133}
+  m_CullTransparentMesh: 1
 --- !u!1 &1793159710
 GameObject:
   m_ObjectHideFlags: 0
@@ -8620,6 +8980,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 495840491}
+  - {fileID: 1773928134}
+  - {fileID: 1888259966}
   - {fileID: 1089768138}
   - {fileID: 344343888}
   m_Father: {fileID: 0}
@@ -8642,6 +9004,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerNameText: {fileID: 2143674953}
+  _rollAmountText: {fileID: 1055795625}
+  _moneyText: {fileID: 1743532770}
+  _rollAmountPanel: {fileID: 1888259965}
   _buyMenu: {fileID: 344343887}
   _rollDiceButton: {fileID: 1089768137}
 --- !u!1 &1794265006
@@ -9180,6 +9545,82 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1509847052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1888259965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1888259966}
+  - component: {fileID: 1888259968}
+  - component: {fileID: 1888259967}
+  m_Layer: 5
+  m_Name: Roll Amount Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1888259966
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888259965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1055795624}
+  m_Father: {fileID: 1793159714}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7, y: 154}
+  m_SizeDelta: {x: 225.40002, y: 67}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1888259967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888259965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1888259968
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888259965}
+  m_CullTransparentMesh: 1
 --- !u!1 &1896719871
 GameObject:
   m_ObjectHideFlags: 0
@@ -11871,6 +12312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Trinidad
   _cardGO: {fileID: 2493645671216729162}
+  _price: 160000
 --- !u!23 &3658098247673193354
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11973,6 +12415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Chest1
   _cardGO: {fileID: 2647191584989695493}
+  _price: 0
 --- !u!23 &4018503992607999991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12614,6 +13057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Boncafe
   _cardGO: {fileID: 3432660884107328075}
+  _price: 150000
 --- !u!33 &5385133123794077039
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12810,6 +13254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Parque
   _cardGO: {fileID: 596509471908335307}
+  _price: 40000
 --- !u!33 &5957417274418520922
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12855,6 +13300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: SantaLucia
   _cardGO: {fileID: 4346985281691796483}
+  _price: 80000
 --- !u!23 &6131022044219812978
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13002,6 +13448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: LaTerminal
   _cardGO: {fileID: 6341869368912395599}
+  _price: 20000
 --- !u!4 &6376479994616316263
 Transform:
   m_ObjectHideFlags: 0
@@ -13095,6 +13542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: PolloCampero
   _cardGO: {fileID: 6461285492468769781}
+  _price: 40000
 --- !u!4 &6466381799421115935
 Transform:
   m_ObjectHideFlags: 0
@@ -13124,6 +13572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: GOTOJAIL
   _cardGO: {fileID: 4417619615480446140}
+  _price: 0
 --- !u!33 &6471047016191009776
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13146,6 +13595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Jail
   _cardGO: {fileID: 4424414290569023349}
+  _price: 0
 --- !u!33 &6548870523199544013
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13176,6 +13626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: SuperTax
   _cardGO: {fileID: 4197469345867600929}
+  _price: 40000
 --- !u!23 &6635509481944320513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13235,6 +13686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: LaEstrella
   _cardGO: {fileID: 3232306258310402812}
+  _price: 60000
 --- !u!4 &6676957641454190776
 Transform:
   m_ObjectHideFlags: 0
@@ -13309,6 +13761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Benson
   _cardGO: {fileID: 1572604131505617343}
+  _price: 140000
 --- !u!4 &6948100660515053077
 Transform:
   m_ObjectHideFlags: 0
@@ -13398,6 +13851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: WaterCompany
   _cardGO: {fileID: 252674880187498413}
+  _price: 50000
 --- !u!23 &7187501161977760674
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13578,6 +14032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Cabuz
   _cardGO: {fileID: 4503859251681706168}
+  _price: 50000
 --- !u!4 &7458768451719347401
 Transform:
   m_ObjectHideFlags: 0
@@ -13626,6 +14081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Morazan
   _cardGO: {fileID: 7475562430407016234}
+  _price: 80000
 --- !u!33 &7587085853967549991
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13701,6 +14157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: FarmaciaHigia
   _cardGO: {fileID: 7703812791436555447}
+  _price: 90000
 --- !u!33 &7704613655282064136
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13723,6 +14180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: LaMunicipalidad
   _cardGO: {fileID: 5129914824879961818}
+  _price: 120000
 --- !u!1 &7721223719617053871
 GameObject:
   m_ObjectHideFlags: 0
@@ -13763,6 +14221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Tax
   _cardGO: {fileID: 4464989086153068972}
+  _price: 90000
 --- !u!33 &7857752566720030072
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13785,6 +14244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: SanIsidro
   _cardGO: {fileID: 1033012467432176486}
+  _price: 60000
 --- !u!33 &7886064829971957427
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13822,6 +14282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Estadio
   _cardGO: {fileID: 1442626796798912709}
+  _price: 170000
 --- !u!1 &7907560589271534459
 GameObject:
   m_ObjectHideFlags: 0
@@ -13938,6 +14399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: ElectricCompany
   _cardGO: {fileID: 2281981430164568151}
+  _price: 50000
 --- !u!1 &8125442985437919082
 GameObject:
   m_ObjectHideFlags: 0
@@ -13971,6 +14433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Parking
   _cardGO: {fileID: 8125442985437919082}
+  _price: 0
 --- !u!1 &8176814622119788048
 GameObject:
   m_ObjectHideFlags: 0
@@ -14004,6 +14467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Intercesion
   _cardGO: {fileID: 8176814622119788048}
+  _price: 120000
 --- !u!23 &8208615256629917776
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14063,6 +14527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: QuestionMark2
   _cardGO: {fileID: 5399438819009899954}
+  _price: 0
 --- !u!1 &8279463986928175008
 GameObject:
   m_ObjectHideFlags: 0
@@ -14096,6 +14561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Malacateco
   _cardGO: {fileID: 8279463986928175008}
+  _price: 70000
 --- !u!23 &8359337894598186740
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14155,6 +14621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: SantoDomingo
   _cardGO: {fileID: 4662126150187866012}
+  _price: 80000
 --- !u!23 &8371885802030864725
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14214,6 +14681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Alejos
   _cardGO: {fileID: 7611778155487011441}
+  _price: 80000
 --- !u!1 &8444895594335054222
 GameObject:
   m_ObjectHideFlags: 0
@@ -14247,6 +14715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: SanJuanDeDios
   _cardGO: {fileID: 8444895594335054222}
+  _price: 80000
 --- !u!33 &8569157578071557878
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14269,6 +14738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Chest2
   _cardGO: {fileID: 5642782324474214600}
+  _price: 0
 --- !u!23 &8605364844255587906
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14328,6 +14798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: ElRastro
   _cardGO: {fileID: 1833184379172505307}
+  _price: 110000
 --- !u!33 &8622164180353019446
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14395,6 +14866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Go
   _cardGO: {fileID: 5698242643780821339}
+  _price: 0
 --- !u!33 &8687570507268928214
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14417,6 +14889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: QuestionMark3
   _cardGO: {fileID: 3764848512694006292}
+  _price: 0
 --- !u!33 &8817901213682139667
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14439,6 +14912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: ElMercado
   _cardGO: {fileID: 5579686509423465390}
+  _price: 10000
 --- !u!23 &8858062955411111112
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14498,6 +14972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Starbus
   _cardGO: {fileID: 2266565529920390173}
+  _price: 130000
 --- !u!33 &8867450460430732638
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14520,6 +14995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Mangos
   _cardGO: {fileID: 2216385026222165434}
+  _price: 140000
 --- !u!1 &9025818098337208809
 GameObject:
   m_ObjectHideFlags: 0
@@ -14553,6 +15029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Ineb
   _cardGO: {fileID: 9025818098337208809}
+  _price: 100000
 --- !u!1 &9025853546595409121
 GameObject:
   m_ObjectHideFlags: 0
@@ -14586,6 +15063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: QuestionMark1
   _cardGO: {fileID: 9025853546595409121}
+  _price: 0
 --- !u!1 &9100582406284031227
 GameObject:
   m_ObjectHideFlags: 0
@@ -14619,6 +15097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: ChopSuey
   _cardGO: {fileID: 9100582406284031227}
+  _price: 100000
 --- !u!4 &9169216230648775400
 Transform:
   m_ObjectHideFlags: 0
@@ -14648,6 +15127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Bomberos
   _cardGO: {fileID: 2388730958615497993}
+  _price: 80000
 --- !u!4 &9183957958270580315
 Transform:
   m_ObjectHideFlags: 0
@@ -14677,6 +15157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Chest3
   _cardGO: {fileID: 7907560589271534459}
+  _price: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

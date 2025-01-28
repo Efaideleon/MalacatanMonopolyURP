@@ -22,6 +22,7 @@ public class GameLogic : MonoBehaviour
     public event Action OnPlayerTurnEnded;
     public event Action OnPlayersQueueFilled;
     public event Action OnDiceRolled;
+    public event Action OnBuyProperty;
 
     void OnEnable()
     {
@@ -75,6 +76,15 @@ public class GameLogic : MonoBehaviour
 
         // Player turn is over after choosing to buy or not.
         OnPlayerTurnEnded?.Invoke();
+    }
+
+    public void BuyProperty()
+    {
+        // Update the player money
+        // Purchase the card that the player is currently on.
+        CurrentActivePlayer.PurchaseProperty(_gameBoard.GetCardAt(CurrentActivePlayer.PositionOnBoardIndex));
+        OnBuyProperty?.Invoke();
+        ChangeToNextPlayer();
     }
     
     void OnDestroy()
