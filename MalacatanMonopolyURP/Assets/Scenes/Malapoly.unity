@@ -2850,46 +2850,46 @@ MonoBehaviour:
   - {fileID: 1478668390}
   - {fileID: 1896719871}
   _cards:
-  - {fileID: 8645247265041861444}
-  - {fileID: 8817901213682139668}
-  - {fileID: 9183957958270580316}
-  - {fileID: 6341869368912395600}
-  - {fileID: 7850381861559458026}
-  - {fileID: 8444895594335054223}
-  - {fileID: 5870064807553532777}
-  - {fileID: 8208615256629917777}
-  - {fileID: 6461285492468769782}
-  - {fileID: 7453844794100203158}
-  - {fileID: 6471047016191009777}
-  - {fileID: 7857752566720030073}
-  - {fileID: 8109383758718738939}
-  - {fileID: 6635509481944320514}
-  - {fileID: 8279463986928175009}
-  - {fileID: 7475562430407016235}
-  - {fileID: 6047284586622868414}
-  - {fileID: 4013628959421536023}
-  - {fileID: 9169216230648775401}
-  - {fileID: 7703812791436555448}
-  - {fileID: 8125442985437919083}
-  - {fileID: 9025818098337208810}
-  - {fileID: 9025853546595409122}
-  - {fileID: 9100582406284031228}
-  - {fileID: 8605364844255587907}
-  - {fileID: 8371885802030864726}
-  - {fileID: 7704613655282064137}
-  - {fileID: 8176814622119788049}
-  - {fileID: 7135313144422670783}
-  - {fileID: 8858062955411111113}
-  - {fileID: 6466381799421115936}
-  - {fileID: 6743661130452416146}
-  - {fileID: 8867450460430732639}
-  - {fileID: 8569157578071557879}
-  - {fileID: 5350416074613787325}
-  - {fileID: 8359337894598186741}
-  - {fileID: 8687570507268928215}
-  - {fileID: 3569001149159355122}
-  - {fileID: 6626970100125145316}
-  - {fileID: 7902251204691159313}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &622996794
 Transform:
   m_ObjectHideFlags: 0
@@ -7263,7 +7263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1531696314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11558,9 +11558,9 @@ Transform:
   - {fileID: 716134306830808306}
   - {fileID: 2141323771919926182}
   - {fileID: 983068815675313411}
+  - {fileID: 6453783997356553768}
   - {fileID: 7678055659131974712}
   - {fileID: 8049400596834547432}
-  - {fileID: 6453783997356553768}
   - {fileID: 5758617457685823514}
   - {fileID: 6676957641454190776}
   - {fileID: 6047284586622868413}
@@ -12794,12 +12794,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2493645671216729162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Trinidad
-  _cardGO: {fileID: 2493645671216729162}
-  _price: 160000
+  _id: 0
 --- !u!23 &3658098247673193354
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12897,12 +12895,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2647191584989695493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Chest1
-  _cardGO: {fileID: 2647191584989695493}
-  _price: 0
+  _id: 0
 --- !u!23 &4018503992607999991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13539,12 +13535,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3432660884107328075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Boncafe
-  _cardGO: {fileID: 3432660884107328075}
-  _price: 150000
+  _id: 0
 --- !u!33 &5385133123794077039
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13736,12 +13730,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 596509471908335307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Parque
-  _cardGO: {fileID: 596509471908335307}
-  _price: 40000
+  _id: 0
 --- !u!33 &5957417274418520922
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13782,12 +13774,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4346985281691796483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: SantaLucia
-  _cardGO: {fileID: 4346985281691796483}
-  _price: 80000
+  _id: 0
 --- !u!23 &6131022044219812978
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13930,12 +13920,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6341869368912395599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: LaTerminal
-  _cardGO: {fileID: 6341869368912395599}
-  _price: 20000
+  _id: 0
 --- !u!4 &6376479994616316263
 Transform:
   m_ObjectHideFlags: 0
@@ -14024,12 +14012,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6461285492468769781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: PolloCampero
-  _cardGO: {fileID: 6461285492468769781}
-  _price: 40000
+  _id: 0
 --- !u!4 &6466381799421115935
 Transform:
   m_ObjectHideFlags: 0
@@ -14054,12 +14040,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4417619615480446140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: GOTOJAIL
-  _cardGO: {fileID: 4417619615480446140}
-  _price: 0
+  _id: 0
 --- !u!33 &6471047016191009776
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14077,12 +14061,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4424414290569023349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Jail
-  _cardGO: {fileID: 4424414290569023349}
-  _price: 0
+  _id: 0
 --- !u!33 &6548870523199544013
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14108,12 +14090,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4197469345867600929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: SuperTax
-  _cardGO: {fileID: 4197469345867600929}
-  _price: 40000
+  _id: 0
 --- !u!23 &6635509481944320513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14168,12 +14148,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3232306258310402812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: LaEstrella
-  _cardGO: {fileID: 3232306258310402812}
-  _price: 60000
+  _id: 0
 --- !u!4 &6676957641454190776
 Transform:
   m_ObjectHideFlags: 0
@@ -14243,12 +14221,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1572604131505617343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Benson
-  _cardGO: {fileID: 1572604131505617343}
-  _price: 140000
+  _id: 0
 --- !u!4 &6948100660515053077
 Transform:
   m_ObjectHideFlags: 0
@@ -14333,12 +14309,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 252674880187498413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: WaterCompany
-  _cardGO: {fileID: 252674880187498413}
-  _price: 50000
+  _id: 0
 --- !u!23 &7187501161977760674
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14514,12 +14488,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4503859251681706168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Cabuz
-  _cardGO: {fileID: 4503859251681706168}
-  _price: 50000
+  _id: 0
 --- !u!4 &7458768451719347401
 Transform:
   m_ObjectHideFlags: 0
@@ -14563,12 +14535,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7475562430407016234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Morazan
-  _cardGO: {fileID: 7475562430407016234}
-  _price: 80000
+  _id: 0
 --- !u!33 &7587085853967549991
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14639,12 +14609,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7703812791436555447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: FarmaciaHigia
-  _cardGO: {fileID: 7703812791436555447}
-  _price: 90000
+  _id: 0
 --- !u!33 &7704613655282064136
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14662,12 +14630,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5129914824879961818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: LaMunicipalidad
-  _cardGO: {fileID: 5129914824879961818}
-  _price: 120000
+  _id: 0
 --- !u!1 &7721223719617053871
 GameObject:
   m_ObjectHideFlags: 0
@@ -14703,12 +14669,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4464989086153068972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Tax
-  _cardGO: {fileID: 4464989086153068972}
-  _price: 90000
+  _id: 0
 --- !u!33 &7857752566720030072
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14726,12 +14690,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1033012467432176486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: SanIsidro
-  _cardGO: {fileID: 1033012467432176486}
-  _price: 60000
+  _id: 0
 --- !u!33 &7886064829971957427
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14764,12 +14726,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1442626796798912709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Estadio
-  _cardGO: {fileID: 1442626796798912709}
-  _price: 170000
+  _id: 0
 --- !u!1 &7907560589271534459
 GameObject:
   m_ObjectHideFlags: 0
@@ -14881,12 +14841,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2281981430164568151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: ElectricCompany
-  _cardGO: {fileID: 2281981430164568151}
-  _price: 50000
+  _id: 0
 --- !u!1 &8125442985437919082
 GameObject:
   m_ObjectHideFlags: 0
@@ -14915,12 +14873,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8125442985437919082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Parking
-  _cardGO: {fileID: 8125442985437919082}
-  _price: 0
+  _id: 0
 --- !u!1 &8176814622119788048
 GameObject:
   m_ObjectHideFlags: 0
@@ -14949,12 +14905,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8176814622119788048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Intercesion
-  _cardGO: {fileID: 8176814622119788048}
-  _price: 120000
+  _id: 0
 --- !u!23 &8208615256629917776
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15009,12 +14963,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5399438819009899954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: QuestionMark2
-  _cardGO: {fileID: 5399438819009899954}
-  _price: 0
+  _id: 0
 --- !u!1 &8279463986928175008
 GameObject:
   m_ObjectHideFlags: 0
@@ -15043,12 +14995,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8279463986928175008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Malacateco
-  _cardGO: {fileID: 8279463986928175008}
-  _price: 70000
+  _id: 0
 --- !u!23 &8359337894598186740
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15103,12 +15053,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4662126150187866012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: SantoDomingo
-  _cardGO: {fileID: 4662126150187866012}
-  _price: 80000
+  _id: 0
 --- !u!23 &8371885802030864725
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15163,12 +15111,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7611778155487011441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Alejos
-  _cardGO: {fileID: 7611778155487011441}
-  _price: 80000
+  _id: 0
 --- !u!1 &8444895594335054222
 GameObject:
   m_ObjectHideFlags: 0
@@ -15197,12 +15143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8444895594335054222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: SanJuanDeDios
-  _cardGO: {fileID: 8444895594335054222}
-  _price: 80000
+  _id: 0
 --- !u!33 &8569157578071557878
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15220,12 +15164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5642782324474214600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Chest2
-  _cardGO: {fileID: 5642782324474214600}
-  _price: 0
+  _id: 0
 --- !u!23 &8605364844255587906
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15280,12 +15222,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1833184379172505307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: ElRastro
-  _cardGO: {fileID: 1833184379172505307}
-  _price: 110000
+  _id: 0
 --- !u!33 &8622164180353019446
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15348,12 +15288,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5698242643780821339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Go
-  _cardGO: {fileID: 5698242643780821339}
-  _price: 0
+  _id: 0
 --- !u!33 &8687570507268928214
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15371,12 +15309,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3764848512694006292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: QuestionMark3
-  _cardGO: {fileID: 3764848512694006292}
-  _price: 0
+  _id: 0
 --- !u!33 &8817901213682139667
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15394,12 +15330,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5579686509423465390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: ElMercado
-  _cardGO: {fileID: 5579686509423465390}
-  _price: 10000
+  _id: 0
 --- !u!23 &8858062955411111112
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15454,12 +15388,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2266565529920390173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Starbus
-  _cardGO: {fileID: 2266565529920390173}
-  _price: 130000
+  _id: 0
 --- !u!33 &8867450460430732638
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15477,12 +15409,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2216385026222165434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Mangos
-  _cardGO: {fileID: 2216385026222165434}
-  _price: 140000
+  _id: 0
 --- !u!1 &9025818098337208809
 GameObject:
   m_ObjectHideFlags: 0
@@ -15511,12 +15441,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9025818098337208809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Ineb
-  _cardGO: {fileID: 9025818098337208809}
-  _price: 100000
+  _id: 0
 --- !u!1 &9025853546595409121
 GameObject:
   m_ObjectHideFlags: 0
@@ -15530,7 +15458,7 @@ GameObject:
   - component: {fileID: 3451197200667071751}
   - component: {fileID: 9025853546595409122}
   m_Layer: 0
-  m_Name: QuestionsMark 1.001
+  m_Name: Question Mark 1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15545,12 +15473,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9025853546595409121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: QuestionMark1
-  _cardGO: {fileID: 9025853546595409121}
-  _price: 0
+  _id: 0
 --- !u!1 &9100582406284031227
 GameObject:
   m_ObjectHideFlags: 0
@@ -15579,12 +15505,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9100582406284031227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: ChopSuey
-  _cardGO: {fileID: 9100582406284031227}
-  _price: 100000
+  _id: 0
 --- !u!4 &9169216230648775400
 Transform:
   m_ObjectHideFlags: 0
@@ -15609,12 +15533,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2388730958615497993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Bomberos
-  _cardGO: {fileID: 2388730958615497993}
-  _price: 80000
+  _id: 0
 --- !u!4 &9183957958270580315
 Transform:
   m_ObjectHideFlags: 0
@@ -15639,12 +15561,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7907560589271534459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92db91e1f5ae345a08801b89e0eef0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: d640e84ffd3ea4656a8d96801a944a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Chest3
-  _cardGO: {fileID: 7907560589271534459}
-  _price: 0
+  _id: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

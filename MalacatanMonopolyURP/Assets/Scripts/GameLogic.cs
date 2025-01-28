@@ -61,9 +61,14 @@ public class GameLogic : MonoBehaviour
             // Get the new index for the player.
             var newPlayerBoardIndex = (CurrentActivePlayer.PositionOnBoardIndex + _rolledDiceValue) % 40;
             // Get the card at the new index.
-            var card = _gameBoard.GetCardAt(newPlayerBoardIndex);
+            var place = _gameBoard.GetCardAt(newPlayerBoardIndex);
             // Moving the player position on the board.
-            CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, card.PlayersSpotPosition);
+            CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, place.PlayersSpotPosition);
+
+            if (place is not BuyablePlace)
+            {
+                Debug.LogWarning("The place is not a buyable place.");
+            }
 
             // Trigger an event that depends on the card type.
             // TODO: Call the correct strategy based on the card type.
@@ -88,7 +93,7 @@ public class GameLogic : MonoBehaviour
     {
         // Update the player money
         // Purchase the card that the player is currently on.
-        CurrentActivePlayer.PurchaseProperty(_gameBoard.GetCardAt(CurrentActivePlayer.PositionOnBoardIndex));
+        CurrentActivePlayer.PurchaseProperty(_gameBoard.GetCardAt(CurrentActivePlayer.PositionOnBoardIndex) is BuyablePlace buyablePlace ? buyablePlace : null);
         Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Money: {CurrentActivePlayer.Money}");
         OnBuyProperty?.Invoke();
     }

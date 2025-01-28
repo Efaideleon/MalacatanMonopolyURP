@@ -42,13 +42,13 @@ public class Character : MonoBehaviour , IComparable
         return 1;
     }
 
-    public void PurchaseProperty(Place card)
+    public void PurchaseProperty(BuyablePlace Place)
     {
-        if (Money >= card.Price)
+        if (Money >= Place.Price)
         {
-            Debug.Log($"Player: {PlayerNumber} Purchased: {card.PlaceName} for: {card.Price}");
-            Money -= card.Price;
-            _propertiesOwned.Add(card);
+            Debug.Log($"Player: {PlayerNumber} Purchased: {Place.PlaceName} for: {Place.Price}");
+            Money -= Place.Price;
+            _propertiesOwned.Add(Place);
         }
     }
 }
