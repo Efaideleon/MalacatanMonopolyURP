@@ -9,9 +9,11 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _playerNameText;
     [SerializeField] private TextMeshProUGUI _rollAmountText;
     [SerializeField] private TextMeshProUGUI _moneyText;
+    [SerializeField] private TextMeshProUGUI _youBoughtText;
     [SerializeField] private GameObject _rollAmountPanel;
     [SerializeField] private GameObject _buyMenu;
     [SerializeField] private GameObject _rollDiceButton;
+    [SerializeField] private GameObject _youBoughtPanel;
 
     public void UpdatePlayerName(int playerNumber)
     {
@@ -51,5 +53,16 @@ public class PlayerUI : MonoBehaviour
     public void UpdateMoneyText(float money)
     {
         _moneyText.text = $"Money: {money}";
+    }
+
+    public void ShowYouBoughtPanel(string cardName)
+    {
+        _youBoughtText.text = $"You bought: {cardName}";
+        _youBoughtPanel.SetActive(true);
+    }
+
+    public void HideYouBoughtPanel()
+    {
+        _youBoughtPanel.SetActive(false);
     }
 }

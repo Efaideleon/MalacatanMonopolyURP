@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class GameUIManager : MonoBehaviour
@@ -15,6 +16,7 @@ public class GameUIManager : MonoBehaviour
         _gameLogic.OnDiceRolled += HideRollDiceButton;
         _gameLogic.OnDiceRolled += UpdateRolledAmountText;
         _gameLogic.OnBuyProperty += UpdateMoneyText;
+        _gameLogic.OnBuyProperty += ShowYouBoughtPanel;
     }
 
     void OnDisable()
@@ -26,6 +28,7 @@ public class GameUIManager : MonoBehaviour
         _gameLogic.OnDiceRolled -= HideRollDiceButton;
         _gameLogic.OnDiceRolled -= UpdateRolledAmountText;
         _gameLogic.OnBuyProperty -= UpdateMoneyText;
+        _gameLogic.OnBuyProperty -= ShowYouBoughtPanel;
     }
 
     private void HideRollDiceButton()
@@ -86,6 +89,11 @@ public class GameUIManager : MonoBehaviour
     private void UpdateMoneyText()
     {
         _playerUI.UpdateMoneyText(_gameLogic.CurrentActivePlayer.Money);
+    }
+
+    private void ShowYouBoughtPanel()
+    {
+        _playerUI.ShowYouBoughtPanel(_gameLogic.CurrentActivePlayer.PropertiesOwned.Last().CardName);
     }
 }
 

@@ -18,6 +18,7 @@ public class Character : MonoBehaviour , IComparable
     public float Money { get; private set; } = 500_000;
 
     private List<Card> _propertiesOwned = new List<Card>();
+    public List<Card> PropertiesOwned => _propertiesOwned;
 
     public void InitializeCharacter(int playerNumber)
     {
@@ -43,10 +44,9 @@ public class Character : MonoBehaviour , IComparable
 
     public void PurchaseProperty(Card card)
     {
-        Debug.Log($"1: Purchased: {card.CardName} for: {card.Price}");
         if (Money >= card.Price)
         {
-            Debug.Log($"Purchased: {card.CardName} for: {card.Price}");
+            Debug.Log($"Player: {PlayerNumber} Purchased: {card.CardName} for: {card.Price}");
             Money -= card.Price;
             _propertiesOwned.Add(card);
         }

@@ -84,7 +84,6 @@ public class GameLogic : MonoBehaviour
         // Purchase the card that the player is currently on.
         CurrentActivePlayer.PurchaseProperty(_gameBoard.GetCardAt(CurrentActivePlayer.PositionOnBoardIndex));
         OnBuyProperty?.Invoke();
-        ChangeToNextPlayer();
     }
     
     void OnDestroy()
