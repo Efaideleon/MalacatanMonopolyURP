@@ -61,7 +61,7 @@ public class GameLogic : MonoBehaviour
             // Get the new index for the player.
             var newPlayerBoardIndex = (CurrentActivePlayer.PositionOnBoardIndex + _rolledDiceValue) % 40;
             // Get the card at the new index.
-            var place = _gameBoard.GetCardAt(newPlayerBoardIndex);
+            var place = _gameBoard.GetSpaceAt(newPlayerBoardIndex);
             // Moving the player position on the board.
             // TODO: How are we going to get the position of where the player should go???
             // CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, place.PlayersSpotPosition);
