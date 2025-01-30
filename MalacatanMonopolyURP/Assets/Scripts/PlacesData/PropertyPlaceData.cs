@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BuyablePlaceSO", menuName = "Scriptable Objects/BuyablePlaceSO")]
-public class PropertyPlaceDataSO : BasePlaceDataSO
+public class PropertyPlaceData : PlaceData
 {
     public float price;
 }

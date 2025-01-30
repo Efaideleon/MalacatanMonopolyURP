@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TaxPlace : Space
 {
-    [SerializeField] private TaxPlaceDataSO _data;
+    [SerializeField] private TaxPlaceData _data;
     public override void OnPlayerLand(Character character)
     {
     }
