@@ -1,6 +1,6 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "TreasurePlaceSO", menuName = "Scriptable Objects/TreasurePlaceSO")]
-public class TreasurePlaceDataSO: BasePlaceDataSO
+public class TreasurePlaceData: PlaceData
 {
 }

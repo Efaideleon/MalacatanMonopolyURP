@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GoToJailPlace : Space
 {
-    [SerializeField] private GoToJailPlaceDataSO _data;
+    [SerializeField] private GoToJailPlaceData _data;
     public override void OnPlayerLand(Character character)
     {
     }
