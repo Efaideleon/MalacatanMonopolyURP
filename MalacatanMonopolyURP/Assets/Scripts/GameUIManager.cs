@@ -95,7 +95,8 @@ public class GameUIManager : MonoBehaviour
 
     private void ShowYouBoughtPanel()
     {
-        _playerUI.ShowYouBoughtPanel(_gameLogic.CurrentActivePlayer.PropertiesOwned.Last().PlaceName);
+        // TODO: HOw are we going to get the name from the property????
+        // _playerUI.ShowYouBoughtPanel(_gameLogic.CurrentActivePlayer.PropertiesOwned.Last().Name);
     }
 }
 

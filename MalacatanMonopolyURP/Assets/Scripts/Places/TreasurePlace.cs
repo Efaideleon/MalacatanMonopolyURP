@@ -1,8 +1,9 @@
+using UnityEngine;
+
 public class TreasurePlace : Place
 {
-    protected override void Start()
+    [SerializeField] private TreasurePlaceDataSO _data;
+    public override void OnPlayerLand(Character character)
     {
-        base.Start();
-        UpdateLandStrategy(new CanTreasureStrategy());
     }
 }

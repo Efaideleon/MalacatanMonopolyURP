@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class TaxPlace : Place
 {
-    [SerializeField] private float _taxAmount;
-    protected override void Start()
+    [SerializeField] private TaxPlaceDataSO _data;
+    public override void OnPlayerLand(Character character)
     {
-        base.Start();
-        UpdateLandStrategy(new CanTaxStrategy());
     }
 }

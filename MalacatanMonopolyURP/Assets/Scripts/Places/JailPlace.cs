@@ -1,8 +1,9 @@
+using UnityEngine;
+
 public class JailPlace : Place
 {
-    protected override void Start()
+    [SerializeField] private JailPlaceDataSO _data;
+    public override void OnPlayerLand(Character character)
     {
-        base.Start();
-        UpdateLandStrategy(new CanJailStrategy());
     }
 }

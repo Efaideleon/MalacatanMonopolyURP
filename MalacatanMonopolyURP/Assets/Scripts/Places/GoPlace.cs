@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class GoPlace : Place
 {
-    protected override void Start()
+    [SerializeField] private GoPlaceDataSO _data;
+    public override void OnPlayerLand(Character character)
     {
-        base.Start();
-        UpdateLandStrategy(new CanGoStrategy());
     }
 }

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca06f3aff9ba54823b79ecd0276095bc, type: 3}
+  m_Name: AlejosData
+  m_EditorClassIdentifier: 
+  id: 0
+  Name: Alejos
+  _placeType: 0
+  _playerSpotPosition: {x: 39.7, y: 0, z: 3.5}
+  _playerSpotGo: {fileID: 1013480786933074149, guid: 04ec3bd99cfc346b982b7ea04c5a9527, type: 3}
+  price: 0

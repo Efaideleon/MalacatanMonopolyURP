@@ -1,0 +1,212 @@
+{
+    "Buyable": [
+        {
+            "id": "0",
+            "name": "Alejos",
+            "price": 80000
+        },
+        {
+            "id": "1",
+            "name": "Benson",
+            "price": 140000
+        },
+        {
+            "id": "2",
+            "name": "Bomberos",
+            "price": 80000
+        },
+        {
+            "id": "3",
+            "name": "Boncafe",
+            "price": 150000
+        },
+        {
+            "id": "4",
+            "name": "Cabuz",
+            "price": 50000
+        },
+        {
+            "id": "8",
+            "name": "Chop Suey",
+            "price": 100000
+        },
+        {
+            "id": "9",
+            "name": "El Mercado",
+            "price": 10000
+        },
+        {
+            "id": "10",
+            "name": "El Rastro",
+            "price": 110000
+        },
+        {
+            "id": "11",
+            "name": "Electric Company",
+            "price": 50000
+        },
+        {
+            "id": "12",
+            "name": "Estadio",
+            "price": 170000
+        },
+        {
+            "id": "13",
+            "name": "Farmacia Higia",
+            "price": 90000
+        },
+        {
+            "id": "16",
+            "name": "Ineb",
+            "price": 100000
+        },
+        {
+            "id": "17",
+            "name": "Intercesion",
+            "price": 120000
+        },
+        {
+            "id": "19",
+            "name": "La Estrella",
+            "price": 60000
+        },
+        {
+            "id": "20",
+            "name": "La Municipalidad",
+            "price": 120000
+        },
+        {
+            "id": "21",
+            "name": "La Terminal",
+            "price": 10000
+        },
+        {
+            "id": "22",
+            "name": "Malacateco",
+            "price": 70000
+        },
+        {
+            "id": "23",
+            "name": "Mangos",
+            "price": 140000
+        },
+        {
+            "id": "24",
+            "name": "Morazan",
+            "price": 80000
+        },
+        {
+            "id": "26",
+            "name": "Parque",
+            "price": 40000
+        },
+        {
+            "id": "27",
+            "name": "Pollo Campero",
+            "price": 40000
+        },
+        {
+            "id": "31",
+            "name": "San Isidro",
+            "price": 60000
+        },
+        {
+            "id": "32",
+            "name": "San Juan De Dios",
+            "price": 80000
+        },
+        {
+            "id": "33",
+            "name": "Santa Lucia",
+            "price": 80000
+        },
+        {
+            "id": "34",
+            "name": "Santo Domingo",
+            "price": 80000
+        },
+        {
+            "id": "35",
+            "name": "Starbus",
+            "price": 130000
+        },
+        {
+            "id": "38",
+            "name": "Trinidad",
+            "price": 160000
+        },
+        {
+            "id": "39",
+            "name": "Water Company",
+            "price": 50000
+        }
+    ],
+    "Treasure": [
+        {
+            "id": "5",
+            "name": "Chest1",
+            "cards": []
+        },
+        {
+            "id": "6",
+            "name": "Chest2",
+            "cards": []
+        },
+        {
+            "id": "7",
+            "name": "Chest3",
+            "cards": []
+        }
+    ],
+    "Go": [
+        {
+            "id": "14",
+            "name": "Go",
+            "amount": 90000
+        }
+    ],
+    "GoToJail": [
+        {
+            "id": "15",
+            "name": "GoToJail"
+        }
+    ],
+    "Jail": [
+        {
+            "id": "18",
+            "name": "Jail"
+        }
+    ],
+    "Parking": [
+        {
+            "id": "25",
+            "name": "Parking"
+        }
+    ],
+    "Chance": [
+        {
+            "id": "28",
+            "name": "Question Mark 1"
+        },
+        {
+            "id": "29",
+            "name": "Question Mark 2"
+        },
+        {
+            "id": "30",
+            "name": "Question Mark 3"
+        }
+    ],
+    "Tax": [
+        {
+            "id": "36",
+            "name": "Super Tax",
+            "price": 40000
+        },
+        {
+            "id": "37",
+            "name": "Tax",
+            "amount": 90000
+        }
+    ]
+}

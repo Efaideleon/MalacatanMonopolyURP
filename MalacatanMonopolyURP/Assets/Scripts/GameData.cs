@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GameData", menuName = "Scriptable Objects/GameData")]
+[CreateAssetMenu(fileName = "GameData", menuName = "Scriptable Objects/GameData/GameData")]
 public class GameData : ScriptableObject
 {
     [SerializeField] List<GameObject> _listOfAllCharacterGOs; 
