@@ -1,0 +1,40 @@
+using System;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "PlayerUI", menuName = "Scriptable Objects/UI/PlayerUIData")]
+public class PlayerUIData : ScriptableObject
+{
+    [SerializeField] public string PlayerName;
+    [SerializeField] public int RollAmount; 
+    [SerializeField] public float Money; 
+    [SerializeField] public string NameOfPropertyBought; 
+
+    public event Action<string> OnPlayerNameChange;
+    public event Action<int> OnRollAmountChange;
+    public event Action<float> OnMoneyChange;
+    public event Action<string> OnNameOfPropertyBoughtChange;
+
+    public void ChangePlayerName(string playerName)
+    {
+        PlayerName = playerName;
+        OnPlayerNameChange?.Invoke(PlayerName);
+    }
+    
+    public void UpdateRollAmount(int rollAmount)
+    {
+        RollAmount = rollAmount;
+        OnRollAmountChange(RollAmount);
+    }
+
+    public void UpdateMoney(float money)
+    {
+        Money = money;
+        OnMoneyChange?.Invoke(Money);
+    }
+
+    public void UpdateNameOfPropertyBought(string name)
+    {
+        NameOfPropertyBought = name;
+        OnNameOfPropertyBoughtChange?.Invoke(NameOfPropertyBought);
+    }
+}

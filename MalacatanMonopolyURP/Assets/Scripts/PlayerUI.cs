@@ -14,11 +14,42 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private GameObject _buyMenu;
     [SerializeField] private GameObject _rollDiceButton;
     [SerializeField] private GameObject _youBoughtPanel;
+    [SerializeField] private PlayerUIData _playerUIData;
 
-    public void UpdatePlayerName(int playerNumber)
+    void OnEnable()
     {
-        Debug.Log($"Player Name Text: {playerNumber}");
-        _playerNameText.text = $"Player {playerNumber}";
+        _playerUIData.OnPlayerNameChange += HandlePlayerNameChange;
+        _playerUIData.OnMoneyChange += HandleMoneyChange;
+        _playerUIData.OnNameOfPropertyBoughtChange += HandleNameOfPropertyBoughtChange;
+        _playerUIData.OnRollAmountChange += HandleRollAmountChange;
+    }
+
+    void OnDisable()
+    {
+        _playerUIData.OnPlayerNameChange -= HandlePlayerNameChange;
+        _playerUIData.OnMoneyChange -= HandleMoneyChange;
+        _playerUIData.OnNameOfPropertyBoughtChange -= HandleNameOfPropertyBoughtChange;
+        _playerUIData.OnRollAmountChange -= HandleRollAmountChange;
+    }
+
+    private void HandlePlayerNameChange(string name)
+    {
+        _playerNameText.text = $"Player: {name}";
+    }
+
+    private void HandleMoneyChange(float money)
+    {
+        _moneyText.text = $"Money: {money}";
+    }
+
+    private void HandleNameOfPropertyBoughtChange(string name)
+    {
+        _youBoughtText.text = $"You Bought: {name}";
+    }
+
+    private void HandleRollAmountChange(int amount)
+    {
+        _rollAmountText.text = $"You Rolled: {amount}";
     }
 
     public void ShowBuyMenu()
@@ -45,19 +76,8 @@ public class PlayerUI : MonoBehaviour
         _rollAmountPanel.SetActive(true);
     }
 
-    public void UpdateRolledAmountText(int rolledAmount)
+    public void ShowYouBoughtPanel()
     {
-        _rollAmountText.text = $"You Rolled: {rolledAmount}";
-    }
-
-    public void UpdateMoneyText(float money)
-    {
-        _moneyText.text = $"Money: {money}";
-    }
-
-    public void ShowYouBoughtPanel(string cardName)
-    {
-        _youBoughtText.text = $"You bought: {cardName}";
         _youBoughtPanel.SetActive(true);
     }
 

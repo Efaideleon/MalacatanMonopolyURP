@@ -11,6 +11,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private GameData _gameData;
     [SerializeField] private GameBoard _gameBoard;
     [SerializeField] private CharacterSpawner _characterSpawner;
+    [SerializeField] private PlayerUIData _playerUIData;
 
     private Queue<Character> _playersQueue = new Queue<Character>();
     private int _rolledDiceValue = 0;
@@ -23,6 +24,7 @@ public class GameLogic : MonoBehaviour
     public event Action OnPlayersQueueFilled;
     public event Action OnDiceRolled;
     public event Action OnBuyProperty;
+    public event Action<PropertySpace> OnLandedOnPropertySpace;
 
     void OnEnable()
     {
@@ -50,6 +52,8 @@ public class GameLogic : MonoBehaviour
             Debug.Log($"Player: {player.Name}");
         }
         OnPlayersQueueFilled?.Invoke();
+        _playerUIData.PlayerName = CurrentActivePlayer.Name;
+        _playerUIData.Money = CurrentActivePlayer.Money;
     }
 
     public void RollDice()
@@ -61,16 +65,28 @@ public class GameLogic : MonoBehaviour
             // Get the new index for the player.
             var newPlayerBoardIndex = (CurrentActivePlayer.PositionOnBoardIndex + _rolledDiceValue) % 40;
             // Get the card at the new index.
-            var place = _gameBoard.GetSpaceAt(newPlayerBoardIndex);
+            Space space = _gameBoard.GetSpaceAt(newPlayerBoardIndex);
             // Moving the player position on the board.
             // TODO: How are we going to get the position of where the player should go???
-            CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, place.gameObject.transform.position);
+            CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, space.gameObject.transform.position);
+            // Trigger for when the player lands on this space
+            space.OnPlayerLand(CurrentActivePlayer);
+
+            // TODO: Update the data on the playerUIData.
+
+            if (space is PropertySpace)
+            {
+                PropertySpace propertySpace = (PropertySpace)space;
+                _playerUIData.UpdateNameOfPropertyBought(propertySpace.Data.Name);
+                OnLandedOnPropertySpace?.Invoke((PropertySpace)space);
+            }
 
             // Trigger an event that depends on the card type.
             // TODO: Call the correct strategy based on the card type.
 
             // Player has rolled the dice, but their turn is not over yet.
             _rolledAmount = _rolledDiceValue;
+            _playerUIData.UpdateRollAmount(_rolledAmount);
             OnDiceRolled?.Invoke();
         }
     }
@@ -82,6 +98,8 @@ public class GameLogic : MonoBehaviour
 
         // Player turn is over after choosing to buy or not.
         OnPlayerTurnEnded?.Invoke();
+        _playerUIData.ChangePlayerName(CurrentActivePlayer.Name);
+        _playerUIData.UpdateMoney(CurrentActivePlayer.Money);
         Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Money: {CurrentActivePlayer.Money}");
     }
 
@@ -93,6 +111,7 @@ public class GameLogic : MonoBehaviour
         // CurrentActivePlayer.PurchaseProperty(_gameBoard.GetCardAt(CurrentActivePlayer.PositionOnBoardIndex) is BuyablePlace buyablePlace ? buyablePlace : null);
         Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Money: {CurrentActivePlayer.Money}");
         OnBuyProperty?.Invoke();
+        _playerUIData.UpdateMoney(CurrentActivePlayer.Money);
     }
     
     void OnDestroy()

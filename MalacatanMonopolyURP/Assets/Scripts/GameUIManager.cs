@@ -6,30 +6,23 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private GameLogic _gameLogic;
     [SerializeField] private GameMenu _gameMenu;
     [SerializeField] private PlayerUI _playerUI;
+    [SerializeField] private PlayerUIData _playerUIData;
 
     void OnEnable()
     {
         _gameLogic.OnPlayersQueueFilled += HandleGameStart;
-        _gameLogic.OnPlayerTurnEnded += UpdateUICurrentPlayerName;
         _gameLogic.OnPlayerTurnEnded += ShowRollButton;
-        _gameLogic.OnPlayerTurnEnded += UpdateMoneyText;
         _gameLogic.OnDiceRolled += ShowBuyMenu;
         _gameLogic.OnDiceRolled += HideRollDiceButton;
-        _gameLogic.OnDiceRolled += UpdateRolledAmountText;
-        _gameLogic.OnBuyProperty += UpdateMoneyText;
         _gameLogic.OnBuyProperty += ShowYouBoughtPanel;
     }
 
     void OnDisable()
     {
         _gameLogic.OnPlayersQueueFilled -= HandleGameStart;
-        _gameLogic.OnPlayerTurnEnded -= UpdateUICurrentPlayerName;
         _gameLogic.OnPlayerTurnEnded -= ShowRollButton;
-        _gameLogic.OnPlayerTurnEnded -= UpdateMoneyText;
         _gameLogic.OnDiceRolled -= ShowBuyMenu;
         _gameLogic.OnDiceRolled -= HideRollDiceButton;
-        _gameLogic.OnDiceRolled -= UpdateRolledAmountText;
-        _gameLogic.OnBuyProperty -= UpdateMoneyText;
         _gameLogic.OnBuyProperty -= ShowYouBoughtPanel;
     }
 
@@ -60,37 +53,13 @@ public class GameUIManager : MonoBehaviour
         {
             Debug.Log($"Starting: Current Active player: {_gameLogic.CurrentActivePlayer.Name}");
             Debug.Log($"Starting: Current Active player Number: {_gameLogic.CurrentActivePlayer.PlayerNumber}");
-            _playerUI.UpdatePlayerName(_gameLogic.CurrentActivePlayer.PlayerNumber);
-            UpdateMoneyText();
+            _playerUIData.ChangePlayerName($"{_gameLogic.CurrentActivePlayer.Name}");
+            _playerUIData.UpdateMoney(_gameLogic.CurrentActivePlayer.Money);
         }
         else
         {
             Debug.LogWarning("No players in the queue.");
         }
-    }
-
-    // When the player rolls the dice, the player turn changes.
-    private void UpdateUICurrentPlayerName()
-    {
-        if (_gameLogic.CurrentActivePlayer)
-        {
-            Debug.Log($"Current Active player: {_gameLogic.CurrentActivePlayer}");
-            _playerUI.UpdatePlayerName(_gameLogic.CurrentActivePlayer.PlayerNumber);
-        }
-        else 
-        {
-            Debug.LogWarning("No players in the queue.");
-        }
-    }
-
-    private void UpdateRolledAmountText()
-    {
-        _playerUI.UpdateRolledAmountText(_gameLogic.RolledAmount);
-    }
-
-    private void UpdateMoneyText()
-    {
-        _playerUI.UpdateMoneyText(_gameLogic.CurrentActivePlayer.Money);
     }
 
     private void ShowYouBoughtPanel()

@@ -2406,46 +2406,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spaces:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8664091745817948963}
+  - {fileID: 8555594464088216138}
+  - {fileID: 9193567089095833964}
+  - {fileID: 7952888525674870958}
+  - {fileID: 5215167649392598783}
+  - {fileID: 8749107720485033613}
+  - {fileID: 8903853193827569072}
+  - {fileID: 8843724247292230882}
+  - {fileID: 6571987676483893862}
+  - {fileID: 7108216979218097007}
+  - {fileID: 6666376702224559746}
+  - {fileID: 8117641721199002747}
+  - {fileID: 2529772932918199422}
+  - {fileID: 5871916819712644968}
+  - {fileID: 4798409784643415534}
+  - {fileID: 9031217266923630690}
+  - {fileID: 8910312104043118095}
+  - {fileID: 8118312549045001232}
+  - {fileID: 8733049370300497097}
+  - {fileID: 5678612163889574374}
+  - {fileID: 6099912022793442880}
+  - {fileID: 9221479741092987118}
+  - {fileID: 7654679268943689744}
+  - {fileID: 6699906875839554194}
+  - {fileID: 5298367002737631518}
+  - {fileID: 8358044028089300470}
+  - {fileID: 6295976496407693606}
+  - {fileID: 8742371352477365148}
+  - {fileID: 5700090150900238556}
+  - {fileID: 8678133628991365735}
+  - {fileID: 7672443697064584717}
+  - {fileID: 4467411115738821147}
+  - {fileID: 8670970192140540330}
+  - {fileID: 7345390007269826391}
+  - {fileID: 5957843156807648377}
+  - {fileID: 6458284461278611091}
+  - {fileID: 7198893833660333129}
+  - {fileID: 5658911421316481709}
+  - {fileID: 5606970578201230263}
+  - {fileID: 7785584861783238889}
 --- !u!4 &622996794
 Transform:
   m_ObjectHideFlags: 0
@@ -3074,6 +3074,7 @@ MonoBehaviour:
   _gameLogic: {fileID: 949129129}
   _gameMenu: {fileID: 1531696318}
   _playerUI: {fileID: 1793159715}
+  _playerUIData: {fileID: 11400000, guid: a1402f66bc8aa49a1b35d9611468ec13, type: 2}
 --- !u!4 &772711001
 Transform:
   m_ObjectHideFlags: 0
@@ -3594,6 +3595,7 @@ MonoBehaviour:
   _gameData: {fileID: 11400000, guid: c62fe705e694d44a894a71798ab3a71b, type: 2}
   _gameBoard: {fileID: 622996793}
   _characterSpawner: {fileID: 2104475032}
+  _playerUIData: {fileID: 11400000, guid: a1402f66bc8aa49a1b35d9611468ec13, type: 2}
 --- !u!4 &949129130
 Transform:
   m_ObjectHideFlags: 0
@@ -8154,6 +8156,7 @@ MonoBehaviour:
   _buyMenu: {fileID: 344343887}
   _rollDiceButton: {fileID: 1089768137}
   _youBoughtPanel: {fileID: 1017966425}
+  _playerUIData: {fileID: 11400000, guid: a1402f66bc8aa49a1b35d9611468ec13, type: 2}
 --- !u!1 &1794265006
 GameObject:
   m_ObjectHideFlags: 0
