@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489f91aa208b64ca09205c095ec13fc0, type: 3}
   m_Name: Treasure1Data
   m_EditorClassIdentifier: 
-  id: 0
+  id: 3
   Name: Treasure 1
   _spaceType: 1

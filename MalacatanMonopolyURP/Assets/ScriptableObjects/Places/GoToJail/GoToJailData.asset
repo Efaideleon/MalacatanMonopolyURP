@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7290af10575f242bba8ceadb8e97bd60, type: 3}
   m_Name: GoToJailData
   m_EditorClassIdentifier: 
-  id: 0
+  id: 31
   Name: GoToJail
   _spaceType: 4

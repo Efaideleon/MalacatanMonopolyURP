@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca06f3aff9ba54823b79ecd0276095bc, type: 3}
   m_Name: ElMercadoData
   m_EditorClassIdentifier: 
-  id: 0
+  id: 2
   Name: El Mercado
   _spaceType: 0
-  price: 0
+  price: 10000

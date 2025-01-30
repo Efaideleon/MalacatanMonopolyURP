@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ec5ddaeb0244aa28c498ef5be75aac, type: 3}
   m_Name: TaxPlaceData
   m_EditorClassIdentifier: 
-  id: 0
+  id: 5
   Name: Tax
   _spaceType: 2

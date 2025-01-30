@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcbdda8445214e5dab9fefec166bedd, type: 3}
   m_Name: ParkingData
   m_EditorClassIdentifier: 
-  id: 0
+  id: 21
   Name: Parking
   _spaceType: 6

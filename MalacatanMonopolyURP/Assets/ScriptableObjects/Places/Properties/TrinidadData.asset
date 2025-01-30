@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca06f3aff9ba54823b79ecd0276095bc, type: 3}
   m_Name: TrinidadData
   m_EditorClassIdentifier: 
-  id: 0
+  id: 38
   Name: Trinidad
   _spaceType: 0
-  price: 0
+  price: 160000

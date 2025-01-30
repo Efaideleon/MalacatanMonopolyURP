@@ -64,7 +64,7 @@ public class GameLogic : MonoBehaviour
             var place = _gameBoard.GetSpaceAt(newPlayerBoardIndex);
             // Moving the player position on the board.
             // TODO: How are we going to get the position of where the player should go???
-            // CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, place.PlayersSpotPosition);
+            CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, place.gameObject.transform.position);
 
             // Trigger an event that depends on the card type.
             // TODO: Call the correct strategy based on the card type.

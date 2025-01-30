@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ec5ddaeb0244aa28c498ef5be75aac, type: 3}
   m_Name: SuperTaxData
   m_EditorClassIdentifier: 
-  id: 0
+  id: 39
   Name: Super Tax
   _spaceType: 2

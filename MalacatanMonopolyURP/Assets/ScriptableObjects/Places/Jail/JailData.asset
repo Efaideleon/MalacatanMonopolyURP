@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145292ae252ad4c3485556f4c31ab8c1, type: 3}
   m_Name: JailData
   m_EditorClassIdentifier: 
-  id: 0
+  id: 11
   Name: Jail
   _spaceType: 3

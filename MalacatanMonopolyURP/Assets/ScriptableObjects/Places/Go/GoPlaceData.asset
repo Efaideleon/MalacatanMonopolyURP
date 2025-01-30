@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772cec22beb98491fa04e2a22c08a34c, type: 3}
   m_Name: GoPlaceData
   m_EditorClassIdentifier: 
-  id: 0
+  id: 1
   Name: Go
   _spaceType: 5
