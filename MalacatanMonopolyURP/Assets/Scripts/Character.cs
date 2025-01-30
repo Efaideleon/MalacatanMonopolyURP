@@ -17,8 +17,8 @@ public class Character : MonoBehaviour , IComparable
     public int PositionOnBoardIndex { get; private set; } = 0; 
     public float Money { get; private set; } = 500_000;
 
-    private List<Place> _propertiesOwned = new List<Place>();
-    public List<Place> PropertiesOwned => _propertiesOwned;
+    private List<Space> _propertiesOwned = new List<Space>();
+    public List<Space> PropertiesOwned => _propertiesOwned;
 
     public void InitializeCharacter(int playerNumber)
     {

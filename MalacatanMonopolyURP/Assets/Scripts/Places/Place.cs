@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Place : MonoBehaviour
+public abstract class Space : MonoBehaviour
 {
     public GameObject _playerSpotGo;
 

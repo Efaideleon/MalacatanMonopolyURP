@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GoPlace : Place
+public class GoPlace : Space
 {
     [SerializeField] private GoPlaceDataSO _data;
     public override void OnPlayerLand(Character character)
