@@ -28,6 +28,7 @@ public class Character : MonoBehaviour , IComparable
 
     public void MovePositionTo(int newBoardIndex, Vector3 position)
     {
+        // Moves the player to a position
         transform.position = position;
         PositionOnBoardIndex = newBoardIndex;
     }
