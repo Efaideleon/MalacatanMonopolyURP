@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class TreasurePlace : Space
+public class ParkingSpace : Space
 {
-    [SerializeField] private TreasurePlaceData _data;
+    [SerializeField] private ParkingSpaceData _data;
     public override void OnPlayerLand(Character character)
     {
     }

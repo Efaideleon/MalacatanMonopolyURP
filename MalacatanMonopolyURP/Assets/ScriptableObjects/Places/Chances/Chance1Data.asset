@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94bb7051896ea4be18265314d73e23cf, type: 3}
   m_Name: Chance1Data
   m_EditorClassIdentifier: 
+  id: 0
+  Name: Chance 1
+  _spaceType: 7

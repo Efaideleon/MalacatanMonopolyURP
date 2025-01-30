@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class JailPlace : Space
+public class GoPlace : Space
 {
-    [SerializeField] private JailPlaceData _data;
+    [SerializeField] private GoSpaceData _data;
     public override void OnPlayerLand(Character character)
     {
     }

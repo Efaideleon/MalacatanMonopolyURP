@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: MorazanData
   m_EditorClassIdentifier: 
   id: 0
-  Name: 
-  _placeType: 0
-  _playerSpotGo: {fileID: 0}
+  Name: Morazan
+  _spaceType: 0
   price: 0

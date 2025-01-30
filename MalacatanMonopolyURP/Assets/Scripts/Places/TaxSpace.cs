@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class GoToJailPlace : Space
+public class TaxSpace : Space
 {
-    [SerializeField] private GoToJailPlaceData _data;
+    [SerializeField] private TaxSpaceData _data;
     public override void OnPlayerLand(Character character)
     {
     }

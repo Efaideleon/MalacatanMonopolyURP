@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class TaxPlace : Space
+public class ChancePlace : Space
 {
-    [SerializeField] private TaxPlaceData _data;
+    [SerializeField] private ChancesSpaceData _data;
     public override void OnPlayerLand(Character character)
     {
     }

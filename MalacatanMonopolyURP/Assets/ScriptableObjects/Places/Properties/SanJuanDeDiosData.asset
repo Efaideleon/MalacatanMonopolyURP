@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: SanJuanDeDiosData
   m_EditorClassIdentifier: 
   id: 0
-  Name: 
-  _placeType: 0
-  _playerSpotGo: {fileID: 0}
+  Name: San Juan De Dios
+  _spaceType: 0
   price: 0

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: WaterCompanyData
   m_EditorClassIdentifier: 
   id: 0
-  Name: 
-  _placeType: 0
-  _playerSpotGo: {fileID: 0}
+  Name: Water Company
+  _spaceType: 0
   price: 0

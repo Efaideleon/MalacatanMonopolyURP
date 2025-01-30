@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: SuperTaxData
   m_EditorClassIdentifier: 
   id: 0
-  Name: 
-  _placeType: 0
-  _playerSpotGo: {fileID: 0}
+  Name: Super Tax
+  _spaceType: 2

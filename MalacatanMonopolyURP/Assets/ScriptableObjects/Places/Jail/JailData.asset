@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dcbdda8445214e5dab9fefec166bedd, type: 3}
-  m_Name: ParkingPlaceSO
+  m_Script: {fileID: 11500000, guid: 145292ae252ad4c3485556f4c31ab8c1, type: 3}
+  m_Name: JailData
   m_EditorClassIdentifier: 
   id: 0
-  Name: 
-  _placeType: 0
-  _playerSpotGo: {fileID: 0}
+  Name: Jail
+  _spaceType: 3

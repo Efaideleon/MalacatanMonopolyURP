@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class PropertyPlace : Space
+public class PropertySpace : Space
 {
-    [SerializeField] private PropertyPlaceData _data;
+    [SerializeField] private PropertySpaceData _data;
     public override void OnPlayerLand(Character character)
     {}
 }
