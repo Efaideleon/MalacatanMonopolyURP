@@ -7,12 +7,16 @@ public class PlayerUIData : ScriptableObject
     [SerializeField] public string PlayerName;
     [SerializeField] public int RollAmount; 
     [SerializeField] public float Money; 
+    [SerializeField] public string NameOfPropertyToBuy;
+    [SerializeField] public float PriceOfPropertyToBuy;
     [SerializeField] public string NameOfPropertyBought; 
 
     public event Action<string> OnPlayerNameChange;
     public event Action<int> OnRollAmountChange;
     public event Action<float> OnMoneyChange;
     public event Action<string> OnNameOfPropertyBoughtChange;
+    public event Action<string> OnBuyMenuPropertyNameChange;
+    public event Action<float> OnBuyMenuPropertyPriceChange;
 
     public void ChangePlayerName(string playerName)
     {
@@ -36,5 +40,17 @@ public class PlayerUIData : ScriptableObject
     {
         NameOfPropertyBought = name;
         OnNameOfPropertyBoughtChange?.Invoke(NameOfPropertyBought);
+    }
+
+    public void UpdateNameOfPropertyToBuy(string name)
+    {
+        NameOfPropertyToBuy = name;
+        OnBuyMenuPropertyNameChange?.Invoke(name);
+    }
+
+    public void UpdatePriceOfPropertyToBuy(float price)
+    {
+        PriceOfPropertyToBuy = price;
+        OnBuyMenuPropertyPriceChange?.Invoke(price);
     }
 }

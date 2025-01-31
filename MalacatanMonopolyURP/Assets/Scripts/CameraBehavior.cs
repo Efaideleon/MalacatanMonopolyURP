@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour
@@ -40,18 +41,13 @@ public class CameraBehavior : MonoBehaviour
         }
     }
 
-    private System.Collections.IEnumerator AnimateCamera()
+    private IEnumerator AnimateCamera()
     {
         var offset = CalculateOffset();
-        var targetPosition = _gameLogic.CurrentActivePlayer.transform.position + offset;
-        var startPosition = transform.position;
-        var elapsedTime = 0f;
-        var duration = 1f;
-        while (elapsedTime < duration)
+        while (_gameLogic.CurrentActivePlayer.IsMoving)
         {
-            elapsedTime += Time.deltaTime;
             _camera.transform.LookAt(_gameLogic.CurrentActivePlayer.transform);
-            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
+            transform.position = _gameLogic.CurrentActivePlayer.transform.position + offset;
             yield return null;
         }
     }

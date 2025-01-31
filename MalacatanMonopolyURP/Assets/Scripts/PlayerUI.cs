@@ -10,11 +10,22 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _rollAmountText;
     [SerializeField] private TextMeshProUGUI _moneyText;
     [SerializeField] private TextMeshProUGUI _youBoughtText;
+    [SerializeField] private TextMeshProUGUI _propertyToBuyName;
+    [SerializeField] private TextMeshProUGUI _propertyToBuyPrice;
     [SerializeField] private GameObject _rollAmountPanel;
     [SerializeField] private GameObject _buyMenu;
     [SerializeField] private GameObject _rollDiceButton;
     [SerializeField] private GameObject _youBoughtPanel;
     [SerializeField] private PlayerUIData _playerUIData;
+
+    // Tax Menu
+    // Treasure Menu
+    // Chance Menu
+    // Go Menu
+    // Go To Jail Menu
+    // Jail Menu
+
+    private string _currencySymbol = "G";
 
     void OnEnable()
     {
@@ -22,6 +33,8 @@ public class PlayerUI : MonoBehaviour
         _playerUIData.OnMoneyChange += HandleMoneyChange;
         _playerUIData.OnNameOfPropertyBoughtChange += HandleNameOfPropertyBoughtChange;
         _playerUIData.OnRollAmountChange += HandleRollAmountChange;
+        _playerUIData.OnBuyMenuPropertyNameChange += HandleBuyPropertyNameChange;
+        _playerUIData.OnBuyMenuPropertyPriceChange += HandleBuyPropertyPriceChange;
     }
 
     void OnDisable()
@@ -30,6 +43,19 @@ public class PlayerUI : MonoBehaviour
         _playerUIData.OnMoneyChange -= HandleMoneyChange;
         _playerUIData.OnNameOfPropertyBoughtChange -= HandleNameOfPropertyBoughtChange;
         _playerUIData.OnRollAmountChange -= HandleRollAmountChange;
+        _playerUIData.OnBuyMenuPropertyNameChange -= HandleBuyPropertyNameChange;
+        _playerUIData.OnBuyMenuPropertyPriceChange -= HandleBuyPropertyPriceChange;
+    }
+
+    private void HandleBuyPropertyNameChange(string name)
+    {
+        _propertyToBuyName.text = name;
+    }
+
+    private void HandleBuyPropertyPriceChange(float price)
+    {
+        // TODO: Make the Symbol for currency be changed in a single place.
+        _propertyToBuyPrice.text = $"{_currencySymbol}{price.ToString()}";
     }
 
     private void HandlePlayerNameChange(string name)
@@ -39,7 +65,7 @@ public class PlayerUI : MonoBehaviour
 
     private void HandleMoneyChange(float money)
     {
-        _moneyText.text = $"Money: {money}";
+        _moneyText.text = $"Money: {_currencySymbol}{money}";
     }
 
     private void HandleNameOfPropertyBoughtChange(string name)

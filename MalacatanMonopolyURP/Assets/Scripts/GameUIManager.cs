@@ -33,6 +33,8 @@ public class GameUIManager : MonoBehaviour
 
     private void ShowBuyMenu(PropertySpace property)
     {
+        _playerUIData.UpdateNameOfPropertyToBuy(property.Data.Name);
+        _playerUIData.UpdatePriceOfPropertyToBuy(property.Data.price);
         _playerUI.ShowBuyMenu();
     }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,6 +20,16 @@ public class Character : MonoBehaviour , IComparable
 
     private List<PropertySpace> _propertiesOwned = new List<PropertySpace>();
     public List<PropertySpace> PropertiesOwned => _propertiesOwned;
+    private Vector3 _startPosition;
+    private Vector3 _targetPosition;
+
+    private float _travelDuration = 2f;
+    private float _timeElapsed = 0f;
+    public bool IsMoving { get; set; } = false;
+
+    void Update()
+    {
+    }
 
     public void InitializeCharacter(int playerNumber)
     {
@@ -26,11 +37,27 @@ public class Character : MonoBehaviour , IComparable
         _playerNameText.text = $"Player {PlayerNumber}";
     }
 
-    public void MovePositionTo(int newBoardIndex, Vector3 position)
+    public void MovePositionTo(int newBoardIndex, Vector3 targetPosition)
     {
-        // Moves the player to a position
-        transform.position = position;
+        // Set the new target position 
+        _startPosition = transform.position;
+        _targetPosition = targetPosition;
         PositionOnBoardIndex = newBoardIndex;
+        StartCoroutine(MoveCharacter());
+    }
+
+    private IEnumerator MoveCharacter()
+    {
+        _startPosition = transform.position;
+
+        while (_timeElapsed < _travelDuration)
+        {
+            _timeElapsed += Time.deltaTime;
+            transform.position = Vector3.Lerp(_startPosition, _targetPosition, _timeElapsed / _travelDuration); 
+            IsMoving = true;
+            yield return null;
+        }
+        IsMoving = false;
     }
 
     public void PurchaseProperty(PropertySpace property)
