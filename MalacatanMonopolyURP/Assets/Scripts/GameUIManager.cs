@@ -12,7 +12,7 @@ public class GameUIManager : MonoBehaviour
     {
         _gameLogic.OnPlayersQueueFilled += HandleGameStart;
         _gameLogic.OnPlayerTurnEnded += ShowRollButton;
-        _gameLogic.OnDiceRolled += ShowBuyMenu;
+        _gameLogic.OnLandedOnPropertySpace += ShowBuyMenu;
         _gameLogic.OnDiceRolled += HideRollDiceButton;
         _gameLogic.OnBuyProperty += ShowYouBoughtPanel;
     }
@@ -21,7 +21,7 @@ public class GameUIManager : MonoBehaviour
     {
         _gameLogic.OnPlayersQueueFilled -= HandleGameStart;
         _gameLogic.OnPlayerTurnEnded -= ShowRollButton;
-        _gameLogic.OnDiceRolled -= ShowBuyMenu;
+        _gameLogic.OnLandedOnPropertySpace -= ShowBuyMenu;
         _gameLogic.OnDiceRolled -= HideRollDiceButton;
         _gameLogic.OnBuyProperty -= ShowYouBoughtPanel;
     }
@@ -31,7 +31,7 @@ public class GameUIManager : MonoBehaviour
         _playerUI.HideRollDiceButton();
     }
 
-    private void ShowBuyMenu()
+    private void ShowBuyMenu(PropertySpace property)
     {
         _playerUI.ShowBuyMenu();
     }
@@ -65,7 +65,7 @@ public class GameUIManager : MonoBehaviour
     private void ShowYouBoughtPanel()
     {
         // TODO: HOw are we going to get the name from the property????
-        // _playerUI.ShowYouBoughtPanel(_gameLogic.CurrentActivePlayer.PropertiesOwned.Last().Name);
+        _playerUI.ShowYouBoughtPanel();
     }
 }
 

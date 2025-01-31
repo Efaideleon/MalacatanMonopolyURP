@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -103,14 +104,16 @@ public class GameLogic : MonoBehaviour
         Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Money: {CurrentActivePlayer.Money}");
     }
 
+    // Gets called when you click yes on buy property panel? D:
     public void BuyProperty()
     {
         // Update the player money
         // Purchase the card that the player is currently on.
         // Move the behavior of Purchascing the property to the CanBuyStrategy.
-        // CurrentActivePlayer.PurchaseProperty(_gameBoard.GetCardAt(CurrentActivePlayer.PositionOnBoardIndex) is BuyablePlace buyablePlace ? buyablePlace : null);
+        CurrentActivePlayer.PurchaseProperty(_gameBoard.GetSpaceAt(CurrentActivePlayer.PositionOnBoardIndex) is PropertySpace propertySpace ? propertySpace : null);
         Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Money: {CurrentActivePlayer.Money}");
-        OnBuyProperty?.Invoke();
+        OnBuyProperty?.Invoke(); //meak
+        _playerUIData.UpdateNameOfPropertyBought(CurrentActivePlayer.PropertiesOwned.Last().Data.Name);
         _playerUIData.UpdateMoney(CurrentActivePlayer.Money);
     }
     

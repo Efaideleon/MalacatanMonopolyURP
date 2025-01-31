@@ -17,8 +17,8 @@ public class Character : MonoBehaviour , IComparable
     public int PositionOnBoardIndex { get; private set; } = 0; 
     public float Money { get; private set; } = 500_000;
 
-    private List<Space> _propertiesOwned = new List<Space>();
-    public List<Space> PropertiesOwned => _propertiesOwned;
+    private List<PropertySpace> _propertiesOwned = new List<PropertySpace>();
+    public List<PropertySpace> PropertiesOwned => _propertiesOwned;
 
     public void InitializeCharacter(int playerNumber)
     {
@@ -31,6 +31,14 @@ public class Character : MonoBehaviour , IComparable
         // Moves the player to a position
         transform.position = position;
         PositionOnBoardIndex = newBoardIndex;
+    }
+
+    public void PurchaseProperty(PropertySpace property)
+    {
+        Debug.Log($"Property Bought: {property}");
+        _propertiesOwned.Add(property);
+        Money -= property.Data.price;
+        //:( meak meak meak meak 
     }
 
     public int CompareTo(object obj)
