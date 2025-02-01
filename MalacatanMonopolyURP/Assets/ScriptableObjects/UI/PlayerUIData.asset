@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323369082d67e4b36a5855c27a157339, type: 3}
   m_Name: PlayerUIData
   m_EditorClassIdentifier: 
+  PlayerName: Avocado
+  RollAmount: 0
+  Money: 500000
+  NameOfPropertyToBuy: 
+  PriceOfPropertyToBuy: 0
+  NameOfPropertyBought: 

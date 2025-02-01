@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Uss/PlayerOverview.uss?fileID=7433441132597879392&amp;guid=469180c861272473d93d3ca0367bd346&amp;type=3#PlayerOverview" />
+    <ui:VisualElement name="player-name-container" class="player-overview_player-name-container" style="flex-grow: 1; max-width: none; max-height: none; background-color: rgba(0, 0, 0, 0.54); flex-basis: auto; flex-direction: row; flex-wrap: nowrap; position: absolute; width: 100%;">
+        <ui:VisualElement style="flex-grow: 1; align-self: auto; justify-content: center; align-items: flex-start; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-items: center; justify-content: center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; background-color: rgb(250, 237, 237);">
+                <ui:Label name="player-name-label" class="player-overview_player-name-label">
+                    <Bindings>
+                        <ui:DataBinding property="text" data-source-path="PlayerName" data-source="project://database/Assets/ScriptableObjects/UI/PlayerUIData.asset?fileID=11400000&amp;guid=a1402f66bc8aa49a1b35d9611468ec13&amp;type=2#PlayerUIData" binding-mode="ToTarget" />
+                    </Bindings>
+                </ui:Label>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-self: auto; justify-content: center; align-items: flex-end; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-items: center; justify-content: center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; background-color: rgb(250, 237, 237);">
+                <ui:Label text="Money:" name="player-name-label" data-source="project://database/Assets/ScriptableObjects/UI/PlayerUIData.asset?fileID=11400000&amp;guid=a1402f66bc8aa49a1b35d9611468ec13&amp;type=2#PlayerUIData" data-source-path="PlayerName" class="player-overview_player-name-label">
+                    <Bindings>
+                        <ui:DataBinding property="text" data-source-path="Money" data-source="project://database/Assets/ScriptableObjects/UI/PlayerUIData.asset?fileID=11400000&amp;guid=a1402f66bc8aa49a1b35d9611468ec13&amp;type=2#PlayerUIData" binding-mode="ToTarget" />
+                    </Bindings>
+                </ui:Label>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

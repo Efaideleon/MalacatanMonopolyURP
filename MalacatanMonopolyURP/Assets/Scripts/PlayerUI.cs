@@ -19,11 +19,24 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private PlayerUIData _playerUIData;
 
     // Tax Menu
+    [SerializeField] private GameObject _taxMenuPanel;
+    [SerializeField] private TextMeshProUGUI _taxAmountText;
     // Treasure Menu
+    [SerializeField] private GameObject _treasureMenuPanel;
+    [SerializeField] private TextMeshProUGUI _youGotText;
+
     // Chance Menu
+    [SerializeField] private GameObject _chanceMenuPanel;
+    [SerializeField] private TextMeshProUGUI _chanceMenuText;
+
     // Go Menu
+    [SerializeField] private GameObject _goMenuPanel;
+    [SerializeField] private TextMeshProUGUI _goAmountText;
     // Go To Jail Menu
+    [SerializeField] private GameObject _goToJailMenuPanel;
     // Jail Menu
+    [SerializeField] private GameObject _jailMenuPanel;
+    [SerializeField] private TextMeshProUGUI _turnsRemainigText;
 
     private string _currencySymbol = "G";
 

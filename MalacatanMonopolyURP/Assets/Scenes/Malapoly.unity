@@ -10971,6 +10971,17 @@ MonoBehaviour:
   _rollDiceButton: {fileID: 1089768137}
   _youBoughtPanel: {fileID: 1017966425}
   _playerUIData: {fileID: 11400000, guid: a1402f66bc8aa49a1b35d9611468ec13, type: 2}
+  _taxMenuPanel: {fileID: 0}
+  _taxAmountText: {fileID: 0}
+  _treasureMenuPanel: {fileID: 0}
+  _youGotText: {fileID: 0}
+  _chanceMenuPanel: {fileID: 0}
+  _chanceMenuText: {fileID: 0}
+  _goMenuPanel: {fileID: 0}
+  _goAmountText: {fileID: 0}
+  _goToJailMenuPanel: {fileID: 0}
+  _jailMenuPanel: {fileID: 0}
+  _turnsRemainigText: {fileID: 0}
 --- !u!1 &1794265006
 GameObject:
   m_ObjectHideFlags: 0
