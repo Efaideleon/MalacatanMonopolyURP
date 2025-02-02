@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerUI", menuName = "Scriptable Objects/UI/PlayerUIData")]
-public class PlayerUIData : ScriptableObject
+public class GameScreenUIData : ScriptableObject
 {
     [SerializeField] public string PlayerName;
     [SerializeField] public int RollAmount; 

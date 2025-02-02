@@ -12,7 +12,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private GameData _gameData;
     [SerializeField] private GameBoard _gameBoard;
     [SerializeField] private CharacterSpawner _characterSpawner;
-    [SerializeField] private PlayerUIData _playerUIData;
+    [SerializeField] private GameScreenUIData _gameScreenUIData;
 
     private Queue<Character> _playersQueue = new Queue<Character>();
     private int _rolledDiceValue = 0;
@@ -30,11 +30,13 @@ public class GameLogic : MonoBehaviour
     void OnEnable()
     {
         _characterSpawner.OnAllCharactersSpawned += FillPlayersQueue;
+        GameplayEvents.OnRoll += RollDice;
     }
 
     void OnDisable()
     {
         _characterSpawner.OnAllCharactersSpawned -= FillPlayersQueue;
+        GameplayEvents.OnRoll -= RollDice;
     }
 
     void Start()
@@ -53,8 +55,8 @@ public class GameLogic : MonoBehaviour
             Debug.Log($"Player: {player.Name}");
         }
         OnPlayersQueueFilled?.Invoke();
-        _playerUIData.PlayerName = CurrentActivePlayer.Name;
-        _playerUIData.Money = CurrentActivePlayer.Money;
+        _gameScreenUIData.PlayerName = CurrentActivePlayer.Name;
+        _gameScreenUIData.Money = CurrentActivePlayer.Money;
     }
 
     public void RollDice()
@@ -78,7 +80,7 @@ public class GameLogic : MonoBehaviour
             if (space is PropertySpace)
             {
                 PropertySpace propertySpace = (PropertySpace)space;
-                _playerUIData.UpdateNameOfPropertyBought(propertySpace.Data.Name);
+                _gameScreenUIData.UpdateNameOfPropertyBought(propertySpace.Data.Name);
                 OnLandedOnPropertySpace?.Invoke((PropertySpace)space);
             }
 
@@ -87,7 +89,7 @@ public class GameLogic : MonoBehaviour
 
             // Player has rolled the dice, but their turn is not over yet.
             _rolledAmount = _rolledDiceValue;
-            _playerUIData.UpdateRollAmount(_rolledAmount);
+            _gameScreenUIData.UpdateRollAmount(_rolledAmount);
             OnDiceRolled?.Invoke();
         }
     }
@@ -99,8 +101,9 @@ public class GameLogic : MonoBehaviour
 
         // Player turn is over after choosing to buy or not.
         OnPlayerTurnEnded?.Invoke();
-        _playerUIData.ChangePlayerName(CurrentActivePlayer.Name);
-        _playerUIData.UpdateMoney(CurrentActivePlayer.Money);
+        GameplayEvents.OnPlayerTurnEnded?.Invoke();
+        _gameScreenUIData.ChangePlayerName(CurrentActivePlayer.Name);
+        _gameScreenUIData.UpdateMoney(CurrentActivePlayer.Money);
         Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Money: {CurrentActivePlayer.Money}");
     }
 
@@ -113,8 +116,8 @@ public class GameLogic : MonoBehaviour
         CurrentActivePlayer.PurchaseProperty(_gameBoard.GetSpaceAt(CurrentActivePlayer.PositionOnBoardIndex) is PropertySpace propertySpace ? propertySpace : null);
         Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Money: {CurrentActivePlayer.Money}");
         OnBuyProperty?.Invoke(); //meak
-        _playerUIData.UpdateNameOfPropertyBought(CurrentActivePlayer.PropertiesOwned.Last().Data.Name);
-        _playerUIData.UpdateMoney(CurrentActivePlayer.Money);
+        _gameScreenUIData.UpdateNameOfPropertyBought(CurrentActivePlayer.PropertiesOwned.Last().Data.Name);
+        _gameScreenUIData.UpdateMoney(CurrentActivePlayer.Money);
     }
     
     void OnDestroy()

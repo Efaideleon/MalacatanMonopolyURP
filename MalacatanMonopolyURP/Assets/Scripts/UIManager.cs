@@ -1,13 +1,17 @@
-using System.Linq;
 using UnityEngine;
 
-public class GameUIManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameLogic _gameLogic;
     [SerializeField] private GameMenu _gameMenu;
     [SerializeField] private PlayerUI _playerUI;
-    [SerializeField] private PlayerUIData _playerUIData;
+    [SerializeField] private GameScreenUIData _gameScreenUIData;
+    [SerializeField] private UIManagerData _uIManagerData;
 
+    void Start()
+    {
+        _uIManagerData.ShowGameScreenUI(false);
+    }
     void OnEnable()
     {
         _gameLogic.OnPlayersQueueFilled += HandleGameStart;
@@ -33,8 +37,8 @@ public class GameUIManager : MonoBehaviour
 
     private void ShowBuyMenu(PropertySpace property)
     {
-        _playerUIData.UpdateNameOfPropertyToBuy(property.Data.Name);
-        _playerUIData.UpdatePriceOfPropertyToBuy(property.Data.price);
+        _gameScreenUIData.UpdateNameOfPropertyToBuy(property.Data.Name);
+        _gameScreenUIData.UpdatePriceOfPropertyToBuy(property.Data.price);
         _playerUI.ShowBuyMenu();
     }
 
@@ -50,13 +54,14 @@ public class GameUIManager : MonoBehaviour
         // and show the player UI.
         _gameMenu.gameObject.SetActive(false);
         _playerUI.gameObject.SetActive(true);
+        _uIManagerData.ShowGameScreenUI(true);
 
         if (_gameLogic.CurrentActivePlayer)
         {
             Debug.Log($"Starting: Current Active player: {_gameLogic.CurrentActivePlayer.Name}");
             Debug.Log($"Starting: Current Active player Number: {_gameLogic.CurrentActivePlayer.PlayerNumber}");
-            _playerUIData.ChangePlayerName($"{_gameLogic.CurrentActivePlayer.Name}");
-            _playerUIData.UpdateMoney(_gameLogic.CurrentActivePlayer.Money);
+            _gameScreenUIData.ChangePlayerName($"{_gameLogic.CurrentActivePlayer.Name}");
+            _gameScreenUIData.UpdateMoney(_gameLogic.CurrentActivePlayer.Money);
         }
         else
         {
@@ -70,4 +75,3 @@ public class GameUIManager : MonoBehaviour
         _playerUI.ShowYouBoughtPanel();
     }
 }
-

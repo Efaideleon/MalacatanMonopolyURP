@@ -16,7 +16,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private GameObject _buyMenu;
     [SerializeField] private GameObject _rollDiceButton;
     [SerializeField] private GameObject _youBoughtPanel;
-    [SerializeField] private PlayerUIData _playerUIData;
+    [SerializeField] private GameScreenUIData _playerUIData;
 
     // Tax Menu
     [SerializeField] private GameObject _taxMenuPanel;
@@ -73,12 +73,14 @@ public class PlayerUI : MonoBehaviour
 
     private void HandlePlayerNameChange(string name)
     {
-        _playerNameText.text = $"Player: {name}";
+        // Replaced by UI Toolkit
+        // _playerNameText.text = $"Player: {name}";
     }
 
     private void HandleMoneyChange(float money)
     {
-        _moneyText.text = $"Money: {_currencySymbol}{money}";
+        // Replaced by UI Toolkit
+        // _moneyText.text = $"Money: {_currencySymbol}{money}";
     }
 
     private void HandleNameOfPropertyBoughtChange(string name)
