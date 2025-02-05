@@ -10,3 +10,9 @@
 .player-overview_player-money-label {
 
 }
+
+.popup-container 
+{
+    width: 40%;
+    height: 20%;
+}

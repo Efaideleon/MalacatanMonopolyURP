@@ -5,16 +5,19 @@ public class GameScreenSetup : MonoBehaviour
 {
     [SerializeField] private UIDocument _uIDocument;
     private RollDisplay _rollDisplay;
+    private PopUpMenu _popUpMenu;    
     private VisualElement _root;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        _root = _uIDocument.rootVisualElement.Q<VisualElement>("game-screen");
-        _rollDisplay = new RollDisplay(_root);
+        /*_root = _uIDocument.rootVisualElement.Q<VisualElement>("game-screen");*/
+        /**/
+        /*_rollDisplay = new RollDisplay(_root);*/
+        /*_popUpMenu = new PopUpMenu(_root);*/
     }
 
     void OnDestroy()
     {
-        _rollDisplay.Dispose();
+        // _rollDisplay.Dispose();
     }
 }

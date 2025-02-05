@@ -1,5 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 using TMPro;
 using System;
 using System.Linq;
@@ -33,9 +34,13 @@ public class GameMenu: MonoBehaviour
     // Events
     public event Action<List<Character>> OnAllCharactersPicked;
 
+    // Managers
+    SceneManager _sceneManager;
+
     void Start()
     {
         _chosenCharacter = _gameData.ListOfAllCharacterGOs[0].GetComponent<Character>();
+        SceneManager _sceneManager = new SceneManager();
     }
 
     public void PickNumOfPlayers(GameObject numOfPlayers)
@@ -47,10 +52,10 @@ public class GameMenu: MonoBehaviour
     public void PickCharacter(GameObject CharacterNamePanel)
     {
         _characterSelector.transform.position = CharacterNamePanel.transform.position;
-         GameObject chosenCharacterGO = _gameData.ListOfAllCharacterGOs.FirstOrDefault(character => character.name == CharacterNamePanel.name);
-         // if (chosenCharacterGO != null)
+        GameObject chosenCharacterGO = _gameData.ListOfAllCharacterGOs.FirstOrDefault(character => character.name == CharacterNamePanel.name);
+        // if (chosenCharacterGO != null)
         _chosenCharacter = chosenCharacterGO.GetComponent<Character>();
-         Debug.Log($"Character chosen: {_chosenCharacter.name}");
+        Debug.Log($"Character chosen: {_chosenCharacter.name}");
     }
 
     public void PickNumberOfRounds(GameObject RoundPanelNum)
@@ -61,7 +66,8 @@ public class GameMenu: MonoBehaviour
 
     public void HandleStartButton()
     {
-        ChangeMenu(StartMenu,NumOfPlayersMenu);
+        Debug.Log("Start clicked...");
+        ChangeMenu(StartMenu, NumOfPlayersMenu);
     }
 
     public void HandleConfirmNumOfPlayersButton()
@@ -139,7 +145,11 @@ public class GameMenu: MonoBehaviour
             Debug.Log("Starting the game...");
             if (NumOfRoundsMenu != null)
             {
+                // TODO: Dont desactivate the canvas instead load the next scene
                 NumOfRoundsMenu.SetActive(false);
+
+                LoadGameScene();
+
                 // TODO: Pass the character list to spawn
                 OnAllCharactersPicked.Invoke(_gameData.ListOfCharactersPicked);
             }
@@ -148,6 +158,15 @@ public class GameMenu: MonoBehaviour
                 Debug.LogWarning("Current menu is not assigned!");
             }
         }
+    }
+
+    private void LoadGameScene()
+    {
+        // Call the unity scenemanager to unload the current scene.
+        // Load the game scene
+        // TODO: Change to using async later.
+        int gameMenuSceneIndex = 0;
+        SceneManager.UnloadSceneAsync(gameMenuSceneIndex);
     }
 
     private void ChangeMenu(GameObject currentMenu, GameObject nextMenu)

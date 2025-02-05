@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417bb994be80947a1b7488da0bb09c37, type: 3}
   m_Name: UIManagerData
   m_EditorClassIdentifier: 
-  _gameScreenUIDisplay: 1
+  _gameScreenUIDisplay: 0

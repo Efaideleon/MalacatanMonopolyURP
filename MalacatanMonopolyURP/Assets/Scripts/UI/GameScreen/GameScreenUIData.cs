@@ -1,9 +1,12 @@
 using System;
+using System.ComponentModel;
+using Unity.Properties;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerUI", menuName = "Scriptable Objects/UI/PlayerUIData")]
 public class GameScreenUIData : ScriptableObject
 {
+    // Each of this properties is binded to the Gamescreen.uxml components
     [SerializeField] public string PlayerName;
     [SerializeField] public int RollAmount; 
     [SerializeField] public float Money; 

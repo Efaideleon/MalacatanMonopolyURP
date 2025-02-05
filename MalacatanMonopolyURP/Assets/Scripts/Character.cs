@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using TMPro;
 using UnityEngine;
 
-public class Character : MonoBehaviour , IComparable
+// Character Model
+public class Character : MonoBehaviour , IComparable, INotifyPropertyChanged
 {
     // Name of the character.
     [SerializeField] private string _name;
@@ -16,7 +18,16 @@ public class Character : MonoBehaviour , IComparable
     // Number of the player
     public int PlayerNumber { get; private set; }
     public int PositionOnBoardIndex { get; private set; } = 0; 
-    public float Money { get; private set; } = 500_000;
+    private float _money = 500_000;
+    public float Money 
+    { 
+        get => _money;
+        set
+        {
+            _money = value;
+            OnPropertyChanged(nameof(Money));
+        }
+    }
 
     private List<PropertySpace> _propertiesOwned = new List<PropertySpace>();
     public List<PropertySpace> PropertiesOwned => _propertiesOwned;
@@ -25,6 +36,9 @@ public class Character : MonoBehaviour , IComparable
 
     private float _travelDuration = 2f;
     private float _timeElapsed = 0f;
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
     public bool IsMoving { get; set; } = false;
 
     void Update()
@@ -35,6 +49,11 @@ public class Character : MonoBehaviour , IComparable
     {
         PlayerNumber = playerNumber;
         _playerNameText.text = $"Player {PlayerNumber}";
+    }
+
+    private void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
     public void MovePositionTo(int newBoardIndex, Vector3 targetPosition)

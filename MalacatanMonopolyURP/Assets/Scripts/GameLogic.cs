@@ -1,20 +1,19 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class GameLogic : MonoBehaviour
+// Model
+public class GameLogic : MonoBehaviour, INotifyPropertyChanged
 {
     [Header("UI Elements")]
-    [SerializeField] private Button _rollDiceButton;
     [SerializeField] private GameData _gameData;
     [SerializeField] private GameBoard _gameBoard;
     [SerializeField] private CharacterSpawner _characterSpawner;
     [SerializeField] private GameScreenUIData _gameScreenUIData;
 
-    private Queue<Character> _playersQueue = new Queue<Character>();
+    private readonly ObservableQueue<Character> _playersQueue = new ();
     private int _rolledDiceValue = 0;
     private int _rolledAmount = 0;
 
@@ -26,17 +25,48 @@ public class GameLogic : MonoBehaviour
     public event Action OnDiceRolled;
     public event Action OnBuyProperty;
     public event Action<PropertySpace> OnLandedOnPropertySpace;
+    public event Action OnPlayersQueueChanged;
+    public event PropertyChangedEventHandler PropertyChanged;
 
     void OnEnable()
     {
+        _playersQueue.CollectionChanged += HandlePlayersQueueChange;
         _characterSpawner.OnAllCharactersSpawned += FillPlayersQueue;
         GameplayEvents.OnRoll += RollDice;
+        GameplayEvents.OnPropertyPurchased += BuyProperty;
     }
 
     void OnDisable()
     {
+        _playersQueue.CollectionChanged -= HandlePlayersQueueChange;
         _characterSpawner.OnAllCharactersSpawned -= FillPlayersQueue;
         GameplayEvents.OnRoll -= RollDice;
+        GameplayEvents.OnPropertyPurchased -= BuyProperty;
+    }
+
+    private void HandlePlayersQueueChange(object sender, NotifyCollectionChangedEventArgs e)
+    {
+        // When changing the queue unsubscribe all the previous elements and subscribe the new ones.
+        if (e.OldItems != null)
+        {
+            foreach (INotifyPropertyChanged item in e.OldItems)
+            {
+                item.PropertyChanged -= CharacterInQueuePropertyChange;
+            }
+        }
+        if (e.NewItems != null)
+        {
+            foreach (INotifyPropertyChanged item in e.NewItems)
+            {
+                item.PropertyChanged -= CharacterInQueuePropertyChange;
+            }
+        }
+        OnPlayersQueueChanged?.Invoke();
+    }
+
+    private void CharacterInQueuePropertyChange(object sender, PropertyChangedEventArgs e)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(e.PropertyName)));
     }
 
     void Start()
@@ -80,8 +110,9 @@ public class GameLogic : MonoBehaviour
             if (space is PropertySpace)
             {
                 PropertySpace propertySpace = (PropertySpace)space;
-                _gameScreenUIData.UpdateNameOfPropertyBought(propertySpace.Data.Name);
-                OnLandedOnPropertySpace?.Invoke((PropertySpace)space);
+                _gameScreenUIData.UpdateNameOfPropertyToBuy(propertySpace.Data.Name);
+                OnLandedOnPropertySpace?.Invoke(propertySpace);
+                GameplayEvents.OnLandedOnPropertySpace?.Invoke();
             }
 
             // Trigger an event that depends on the card type.
@@ -103,21 +134,31 @@ public class GameLogic : MonoBehaviour
         OnPlayerTurnEnded?.Invoke();
         GameplayEvents.OnPlayerTurnEnded?.Invoke();
         _gameScreenUIData.ChangePlayerName(CurrentActivePlayer.Name);
-        _gameScreenUIData.UpdateMoney(CurrentActivePlayer.Money);
         Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Money: {CurrentActivePlayer.Money}");
     }
 
     // Gets called when you click yes on buy property panel? D:
-    public void BuyProperty()
+    private void BuyProperty()
     {
+        Debug.Log("BuyProperty is getting called");
+        Debug.LogWarning("hmmmm");
         // Update the player money
         // Purchase the card that the player is currently on.
         // Move the behavior of Purchascing the property to the CanBuyStrategy.
+        
+        
         CurrentActivePlayer.PurchaseProperty(_gameBoard.GetSpaceAt(CurrentActivePlayer.PositionOnBoardIndex) is PropertySpace propertySpace ? propertySpace : null);
         Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Money: {CurrentActivePlayer.Money}");
         OnBuyProperty?.Invoke(); //meak
+        // TODO: Removes this methods and bind the properties to the GameScreenUIData instead.
         _gameScreenUIData.UpdateNameOfPropertyBought(CurrentActivePlayer.PropertiesOwned.Last().Data.Name);
         _gameScreenUIData.UpdateMoney(CurrentActivePlayer.Money);
+        
+        
+        // TODO:
+        // Might Change this function to try to buy. If they dont' have enough money shouldn't buy
+        // If they have enogh money show a pop up menu saying "You bought this property!"
+        //ChangeToNextPlayer();
     }
     
     void OnDestroy()
