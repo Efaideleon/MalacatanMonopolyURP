@@ -34,13 +34,10 @@ public class GameMenu: MonoBehaviour
     // Events
     public event Action<List<Character>> OnAllCharactersPicked;
 
-    // Managers
-    SceneManager _sceneManager;
-
     void Start()
     {
+        _gameData.Reset();
         _chosenCharacter = _gameData.ListOfAllCharacterGOs[0].GetComponent<Character>();
-        SceneManager _sceneManager = new SceneManager();
     }
 
     public void PickNumOfPlayers(GameObject numOfPlayers)
@@ -145,13 +142,10 @@ public class GameMenu: MonoBehaviour
             Debug.Log("Starting the game...");
             if (NumOfRoundsMenu != null)
             {
-                // TODO: Dont desactivate the canvas instead load the next scene
-                NumOfRoundsMenu.SetActive(false);
-
                 LoadGameScene();
-
+                UnloadGameMenuScene();
                 // TODO: Pass the character list to spawn
-                OnAllCharactersPicked.Invoke(_gameData.ListOfCharactersPicked);
+                /*OnAllCharactersPicked?.Invoke(_gameData.ListOfCharactersPicked);*/
             }
             else
             {
@@ -160,13 +154,19 @@ public class GameMenu: MonoBehaviour
         }
     }
 
-    private void LoadGameScene()
+    private void UnloadGameMenuScene()
     {
         // Call the unity scenemanager to unload the current scene.
         // Load the game scene
         // TODO: Change to using async later.
         int gameMenuSceneIndex = 0;
         SceneManager.UnloadSceneAsync(gameMenuSceneIndex);
+    }
+
+    private void LoadGameScene()
+    {
+        int gameSceneIndex = 1;
+        SceneManager.LoadSceneAsync(gameSceneIndex);
     }
 
     private void ChangeMenu(GameObject currentMenu, GameObject nextMenu)

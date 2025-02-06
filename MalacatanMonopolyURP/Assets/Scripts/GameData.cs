@@ -6,7 +6,7 @@ public class GameData : ScriptableObject
 {
     [SerializeField] List<GameObject> _listOfAllCharacterGOs; 
     public List<GameObject> ListOfAllCharacterGOs => _listOfAllCharacterGOs;
-    private List<Character> _listOfCharacersPicked = new();
+    [SerializeField] private List<Character> _listOfCharacersPicked = new();
     public List<Character> ListOfCharactersPicked => _listOfCharacersPicked;
     private List<Character> _listOfInstancesOfCharactersPicked = new();
     public List<Character> ListOfInstancesOfCharactersPicked => _listOfInstancesOfCharactersPicked;

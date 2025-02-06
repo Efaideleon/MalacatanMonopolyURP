@@ -19,6 +19,7 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
 
     public Character CurrentActivePlayer => _playersQueue.Peek();
     public int RolledAmount => _rolledAmount; 
+    public int RoundNumber { get; private set; }
 
     public event Action OnPlayerTurnEnded;
     public event Action OnPlayersQueueFilled;
@@ -30,22 +31,27 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
 
     void OnEnable()
     {
-        _playersQueue.CollectionChanged += HandlePlayersQueueChange;
+        if (_playersQueue == null)
+        {
+            Debug.Log("Players queue is empty");
+        }
         _characterSpawner.OnAllCharactersSpawned += FillPlayersQueue;
+        _playersQueue.CollectionChanged += HandlePlayersQueueChange;
         GameplayEvents.OnRoll += RollDice;
         GameplayEvents.OnPropertyPurchased += BuyProperty;
     }
 
     void OnDisable()
     {
-        _playersQueue.CollectionChanged -= HandlePlayersQueueChange;
         _characterSpawner.OnAllCharactersSpawned -= FillPlayersQueue;
+        _playersQueue.CollectionChanged -= HandlePlayersQueueChange;
         GameplayEvents.OnRoll -= RollDice;
         GameplayEvents.OnPropertyPurchased -= BuyProperty;
     }
 
     private void HandlePlayersQueueChange(object sender, NotifyCollectionChangedEventArgs e)
     {
+        Debug.Log("HandlePlayersQueueChange");
         // When changing the queue unsubscribe all the previous elements and subscribe the new ones.
         if (e.OldItems != null)
         {
@@ -69,11 +75,6 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(e.PropertyName)));
     }
 
-    void Start()
-    {
-        _gameData.Reset();
-    }
-
     private void FillPlayersQueue()
     {
         foreach (var character in _gameData.ListOfInstancesOfCharactersPicked)
@@ -85,13 +86,12 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
             Debug.Log($"Player: {player.Name}");
         }
         OnPlayersQueueFilled?.Invoke();
-        _gameScreenUIData.PlayerName = CurrentActivePlayer.Name;
-        _gameScreenUIData.Money = CurrentActivePlayer.Money;
     }
 
     public void RollDice()
     {
         _rolledDiceValue = UnityEngine.Random.Range(1, 7);
+        /*_rolledDiceValue = 3;*/
         if (CurrentActivePlayer)
         {
             Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Rolled: {_rolledDiceValue}");
@@ -127,7 +127,14 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
 
     public void ChangeToNextPlayer()
     {
+        // Check if we looped through the queue and increase the round number.
+        if (CurrentActivePlayer.PlayerNumber == _playersQueue.Count)
+        {
+            RoundNumber++;
+        }
+        
         var currentPlayer = _playersQueue.Dequeue();
+        Debug.Log($"Current Player number {currentPlayer.PlayerNumber}");
         _playersQueue.Enqueue(currentPlayer);
 
         // Player turn is over after choosing to buy or not.
@@ -141,7 +148,6 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
     private void BuyProperty()
     {
         Debug.Log("BuyProperty is getting called");
-        Debug.LogWarning("hmmmm");
         // Update the player money
         // Purchase the card that the player is currently on.
         // Move the behavior of Purchascing the property to the CanBuyStrategy.
@@ -164,5 +170,10 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
     void OnDestroy()
     {
         _gameData.Reset();
+    }
+
+    public Space GetCurrentCharacterSpace()
+    {
+        return _gameBoard.GetSpaceAt(CurrentActivePlayer.PositionOnBoardIndex);
     }
 }

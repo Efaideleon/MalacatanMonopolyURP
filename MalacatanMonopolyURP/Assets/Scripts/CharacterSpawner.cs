@@ -1,28 +1,22 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
 using System;
 
 public class CharacterSpawner : MonoBehaviour
 {
     [SerializeField] GameData _gameData;
-    [SerializeField] GameMenu _gameMenu;
 
     public event Action OnAllCharactersSpawned;
 
-    void OnEnable()
+    void Start()
     {
         // When the Start Button on the Round selection Menu is pressed spawn the Characters.
-        _gameMenu.OnAllCharactersPicked += SpawnCharacters;
-    }
-
-    void OnDisable()
-    {
-        _gameMenu.OnAllCharactersPicked -= SpawnCharacters;
+        SpawnCharacters(_gameData.ListOfCharactersPicked);
     }
 
     public void SpawnCharacters(List<Character> charactersToSpawn)
     {
+        Debug.Log($"number of character to spawn: {charactersToSpawn.Count}");
         float radius = 3f;
         for (int i = 0; i < charactersToSpawn.Count; i++)
         {

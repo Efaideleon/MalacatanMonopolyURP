@@ -5,33 +5,38 @@ public class CameraBehavior : MonoBehaviour
 {
     [SerializeField] private GameLogic _gameLogic;
     private UnityEngine.Camera _camera;
+    private Vector3 _initialCameraPosition;
 
     void Start()
     {
+        Debug.Log($"Start Initial Position: {transform.position}");
         _camera = GetComponent<UnityEngine.Camera>();
+        _initialCameraPosition = transform.position;
+        Debug.Log($"_initialCameraTransform.position: {_initialCameraPosition}");
     }
 
     void OnEnable()
     {
         _gameLogic.OnPlayersQueueFilled += HandleGameStart;
         // When the player rolls the dice, make the camera look at that current player on their new position.
-        _gameLogic.OnDiceRolled += UpdateCameraPosition;
+        _gameLogic.OnDiceRolled += MoveCameraPanning;
         // When the player turn ends, make the camera look at the next player.
-        _gameLogic.OnPlayerTurnEnded += UpdateCameraPosition;
+        _gameLogic.OnPlayerTurnEnded += MoveCameraIsntantly;
     }
 
     void OnDisable()
     {
         _gameLogic.OnPlayersQueueFilled -= HandleGameStart;
-        _gameLogic.OnDiceRolled -= UpdateCameraPosition;
-        _gameLogic.OnPlayerTurnEnded -= UpdateCameraPosition;
+        _gameLogic.OnDiceRolled -= MoveCameraPanning;
+        _gameLogic.OnPlayerTurnEnded -= MoveCameraIsntantly;
     }
 
     private void HandleGameStart()
-    {}
+    {
+    }
 
     // Make the camera look at the current active player.
-    private void UpdateCameraPosition()
+    private void MoveCameraPanning()
     {
         if (_gameLogic.CurrentActivePlayer)
         {
@@ -49,6 +54,26 @@ public class CameraBehavior : MonoBehaviour
             _camera.transform.LookAt(_gameLogic.CurrentActivePlayer.transform);
             transform.position = _gameLogic.CurrentActivePlayer.transform.position + offset;
             yield return null;
+        }
+    }
+
+    private void MoveCameraIsntantly()
+    {
+        Debug.Log($"Name of player to look at {_gameLogic.CurrentActivePlayer.Name}");
+        Debug.Log($"Round Number: {_gameLogic.RoundNumber}");
+        if (_gameLogic.RoundNumber == 0)
+        {
+            Debug.Log($"Name of player to look at {_gameLogic.CurrentActivePlayer.Name}");
+            Debug.Log($"Initial Camera Position: {_initialCameraPosition}");
+            Debug.Log($"Current Camera Position: {transform.position}");
+            transform.position = _initialCameraPosition;
+            _camera.transform.LookAt(_gameLogic.CurrentActivePlayer.transform);
+        }
+        else
+        {
+            var offset = CalculateOffset();
+            transform.position = _gameLogic.CurrentActivePlayer.transform.position + offset;
+            _camera.transform.LookAt(_gameLogic.CurrentActivePlayer.transform);
         }
     }
 

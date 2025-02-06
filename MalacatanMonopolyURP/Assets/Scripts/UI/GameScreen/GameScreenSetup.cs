@@ -4,16 +4,20 @@ using UnityEngine.UIElements;
 public class GameScreenSetup : MonoBehaviour
 {
     [SerializeField] private UIDocument _uIDocument;
+    [SerializeField] private GameLogic _gameLogic;
     private RollDisplay _rollDisplay;
     private PopUpMenu _popUpMenu;    
+    private YouBoughtDisplay _youBoughtDisplay;    
     private VisualElement _root;
 
     void Start()
     {
-        /*_root = _uIDocument.rootVisualElement.Q<VisualElement>("game-screen");*/
-        /**/
-        /*_rollDisplay = new RollDisplay(_root);*/
-        /*_popUpMenu = new PopUpMenu(_root);*/
+        VisualElement popUpRoot = _uIDocument.rootVisualElement.Q<VisualElement>("popup-menu-container");
+        VisualElement rollRoot = _uIDocument.rootVisualElement.Q<VisualElement>("roll-display-container");
+        VisualElement youBoughtDisplayRoot = _uIDocument.rootVisualElement.Q<VisualElement>("you-bought-display-container");
+        _rollDisplay = new RollDisplay(rollRoot);
+        _popUpMenu = new PopUpMenu(popUpRoot, _gameLogic);
+        _youBoughtDisplay = new YouBoughtDisplay(youBoughtDisplayRoot, _gameLogic);
     }
 
     void OnDestroy()

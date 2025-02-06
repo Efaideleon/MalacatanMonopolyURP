@@ -1,28 +1,31 @@
 using UnityEngine.UIElements;
 
+// This pop up menu asks the user if they want to buy the property
 public class PopUpMenu
 {
     private const string PopUpMenuClassName = "popup-menu-container";
     private const string AcceptButtonClassName = "popup-menu-accept-button";
     private const string DeclineButtonClassName = "popup-menu-decline-button";
+    private const string BuyPopUpLabelClassName = "buy-popup-menu-label";
     private VisualElement _root;
-    private VisualElement _popUpMenuContainer;
     private Button _popUpMenuDeclineButton;
     private Button _popUpMenuAcceptButton;
+    private Label _buyPopUpMenuLabel;
 
-    public PopUpMenu(VisualElement root)
+    private GameLogic _gameLogic;
+
+    public PopUpMenu(VisualElement root, GameLogic gameLogic)
     {
         _root = root;
+        _gameLogic = gameLogic;
         Initialize();
     }
 
     private void Initialize()
     {
-        // Getting references to uxml attributes in PopUp Menu
-        _popUpMenuContainer = _root.Q<VisualElement>(PopUpMenuClassName);
         _popUpMenuAcceptButton = _root.Q<Button>(AcceptButtonClassName);
         _popUpMenuDeclineButton = _root.Q<Button>(DeclineButtonClassName);
-
+        _buyPopUpMenuLabel = _root.Q<Label>(BuyPopUpLabelClassName); 
         HidePopUpMenu();
         SubscribeEvents();
     }
@@ -58,13 +61,24 @@ public class PopUpMenu
     private void OnDeclineButtonClicked()
     {
         HidePopUpMenu();
+        ChangeToNextPlayer();
+    }
+
+    private void ChangeToNextPlayer()
+    {
+        _gameLogic.ChangeToNextPlayer();
     }
 
     // TODO: Maybe pass the text for the label here.
     private void ShowPopUpMenu() 
     {
-        _popUpMenuContainer.style.display = DisplayStyle.Flex;
+        _root.style.display = DisplayStyle.Flex;
+        var currentPlayerSandingSpace = _gameLogic.GetCurrentCharacterSpace();
+        if (currentPlayerSandingSpace != null)
+        {
+            _buyPopUpMenuLabel.text = ((PropertySpace)currentPlayerSandingSpace).Data.Name;
+        }
     }
 
-    private void HidePopUpMenu() => _popUpMenuContainer.style.display = DisplayStyle.None;
+    private void HidePopUpMenu() => _root.style.display = DisplayStyle.None;
 }

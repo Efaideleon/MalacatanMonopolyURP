@@ -1,6 +1,4 @@
 using System;
-using System.ComponentModel;
-using Unity.Properties;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerUI", menuName = "Scriptable Objects/UI/PlayerUIData")]
@@ -30,7 +28,7 @@ public class GameScreenUIData : ScriptableObject
     public void UpdateRollAmount(int rollAmount)
     {
         RollAmount = rollAmount;
-        OnRollAmountChange(RollAmount);
+        OnRollAmountChange?.Invoke(RollAmount);
     }
 
     public void UpdateMoney(float money)
