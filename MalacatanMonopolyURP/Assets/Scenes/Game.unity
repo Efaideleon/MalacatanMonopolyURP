@@ -2097,8 +2097,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameLogic: {fileID: 949129129}
-  _gameMenu: {fileID: 0}
-  _playerUI: {fileID: 1793159715}
   _gameScreenUIData: {fileID: 11400000, guid: a1402f66bc8aa49a1b35d9611468ec13, type: 2}
   _uIManagerData: {fileID: 11400000, guid: d953400170f37479f9b77141692f01be, type: 2}
 --- !u!4 &772711001
@@ -2414,6 +2412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uIDocument: {fileID: 1005727529}
+  _gameLogic: {fileID: 949129129}
 --- !u!1 &1017966425
 GameObject:
   m_ObjectHideFlags: 0
@@ -4652,7 +4651,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameData: {fileID: 11400000, guid: c62fe705e694d44a894a71798ab3a71b, type: 2}
-  _gameMenu: {fileID: 0}
 --- !u!1 &2110888445
 GameObject:
   m_ObjectHideFlags: 0
