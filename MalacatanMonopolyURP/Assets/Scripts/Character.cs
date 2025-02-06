@@ -58,6 +58,9 @@ public class Character : MonoBehaviour , IComparable, INotifyPropertyChanged
 
     public void MovePositionTo(int newBoardIndex, Vector3 targetPosition)
     {
+        Debug.Log($"Moving Character {Name}");
+        Debug.Log($"Current Postion: {transform.position}");
+        Debug.Log($"Target Position: {targetPosition}");
         // Set the new target position 
         _startPosition = transform.position;
         _targetPosition = targetPosition;
@@ -77,6 +80,7 @@ public class Character : MonoBehaviour , IComparable, INotifyPropertyChanged
             yield return null;
         }
         IsMoving = false;
+        _timeElapsed = 0;
     }
 
     public void PurchaseProperty(PropertySpace property)
