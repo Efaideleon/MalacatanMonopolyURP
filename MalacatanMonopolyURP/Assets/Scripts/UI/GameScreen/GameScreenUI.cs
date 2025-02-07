@@ -82,5 +82,7 @@ public class GameScreenUI
         _goContainer = _root.Q<VisualElement>(GoDisplayContainerClassName);
         _parkingContainer = _root.Q<VisualElement>(ParkingDisplayContainerClassName);
         _treasureContainer = _root.Q<VisualElement>(TreasureDisplayContainerClassName);
+
+        
     }
 }
