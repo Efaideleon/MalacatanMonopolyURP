@@ -27,62 +27,42 @@ public class GameScreenUI
     private const string ParkingButtonClassName = "parking-panel-button";
     private const string TreasureButtonClassName = "treasure-panel-button";
 
-    private Label _taxLabel;
-    private Label _jailLabel;
-    private Label _goToJailLabel;
-    private Label _chanceLabel;
-    private Label _goLabel;
-    private Label _parkingLabel;
-    private Label _treasureLabel;
+    private AlertPopUp _taxPopUp;
+    private AlertPopUp _jailPopUp;
+    private AlertPopUp _goToJailPopUp;
+    private AlertPopUp _chancePopUp;
+    private AlertPopUp _goPopUp;
+    private AlertPopUp _parkingPopUp;
+    private AlertPopUp _treasurePopUp;
 
-    private Button _taxButton;
-    private Button _jailButton;
-    private Button _goToJailButton;
-    private Button _chanceButton;
-    private Button _goButton;
-    private Button _parkingButton;
-    private Button _treasureButton;
+    private GameLogic _gameLogic;
 
-    private VisualElement _taxContainer;
-    private VisualElement _jailContainer;
-    private VisualElement _goToJailContainer;
-    private VisualElement _chanceContainer;
-    private VisualElement _goContainer;
-    private VisualElement _parkingContainer;
-    private VisualElement _treasureContainer;
-
-    public GameScreenUI(VisualElement root)
+    public GameScreenUI(VisualElement root, GameLogic gameLogic)
     {
         _root = root;
+        _gameLogic = gameLogic;
         Initialize();
     }
 
     private void Initialize()
     {
-        _taxLabel = _root.Q<Label>(TaxLabelClassName);
-        _jailLabel = _root.Q<Label>(JailLabelClassName);
-        _goToJailLabel = _root.Q<Label>(GoToJailLabelClassName);
-        _chanceLabel = _root.Q<Label>(ChanceLabelClassName);
-        _goLabel = _root.Q<Label>(GoLabelClassName);
-        _parkingLabel = _root.Q<Label>(ParkingLabelClassName);
-        _treasureLabel = _root.Q<Label>(TreasureLabelClassName);
+        _taxPopUp = new AlertPopUp(_root, TaxDisplayContainerClassName, TaxButtonClassName, TaxLabelClassName, _gameLogic);
+        _jailPopUp = new AlertPopUp(_root, JailDisplayContainerClassName, JailButtonClassName, JailLabelClassName, _gameLogic);
+        _goToJailPopUp = new AlertPopUp(_root, GoToJailContainerClassName, GoToJailButtonClassName, GoToJailContainerClassName, _gameLogic);
+        _chancePopUp = new AlertPopUp(_root, ChanceDisplayContainerClassName, ChanceButtonClassName, ChanceLabelClassName, _gameLogic);
+        _goPopUp = new AlertPopUp(_root, GoDisplayContainerClassName, GoButtonClassName, GoLabelClassName, _gameLogic);
+        _parkingPopUp = new AlertPopUp(_root, ParkingDisplayContainerClassName, ParkingButtonClassName, ParkingLabelClassName, _gameLogic);
+        _treasurePopUp = new AlertPopUp(_root, TreasureDisplayContainerClassName, TreasureButtonClassName, TreasureLabelClassName, _gameLogic);
+    }
 
-        _taxButton = _root.Q<Button>(TaxButtonClassName);
-        _jailButton = _root.Q<Button>(JailButtonClassName);
-        _goToJailButton = _root.Q<Button>(GoToJailButtonClassName);
-        _chanceButton = _root.Q<Button>(ChanceButtonClassName);
-        _goButton = _root.Q<Button>(GoButtonClassName);
-        _parkingButton = _root.Q<Button>(ParkingButtonClassName);
-        _treasureButton = _root.Q<Button>(TreasureButtonClassName);
-
-        _taxContainer = _root.Q<VisualElement>(TaxDisplayContainerClassName);
-        _jailContainer = _root.Q<VisualElement>(JailDisplayContainerClassName);
-        _goToJailContainer = _root.Q<VisualElement>(GoToJailContainerClassName);
-        _chanceContainer = _root.Q<VisualElement>(ChanceDisplayContainerClassName);
-        _goContainer = _root.Q<VisualElement>(GoDisplayContainerClassName);
-        _parkingContainer = _root.Q<VisualElement>(ParkingDisplayContainerClassName);
-        _treasureContainer = _root.Q<VisualElement>(TreasureDisplayContainerClassName);
-
-        
+    public void Dispose()
+    {
+        _taxPopUp.Dispose();
+        _jailPopUp.Dispose();
+        _goToJailPopUp.Dispose();
+        _chancePopUp.Dispose();
+        _goPopUp.Dispose();
+        _parkingPopUp.Dispose();
+        _treasurePopUp.Dispose();
     }
 }
