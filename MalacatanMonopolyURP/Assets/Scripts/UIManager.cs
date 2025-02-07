@@ -13,13 +13,13 @@ public class UIManager : MonoBehaviour
     void OnEnable()
     {
         _gameLogic.OnPlayersQueueFilled += HandleGameStart;
-        _gameLogic.OnLandedOnPropertySpace += ShowBuyMenu;
+        GameplayEvents.OnLandedOnPropertySpace += ShowBuyMenu;
     }
 
     void OnDisable()
     {
         _gameLogic.OnPlayersQueueFilled -= HandleGameStart;
-        _gameLogic.OnLandedOnPropertySpace -= ShowBuyMenu;
+        GameplayEvents.OnLandedOnPropertySpace -= ShowBuyMenu;
     }
 
     private void ShowBuyMenu(PropertySpace property)

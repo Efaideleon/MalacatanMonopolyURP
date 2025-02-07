@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PropertySpace : Space
@@ -7,5 +6,6 @@ public class PropertySpace : Space
     public PropertySpaceData Data => _data;
     public override void OnPlayerLand(Character character)
     {
+        GameplayEvents.OnLandedOnPropertySpace?.Invoke(this);
     }
 }

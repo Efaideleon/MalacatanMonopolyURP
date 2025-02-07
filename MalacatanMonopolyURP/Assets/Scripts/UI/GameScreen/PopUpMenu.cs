@@ -70,14 +70,10 @@ public class PopUpMenu
     }
 
     // TODO: Maybe pass the text for the label here.
-    private void ShowPopUpMenu() 
+    private void ShowPopUpMenu(PropertySpace property) 
     {
         _root.style.display = DisplayStyle.Flex;
-        var currentPlayerSandingSpace = _gameLogic.GetCurrentCharacterSpace();
-        if (currentPlayerSandingSpace != null)
-        {
-            _buyPopUpMenuLabel.text = ((PropertySpace)currentPlayerSandingSpace).Data.Name;
-        }
+        _buyPopUpMenuLabel.text = property.Data.Name;
     }
 
     private void HidePopUpMenu() => _root.style.display = DisplayStyle.None;

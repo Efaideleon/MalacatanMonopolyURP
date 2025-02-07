@@ -25,7 +25,6 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
     public event Action OnPlayersQueueFilled;
     public event Action OnDiceRolled;
     public event Action OnBuyProperty;
-    public event Action<PropertySpace> OnLandedOnPropertySpace;
     public event Action OnPlayersQueueChanged;
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -39,6 +38,7 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
         _playersQueue.CollectionChanged += HandlePlayersQueueChange;
         GameplayEvents.OnRoll += RollDice;
         GameplayEvents.OnPropertyPurchased += BuyProperty;
+        GameplayEvents.OnLandedOnPropertySpace += UpdateGameScreenUIPropertyToBuyName;
     }
 
     void OnDisable()
@@ -47,6 +47,7 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
         _playersQueue.CollectionChanged -= HandlePlayersQueueChange;
         GameplayEvents.OnRoll -= RollDice;
         GameplayEvents.OnPropertyPurchased -= BuyProperty;
+        GameplayEvents.OnLandedOnPropertySpace -= UpdateGameScreenUIPropertyToBuyName;
     }
 
     private void HandlePlayersQueueChange(object sender, NotifyCollectionChangedEventArgs e)
@@ -68,6 +69,11 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
             }
         }
         OnPlayersQueueChanged?.Invoke();
+    }
+
+    private void UpdateGameScreenUIPropertyToBuyName(PropertySpace property)
+    {
+        _gameScreenUIData.UpdateNameOfPropertyToBuy(property.Data.Name);
     }
 
     private void CharacterInQueuePropertyChange(object sender, PropertyChangedEventArgs e)
@@ -95,28 +101,13 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
         if (CurrentActivePlayer)
         {
             Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Rolled: {_rolledDiceValue}");
-            // Get the new index for the player.
+
             var newPlayerBoardIndex = (CurrentActivePlayer.PositionOnBoardIndex + _rolledDiceValue) % 40;
-            // Get the card at the new index.
             Space space = _gameBoard.GetSpaceAt(newPlayerBoardIndex);
-            // Moving the player position on the board.
-            // TODO: How are we going to get the position of where the player should go???
+
             CurrentActivePlayer.MovePositionTo(newPlayerBoardIndex, space.gameObject.transform.position);
-            // Trigger for when the player lands on this space
+
             space.OnPlayerLand(CurrentActivePlayer);
-
-            // TODO: Update the data on the playerUIData.
-
-            if (space is PropertySpace)
-            {
-                PropertySpace propertySpace = (PropertySpace)space;
-                _gameScreenUIData.UpdateNameOfPropertyToBuy(propertySpace.Data.Name);
-                OnLandedOnPropertySpace?.Invoke(propertySpace);
-                GameplayEvents.OnLandedOnPropertySpace?.Invoke();
-            }
-
-            // Trigger an event that depends on the card type.
-            // TODO: Call the correct strategy based on the card type.
 
             // Player has rolled the dice, but their turn is not over yet.
             _rolledAmount = _rolledDiceValue;

@@ -13,7 +13,7 @@ public class GameScreenUIManager : MonoBehaviour
         // TODO: Use the PropertyChange event from gameLogic instead
         // TODO: Bind the variable from character / gameLogic to gameScreenUIData instead of subscribing to events.
         _gameLogic.OnPlayersQueueChanged += UpdateGameScreenUIData;
-        _gameLogic.OnLandedOnPropertySpace += UpdateGameScreenPropertyToBuy;
+        GameplayEvents.OnLandedOnPropertySpace += UpdateGameScreenPropertyToBuy;
         _gameLogic.OnDiceRolled += UpdateGameScreenRolledAmount; 
         _gameLogic.PropertyChanged += HandleGameLogicPropertyChange;
         //bind the gameLogic property changed to the variable in the scriptable object.
@@ -22,7 +22,7 @@ public class GameScreenUIManager : MonoBehaviour
     void OnDisable()
     {
         _gameLogic.OnPlayersQueueChanged -= UpdateGameScreenUIData;
-        _gameLogic.OnLandedOnPropertySpace -= UpdateGameScreenPropertyToBuy;
+        GameplayEvents.OnLandedOnPropertySpace -= UpdateGameScreenPropertyToBuy;
         _gameLogic.OnDiceRolled -= UpdateGameScreenRolledAmount; 
     }
 
