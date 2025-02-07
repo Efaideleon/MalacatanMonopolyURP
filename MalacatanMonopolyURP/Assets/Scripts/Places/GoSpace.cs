@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class GoPlace : Space
+public class GoSpace : Space
 {
     [SerializeField] private GoSpaceData _data;
+    public GoSpaceData Data => _data;
     public override void OnPlayerLand(Character character)
     {
-        GameplayEvents.OnLandedOnGoSpace?.Invoke();
+        GameplayEvents.OnLandedOnGoSpace?.Invoke(this);
     }
 }

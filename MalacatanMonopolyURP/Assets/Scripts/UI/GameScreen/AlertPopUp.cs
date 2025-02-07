@@ -6,7 +6,7 @@ public class AlertPopUp
     private string _buttonClassName;
     private string _labelClassName;
     private Button _okButton;
-    private Label _youBoughtLabel;
+    private Label _label;
     private VisualElement _container;
     private VisualElement _root;
 
@@ -26,7 +26,7 @@ public class AlertPopUp
     {
         _container = _root.Q<VisualElement>(_containerClassName);
         _okButton = _container.Q<Button>(_buttonClassName);
-        _youBoughtLabel = _container.Q<Label>(_labelClassName);
+        _label = _container.Q<Label>(_labelClassName);
 
         Hide();
         SubscribeEvents();
@@ -47,9 +47,10 @@ public class AlertPopUp
         _okButton.clicked -= OnOkButtonClicked;
     }
 
-    private void Show() 
+    public void Show(string label) 
     {
-        _container.style.display = DisplayStyle.None;
+        _label.text = label;
+        _container.style.display = DisplayStyle.Flex;
     } 
 
     private void OnOkButtonClicked()

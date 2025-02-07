@@ -8,11 +8,11 @@ public static class GameplayEvents
 
     // On Landed events
     public static Action<PropertySpace> OnLandedOnPropertySpace;
-    public static Action OnLandedOnTaxSpace;
-    public static Action OnLandedOnJailSpace;
-    public static Action OnLandedOnGoToJailSpace;
-    public static Action OnLandedOnGoSpace;
-    public static Action OnLandedOnChanceSpace;
-    public static Action OnLandedOnParkingSpace;
-    public static Action OnLandedOnTreasureSpace;
+    public static Action<TaxSpace> OnLandedOnTaxSpace;
+    public static Action<JailSpace> OnLandedOnJailSpace;
+    public static Action<GoToJailSpace> OnLandedOnGoToJailSpace;
+    public static Action<GoSpace> OnLandedOnGoSpace;
+    public static Action<ChanceSpace> OnLandedOnChanceSpace;
+    public static Action<ParkingSpace> OnLandedOnParkingSpace;
+    public static Action<TreasureSpace> OnLandedOnTreasureSpace;
 }

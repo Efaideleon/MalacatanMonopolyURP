@@ -96,8 +96,8 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
 
     public void RollDice()
     {
-        /*_rolledDiceValue = UnityEngine.Random.Range(1, 7);*/
-        _rolledDiceValue = 2;
+        _rolledDiceValue = UnityEngine.Random.Range(1, 7);
+        /*_rolledDiceValue = 2;*/
         if (CurrentActivePlayer)
         {
             Debug.Log($"Player: {CurrentActivePlayer.PlayerNumber} Rolled: {_rolledDiceValue}");
