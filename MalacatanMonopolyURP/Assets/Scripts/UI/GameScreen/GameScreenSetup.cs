@@ -10,6 +10,9 @@ public class GameScreenSetup : MonoBehaviour
     private YouBoughtDisplay _youBoughtDisplay;    
     private VisualElement _root;
 
+    private GameScreenUI _gameScreenUI;
+    private VisualElement _gameScreenAlertRoot;
+
     void Start()
     {
         VisualElement popUpRoot = _uIDocument.rootVisualElement.Q<VisualElement>("popup-menu-container");
@@ -18,6 +21,9 @@ public class GameScreenSetup : MonoBehaviour
         _rollDisplay = new RollDisplay(rollRoot);
         _popUpMenu = new PopUpMenu(popUpRoot, _gameLogic);
         _youBoughtDisplay = new YouBoughtDisplay(youBoughtDisplayRoot, _gameLogic);
+
+        VisualElement _gameScreenAlertRoot = _uIDocument.rootVisualElement.Q<VisualElement>("game-screen-bottom-container");
+        _gameScreenUI = new GameScreenUI(_gameScreenAlertRoot, _gameLogic);
     }
 
     void OnDestroy()

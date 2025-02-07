@@ -79,7 +79,7 @@ public class Character : MonoBehaviour , IComparable, INotifyPropertyChanged
             IsMoving = true;
             yield return null;
         }
-        IsMoving = false;
+        IsMoving = false; // Bogus:
         _timeElapsed = 0;
     }
 
