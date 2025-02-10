@@ -7,6 +7,6 @@ public class TaxSpace : Space
     public override void OnPlayerLand(Character character)
     {
         Debug.Log("Landed on tax!!!");
-        GameplayEvents.OnLandedOnTaxSpace?.Invoke(this);
+        GameplayEvents.OnLandedOnSpace?.Invoke(this);
     }
 }

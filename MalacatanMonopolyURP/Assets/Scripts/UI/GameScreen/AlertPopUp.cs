@@ -1,4 +1,5 @@
 using UnityEngine.UIElements;
+using UnityEngine;
 
 public class AlertPopUp
 {
@@ -15,18 +16,26 @@ public class AlertPopUp
     public AlertPopUp(VisualElement root, string containerClassName, string buttonClassName, string labelClassName, GameLogic gameLogic)
     {
         _root = root;
+        _containerClassName = containerClassName;
         _buttonClassName = buttonClassName;
         _labelClassName = labelClassName;
-        _containerClassName = containerClassName;
         _gameLogic = gameLogic;
+        Debug.Log("Alert Pop:");
+        Debug.Log(_containerClassName);
+        Debug.Log(_buttonClassName);
+        Debug.Log(_labelClassName);
+        Debug.Log(_root);
         Initialize();
     }
 
     private void Initialize()
     {
         _container = _root.Q<VisualElement>(_containerClassName);
+        Debug.Log($"Container: {_container}");
         _okButton = _container.Q<Button>(_buttonClassName);
+        Debug.Log($"Button: {_okButton}");
         _label = _container.Q<Label>(_labelClassName);
+        Debug.Log($"Label: {_label}");
 
         Hide();
         SubscribeEvents();

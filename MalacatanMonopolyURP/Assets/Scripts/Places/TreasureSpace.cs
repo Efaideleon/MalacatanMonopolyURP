@@ -7,6 +7,6 @@ public class TreasureSpace : Space
     public override void OnPlayerLand(Character character)
     {
         Debug.Log("Landed on Treasure");
-        GameplayEvents.OnLandedOnTreasureSpace?.Invoke(this);
+        GameplayEvents.OnLandedOnSpace?.Invoke(this);
     }
 }

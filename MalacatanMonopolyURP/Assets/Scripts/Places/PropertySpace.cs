@@ -7,5 +7,6 @@ public class PropertySpace : Space
     public override void OnPlayerLand(Character character)
     {
         GameplayEvents.OnLandedOnPropertySpace?.Invoke(this);
+        GameplayEvents.OnLandedOnSpace?.Invoke(this);
     }
 }

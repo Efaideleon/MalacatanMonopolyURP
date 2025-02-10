@@ -6,6 +6,6 @@ public class ChanceSpace : Space
     public ChancesSpaceData Data => _data;
     public override void OnPlayerLand(Character character)
     {
-        GameplayEvents.OnLandedOnChanceSpace?.Invoke(this);
+        GameplayEvents.OnLandedOnSpace?.Invoke(this);
     }
 }

@@ -6,6 +6,6 @@ public class GoToJailSpace : Space
     public GoToJailSpaceData Data => _data;
     public override void OnPlayerLand(Character character)
     {
-        GameplayEvents.OnLandedOnGoToJailSpace?.Invoke(this);
+        GameplayEvents.OnLandedOnSpace?.Invoke(this);
     }
 }

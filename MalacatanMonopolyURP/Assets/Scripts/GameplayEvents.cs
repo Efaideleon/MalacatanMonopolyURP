@@ -15,4 +15,6 @@ public static class GameplayEvents
     public static Action<ChanceSpace> OnLandedOnChanceSpace;
     public static Action<ParkingSpace> OnLandedOnParkingSpace;
     public static Action<TreasureSpace> OnLandedOnTreasureSpace;
+
+    public static Action<Space> OnLandedOnSpace;
 }

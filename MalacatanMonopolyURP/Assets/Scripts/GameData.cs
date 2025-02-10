@@ -16,7 +16,6 @@ public class GameData : ScriptableObject
     {
         _listOfCharacersPicked.Add(character);
 
-        Debug.Log("List of characters picked:");
         foreach(var c in _listOfCharacersPicked)
         {
             Debug.Log($"Character: {c.name}");

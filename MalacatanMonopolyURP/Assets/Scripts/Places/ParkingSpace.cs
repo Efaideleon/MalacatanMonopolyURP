@@ -6,6 +6,6 @@ public class ParkingSpace : Space
     public ParkingSpaceData Data => _data;
     public override void OnPlayerLand(Character character)
     {
-        GameplayEvents.OnLandedOnParkingSpace?.Invoke(this);
+        GameplayEvents.OnLandedOnSpace?.Invoke(this);
     }
 }

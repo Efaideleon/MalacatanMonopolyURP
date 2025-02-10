@@ -1,135 +1,101 @@
 using UnityEngine.UIElements;
+using System.Collections.Generic;
+using System;
+using UnityEngine;
 
 // Controls all the pop up windows excpet for buy menu, and you bought popup
-public class GameScreenUI 
+public class GameScreenUI
 {
+    private readonly Dictionary<Type, List<string>> _spaceToUIDataDictionary;
+    private readonly Dictionary<Type, AlertPopUp> _spaceToAlertPopUp;
+    private Dictionary<Type, Func<Space, string>> _typeToLabelGeneratorDictionary;
+    private List<Type> _listOfSpaceTypes;
     private readonly VisualElement _root;
-    private const string TaxDisplayContainerClassName = "tax-display-container";
-    private const string JailDisplayContainerClassName = "jail-display-container";
-    private const string GoToJailContainerClassName = "go-to-jail-display-container";
-    private const string ChanceDisplayContainerClassName = "chance-display-container";
-    private const string GoDisplayContainerClassName = "go-display-container";
-    private const string ParkingDisplayContainerClassName = "parking-display-container";
-    private const string TreasureDisplayContainerClassName = "treasure-display-container";
-
-    private const string TaxLabelClassName = "tax-panel-label";
-    private const string JailLabelClassName = "jail-panel-label";
-    private const string GoToJailLabelClassName = "go-to-jail-panel-label";
-    private const string ChanceLabelClassName = "chance-panel-label";
-    private const string GoLabelClassName = "go-panel-label";
-    private const string ParkingLabelClassName = "parking-panel-label";
-    private const string TreasureLabelClassName = "treasure-panel-label";
-
-    private const string TaxButtonClassName = "tax-panel-button";
-    private const string JailButtonClassName = "jail-panel-button";
-    private const string GoToJailButtonClassName = "go-to-jail-panel-button";
-    private const string ChanceButtonClassName = "chance-panel-button";
-    private const string GoButtonClassName = "go-panel-button";
-    private const string ParkingButtonClassName = "parking-panel-button";
-    private const string TreasureButtonClassName = "treasure-panel-button";
-
-    private AlertPopUp _taxPopUp;
-    private AlertPopUp _jailPopUp;
-    private AlertPopUp _goToJailPopUp;
-    private AlertPopUp _chancePopUp;
-    private AlertPopUp _goPopUp;
-    private AlertPopUp _parkingPopUp;
-    private AlertPopUp _treasurePopUp;
-
     private GameLogic _gameLogic;
 
     public GameScreenUI(VisualElement root, GameLogic gameLogic)
     {
         _root = root;
         _gameLogic = gameLogic;
-        Initialize();
+        _listOfSpaceTypes = new ()
+        {
+            typeof(TaxSpace),
+            typeof(JailSpace),
+            typeof(GoToJailSpace),
+            typeof(GoSpace),
+            typeof(ChanceSpace),
+            typeof(TreasureSpace),
+            typeof(ParkingSpace), 
+        };
+
+        _spaceToUIDataDictionary = new()
+        {
+            { typeof(TaxSpace) , new List<string>() { "tax-display-container",  "tax-panel-label", "tax-panel-button"} },
+            { typeof(JailSpace) , new List<string>() { "jail-display-container", "jail-panel-label", "jail-panel-button"} },
+            { typeof(GoToJailSpace) , new List<string>() { "go-to-jail-display-container", "go-to-jail-panel-label", "go-to-jail-panel-button"} },
+            { typeof(GoSpace) , new List<string>() { "go-display-container", "go-panel-label", "go-panel-button"} },
+            { typeof(ChanceSpace) , new List<string>() { "chance-display-container", "chance-panel-label", "chance-panel-button"} },
+            { typeof(TreasureSpace) , new List<string>() { "treasure-display-container", "treasure-panel-label", "treasure-panel-button"} },
+            { typeof(ParkingSpace) , new List<string>() { "parking-display-container", "parking-panel-label", "parking-panel-button"} },
+        };
+
+        _typeToLabelGeneratorDictionary = new()
+        {
+            { typeof(TaxSpace), space => $"You were taxed {((TaxSpace)space).Data.TaxAmount}" },
+            { typeof(JailSpace), space => $"You are in jail for 1 turn!" },
+            { typeof(GoToJailSpace), space => "Go to Jail" },
+            { typeof(GoSpace), space => $"go idk"},
+            { typeof(ChanceSpace), space => $"chance idk" },
+            { typeof(TreasureSpace), space => $"treasure idk" },
+            { typeof(ParkingSpace), space => $"parking idk" },
+        };
+
+        _spaceToAlertPopUp = new();
+        InitializeSpaceToAlertPopUpDictionary(_root);
         SubscribesPopToOnLandEvents();
     }
 
-    private void Initialize()
+    private void InitializeSpaceToAlertPopUpDictionary(VisualElement root)
     {
-        _taxPopUp = new AlertPopUp(_root, TaxDisplayContainerClassName, TaxButtonClassName, TaxLabelClassName, _gameLogic);
-        _jailPopUp = new AlertPopUp(_root, JailDisplayContainerClassName, JailButtonClassName, JailLabelClassName, _gameLogic);
-        _goToJailPopUp = new AlertPopUp(_root, GoToJailContainerClassName, GoToJailButtonClassName, GoToJailLabelClassName, _gameLogic);
-        _chancePopUp = new AlertPopUp(_root, ChanceDisplayContainerClassName, ChanceButtonClassName, ChanceLabelClassName, _gameLogic);
-        _goPopUp = new AlertPopUp(_root, GoDisplayContainerClassName, GoButtonClassName, GoLabelClassName, _gameLogic);
-        _parkingPopUp = new AlertPopUp(_root, ParkingDisplayContainerClassName, ParkingButtonClassName, ParkingLabelClassName, _gameLogic);
-        _treasurePopUp = new AlertPopUp(_root, TreasureDisplayContainerClassName, TreasureButtonClassName, TreasureLabelClassName, _gameLogic);
+        foreach (var spaceType in _listOfSpaceTypes)
+        {
+            if (_spaceToUIDataDictionary.TryGetValue(spaceType, out var listOfClassNames))
+            {
+                string containerClassName = listOfClassNames[0];
+                string labelClassName = listOfClassNames[1];
+                string buttonClassName = listOfClassNames[2];
+
+                _spaceToAlertPopUp.Add(spaceType, new AlertPopUp(
+                        root, 
+                        containerClassName,
+                        buttonClassName,
+                        labelClassName,
+                        _gameLogic
+                ));
+            }
+        }
     }
 
-    private void SubscribesPopToOnLandEvents()
-    {
-        GameplayEvents.OnLandedOnTaxSpace += ShowTaxPopUp;
-        GameplayEvents.OnLandedOnJailSpace += ShowJailPopUp;
-        GameplayEvents.OnLandedOnGoToJailSpace += ShowGoToJailPopUp;
-        GameplayEvents.OnLandedOnChanceSpace += ShowChancePopUp;
-        GameplayEvents.OnLandedOnGoSpace += ShowGoPopUp;
-        GameplayEvents.OnLandedOnParkingSpace += ShowParkingPopUp;
-        GameplayEvents.OnLandedOnTreasureSpace += ShowTreasurePopUp;
-    }
+    private void SubscribesPopToOnLandEvents() => GameplayEvents.OnLandedOnSpace += Show; 
+    private void UnSubscribeFromOnLandEvents() => GameplayEvents.OnLandedOnSpace -= Show;
 
-    private void UnSubscribeFromOnLandEvents()
+    private void Show(Space space)
     {
-        GameplayEvents.OnLandedOnTaxSpace -= ShowTaxPopUp;
-        GameplayEvents.OnLandedOnJailSpace -= ShowJailPopUp;
-        GameplayEvents.OnLandedOnGoToJailSpace -= ShowGoToJailPopUp;
-        GameplayEvents.OnLandedOnChanceSpace -= ShowChancePopUp;
-        GameplayEvents.OnLandedOnGoSpace -= ShowGoPopUp;
-        GameplayEvents.OnLandedOnParkingSpace -= ShowParkingPopUp;
-        GameplayEvents.OnLandedOnTreasureSpace -= ShowTreasurePopUp;
-    }
-
-    private void ShowTaxPopUp(TaxSpace space)
-    {
-        string label = $"You were taxed {space.Data.TaxAmount}";
-        _taxPopUp.Show(label);
-    }
-
-    private void ShowJailPopUp(JailSpace space)
-    {
-        string label = $"You are in jail for 1 turn!";
-        _jailPopUp.Show(label);
-    }
-
-    private void ShowGoToJailPopUp(GoToJailSpace space)
-    {
-        string label = "Go to Jail";
-        _goToJailPopUp.Show(label);
-    }
-
-    private void ShowChancePopUp(ChanceSpace space)
-    {
-        string label = "idk";
-        _chancePopUp.Show(label);
-    }
-
-    private void ShowGoPopUp(GoSpace space)
-    {
-        string label = "You got 200!";
-        _goPopUp.Show(label);
-    }
-
-    private void ShowParkingPopUp(ParkingSpace space)
-    {
-        string label = "Parking stuff";
-        _parkingPopUp.Show(label);
-    }
-
-    private void ShowTreasurePopUp(TreasureSpace space)
-    {
-        string label = "Treasure stuff idk";
-        _treasurePopUp.Show(label);
+        var spaceType = space.GetType();
+        string label; 
+        if (_typeToLabelGeneratorDictionary.TryGetValue(spaceType, out var generateLabel))
+        {
+            label = generateLabel.Invoke(space);
+            if (_spaceToAlertPopUp.TryGetValue(spaceType, out var alertPopUp))
+                alertPopUp.Show(label);
+        }
     }
 
     public void Dispose()
     {
-        _taxPopUp.Dispose();
-        _jailPopUp.Dispose();
-        _goToJailPopUp.Dispose();
-        _chancePopUp.Dispose();
-        _goPopUp.Dispose();
-        _parkingPopUp.Dispose();
-        _treasurePopUp.Dispose();
+        foreach(var popUp in _spaceToAlertPopUp.Values)
+            popUp.Dispose();
+
         UnSubscribeFromOnLandEvents();
     }
 }
