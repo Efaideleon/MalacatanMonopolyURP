@@ -52,7 +52,6 @@ public class GameLogic : MonoBehaviour, INotifyPropertyChanged
 
     private void HandlePlayersQueueChange(object sender, NotifyCollectionChangedEventArgs e)
     {
-        Debug.Log("HandlePlayersQueueChange");
         // When changing the queue unsubscribe all the previous elements and subscribe the new ones.
         if (e.OldItems != null)
         {

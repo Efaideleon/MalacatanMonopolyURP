@@ -9,10 +9,8 @@ public class CameraBehavior : MonoBehaviour
 
     void Start()
     {
-        Debug.Log($"Start Initial Position: {transform.position}");
         _camera = GetComponent<UnityEngine.Camera>();
         _initialCameraPosition = transform.position;
-        Debug.Log($"_initialCameraTransform.position: {_initialCameraPosition}");
     }
 
     void OnEnable()
@@ -59,13 +57,8 @@ public class CameraBehavior : MonoBehaviour
 
     private void MoveCameraIsntantly()
     {
-        Debug.Log($"Name of player to look at {_gameLogic.CurrentActivePlayer.Name}");
-        Debug.Log($"Round Number: {_gameLogic.RoundNumber}");
         if (_gameLogic.RoundNumber == 0)
         {
-            Debug.Log($"Name of player to look at {_gameLogic.CurrentActivePlayer.Name}");
-            Debug.Log($"Initial Camera Position: {_initialCameraPosition}");
-            Debug.Log($"Current Camera Position: {transform.position}");
             transform.position = _initialCameraPosition;
             _camera.transform.LookAt(_gameLogic.CurrentActivePlayer.transform);
         }

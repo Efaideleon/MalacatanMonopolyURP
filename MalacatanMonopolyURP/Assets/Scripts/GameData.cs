@@ -15,21 +15,11 @@ public class GameData : ScriptableObject
     public void AddToCharactersPicked(Character character)
     {
         _listOfCharacersPicked.Add(character);
-
-        foreach(var c in _listOfCharacersPicked)
-        {
-            Debug.Log($"Character: {c.name}");
-        }
     }
 
     public void AddToInstancesOfCharactersPicked(Character character)
     {
         _listOfInstancesOfCharactersPicked.Add(character);
-        Debug.Log($"Adding Character instance: {character.Name}");
-        foreach(var c in _listOfInstancesOfCharactersPicked)
-        {
-            Debug.Log($"Character: {c.name}");
-        }
     }
 
     public void SetTotalNumberOfCharacters(int numOfCharacters)

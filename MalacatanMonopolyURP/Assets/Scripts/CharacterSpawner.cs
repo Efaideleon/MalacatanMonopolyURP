@@ -16,7 +16,6 @@ public class CharacterSpawner : MonoBehaviour
 
     public void SpawnCharacters(List<Character> charactersToSpawn)
     {
-        Debug.Log($"number of character to spawn: {charactersToSpawn.Count}");
         float radius = 3f;
         for (int i = 0; i < charactersToSpawn.Count; i++)
         {

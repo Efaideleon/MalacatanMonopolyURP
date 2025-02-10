@@ -20,22 +20,14 @@ public class AlertPopUp
         _buttonClassName = buttonClassName;
         _labelClassName = labelClassName;
         _gameLogic = gameLogic;
-        Debug.Log("Alert Pop:");
-        Debug.Log(_containerClassName);
-        Debug.Log(_buttonClassName);
-        Debug.Log(_labelClassName);
-        Debug.Log(_root);
         Initialize();
     }
 
     private void Initialize()
     {
         _container = _root.Q<VisualElement>(_containerClassName);
-        Debug.Log($"Container: {_container}");
         _okButton = _container.Q<Button>(_buttonClassName);
-        Debug.Log($"Button: {_okButton}");
         _label = _container.Q<Label>(_labelClassName);
-        Debug.Log($"Label: {_label}");
 
         Hide();
         SubscribeEvents();

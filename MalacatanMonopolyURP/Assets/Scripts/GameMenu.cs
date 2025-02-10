@@ -52,7 +52,6 @@ public class GameMenu: MonoBehaviour
         GameObject chosenCharacterGO = _gameData.ListOfAllCharacterGOs.FirstOrDefault(character => character.name == CharacterNamePanel.name);
         // if (chosenCharacterGO != null)
         _chosenCharacter = chosenCharacterGO.GetComponent<Character>();
-        Debug.Log($"Character chosen: {_chosenCharacter.name}");
     }
 
     public void PickNumberOfRounds(GameObject RoundPanelNum)
@@ -83,15 +82,8 @@ public class GameMenu: MonoBehaviour
 
     public void HandleConfirmCharacterSelection()
     {
-        Debug.Log($"Chosen character: {_chosenCharacter}");
         if (_chosenCharacter != null)
         {
-            // The player should pick a unique character.
-            foreach (Character c in _gameData.ListOfCharactersPicked)
-            {
-                Debug.Log($"{c}");
-            }
-
             if (_gameData.ListOfCharactersPicked.Contains(_chosenCharacter)) return;
 
             Debug.Log($"Player {_numOfCurrentPlayerChoosingChar} picked: {_chosenCharacter.Name}");
